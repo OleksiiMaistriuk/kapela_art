@@ -25,7 +25,7 @@ const Footer = () => {
                 )}
               </span>
               <p className="max-w-xs mt-4 text-sm font-semibold text-gray-600">
-                © 2023 Tomasz Słowioczek{" "}
+                © 2024 Magdalena Kapela{" "}
               </p>
             </div>
 
@@ -47,17 +47,17 @@ const Footer = () => {
               <address className="flex flex-col mt-4 space-y-2 text-base font-semibold text-gray-900">
                 <a
                   className="hover:opacity-75 "
-                  href="mailto:yogatomasz@gmail.com"
-                  aria-label="Email to Tomasz Słowioczek"
+                  href="mailto:    Magdalena Kapela@gmail.com"
+                  aria-label="Email to     Magdalena Kapela"
                 >
-                  yogatomasz@gmail.com
+                  Magdalena Kapela@gmail.com
                 </a>
                 <a
                   className="hover:opacity-75"
                   href="tel:+48882572332"
-                  aria-label="Phone number to Tomasz Słowioczek"
+                  aria-label="Phone number to     Magdalena Kapela"
                 >
-                  +487360556375
+                  +40000000000
                 </a>
               </address>
             </div>

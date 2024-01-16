@@ -8,15 +8,15 @@ const AboutSection = () => {
   const myImageData = getImageData("backgrounds/about.png");
 
   return (
-    <section className="bg-white dark:bg-gray-900 ">
-      <div className="grid text-center text-black place-content-center min-h-[500px] relative isolate">
-        <GatsbyImage
+    <section className=" bg-slate-950">
+      <div className="grid text-center text-white place-content-center min-h-[500px] relative isolate">
+        {/* <GatsbyImage
           image={myImageData}
           alt="Background Image"
           className="h-full w-full object-right md:object-center -z-10"
           style={{ position: "absolute" }}
-        />
-        <span className="bg-white absolute w-full h-full opacity-40" />
+        /> */}
+        {/* <span className="bg-white absolute w-full h-full opacity-40" /> */}
         <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xl dark:text-white pt-5 z-10">
           O mnie
         </h1>

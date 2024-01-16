@@ -1,58 +1,59 @@
 export const aboutList = [
   {
-    title: "Joga dla zdrowia i równowagi",
+    title: "Sztuka jako ekspresja emocji",
     description:
-      "Przez lata praktyki odkryłem, że joga nie jest tylko ćwiczeniem fizycznym, ale także duchowym. Pomogła mi osiągnąć równowagę między ciałem a umysłem, co przekłada się na zdrowsze i bardziej zrównoważone życie. Chcę podzielić się tą wiedzą z Tobą, abyś mógł czerpać z niej tak samo, jak ja.",
-    imageUrl: "about/photo (7).JPG",
-    altText: "Tomek medytujący w parku",
+      "W mojej twórczości artystycznej staram się wyrażać głębokie emocje i myśli. Sztuka dla mnie to nie tylko technika, ale przede wszystkim sposób komunikacji z widzem. Przez lata rozwijałam swój unikalny styl, który pozwala mi przekazywać uczucia i doświadczenia w każdym dziele.",
+    imageUrl: "about/photo (7).jpg",
+    altText: "Magdalena tworząca nową kompozycję artystyczną",
   },
   {
-    title: "Indywidualne podejście do każdego ucznia",
+    title: "Indywidualne podejście do każdego projektu",
     description:
-      "Rozumiem, że każdy z nas jest inny i potrzebuje indywidualnego podejścia. Dlatego moje lekcje są dostosowywane do potrzeb każdego ucznia, aby pomóc osiągnąć maksymalne korzyści z praktyki jogi.",
-    imageUrl: "about/photo (1).JPG",
-    altText: "Tomek uczący grupę ludzi jogi na plaży",
+      "Każdy projekt traktuję jako wyjątkową okazję do eksploracji i eksperymentowania. Moje prace są różnorodne, ponieważ każda z nich jest odpowiedzią na indywidualne inspiracje i doświadczenia, co sprawia, że każde dzieło jest wyjątkowe.",
+    imageUrl: "about/photo (1).jpg",
+    altText: "Magdalena prezentująca swoje dzieła sztuki",
   },
   {
-    title: "Warsztaty i wyjazdy jogiczne",
+    title: "Warsztaty i wystawy artystyczne",
     description:
-      "Oprócz regularnych lekcji oferuję również warsztaty i wyjazdy jogiczne. To wspaniała okazja, aby pogłębić swoją praktykę, poznać innych pasjonatów jogi i spędzić czas w pięknych miejscach, które sprzyjają relaksacji i medytacji.",
-    imageUrl: "about/photo (2).JPG",
-    altText: "Tomek prowadzący warsztat jogi w górach",
+      "Regularnie organizuję warsztaty i wystawy, aby dzielić się moją pasją i wiedzą z innymi. Te wydarzenia są okazją do spotkań z ludźmi, wymiany doświadczeń i prezentowania moich najnowszych prac.",
+    imageUrl: "about/photo (2).jpg",
+    altText: "Magdalena na jednej ze swoich wystaw artystycznych",
   },
   {
-    title: "Nieustanne doskonalenie",
+    title: "Rozwój i eksploracja nowych technik",
     description:
-      "Mimo wieloletniego doświadczenia wciąż uczę się nowych technik i metodyk. Uważam, że w jogi nigdy się nie kończy nauki. Regularnie uczestniczę w kursach i warsztatach, aby stale rozwijać swoje umiejętności i przekazywać je moim uczniom.",
-    imageUrl: "about/photo (3).JPG",
-    altText: "Tomek praktykujący trudne pozy jogi",
+      "Jestem zawsze otwarta na nowe techniki i podejścia w sztuce. Uważam, że ciągła nauka i eksploracja są kluczowe dla rozwoju artystycznego. Regularnie uczestniczę w warsztatach i szkoleniach, aby rozwijać moje umiejętności i wprowadzać świeże pomysły do moich prac.",
+    imageUrl: "about/photo (3).jpg",
+    altText: "Magdalena eksperymentująca z nowymi technikami malarskimi",
   },
   {
-    title: "Dostosowanie jogi do potrzeb zdrowotnych",
+    title: "Sztuka dostosowana do indywidualnych potrzeb",
     description:
-      "Wierzę, że joga może być dostosowana do wsparcia zdrowia i leczenia. Specjalizuję się w tworzeniu programów jogi dostosowanych do indywidualnych potrzeb zdrowotnych, takich jak łagodzenie bólu pleców, poprawa elastyczności i zmniejszanie stresu.",
-    imageUrl: "about/photo (4).JPG",
-    altText: "Tomek demonstrujący terapeutyczną pozę jogi",
+      "Specjalizuję się w tworzeniu dzieł sztuki na zamówienie, dostosowanych do indywidualnych potrzeb i preferencji klientów. Moje doświadczenie pozwala mi na tworzenie unikalnych kompozycji, które idealnie wpisują się w przestrzeń i charakter zamawiającego.",
+    imageUrl: "about/photo (4).jpg",
+    altText:
+      "Magdalena przy pracy nad spersonalizowanym projektem artystycznym",
   },
   {
-    title: "Yoga dla wszystkich grup wiekowych",
+    title: "Sztuka dla wszystkich",
     description:
-      "Moje zajęcia jogi są otwarte dla osób w każdym wieku. Od dzieci po seniorów, dostosowuję praktykę, aby była bezpieczna, przyjemna i korzystna dla każdej grupy wiekowej, pomagając w utrzymaniu zdrowia fizycznego i psychicznego na każdym etapie życia.",
-    imageUrl: "about/photo (5).JPG",
-    altText: "Tomek prowadzący jogę dla różnych grup wiekowych",
+      "Wierzę, że sztuka jest dla każdego i staram się, aby moje prace były dostępne dla szerokiego grona odbiorców. Organizuję wystawy i projekty, które są otwarte dla wszystkich, niezależnie od wieku czy doświadczenia w sztuce, promując w ten sposób dostępność i inkluzję w świecie sztuki.",
+    imageUrl: "about/photo (5).jpg",
+    altText: "Magdalena podczas otwarcia publicznej wystawy swoich prac",
   },
   {
-    title: "Integracja medytacji i mindfulness",
+    title: "Połączenie sztuki z mindfulness",
     description:
-      "Włączam elementy medytacji i uważności (mindfulness) do moich zajęć, aby pogłębić doświadczenie jogi. Te techniki pomagają w osiągnięciu spokoju umysłu, poprawiają koncentrację i pomagają w zarządzaniu emocjami.",
-    imageUrl: "about/photo (6).JPG",
-    altText: "Tomek prowadzący sesję medytacji",
+      "W mojej twórczości często łączę sztukę z elementami mindfulness i medytacji. Uważam, że sztukamoże być narzędziem do osiągnięcia spokoju umysłu i lepszego zrozumienia siebie. Poprzez twórczość i aprecjację sztuki promuję uważność i wewnętrzną harmonię.",
+    imageUrl: "about/photo (6).jpg",
+    altText: "Magdalena prowadząca warsztat łączący sztukę z mindfulness",
   },
   {
-    title: "Joga online i dostępność cyfrowa",
+    title: "Sztuka cyfrowa i dostępność online",
     description:
-      "Oferuję również lekcje jogi online, aby umożliwić uczestnictwo z dowolnego miejsca na świecie. Dzięki temu moje zajęcia są dostępne dla tych, którzy nie mogą uczestniczyć osobiście, zapewniając elastyczność i wygodę praktyki w domu.",
-    imageUrl: "about/photo (8).JPG",
-    altText: "Tomek prowadzący zajęcia jogi online",
+      "Rozwijam również swoją obecność w świecie sztuki cyfrowej, oferując prace dostępne online. Dzięki temu moje dzieła są dostępne dla szerszego grona odbiorców na całym świecie, umożliwiając łatwy dostęp do sztuki bez ograniczeń geograficznych.",
+    imageUrl: "about/photo (8).jpg",
+    altText: "Magdalena prezentująca swoje prace cyfrowe online",
   },
 ];

@@ -70,7 +70,7 @@ const NavBar = () => {
 
         <a
           className="hover:opacity-75"
-          href="https://www.instagram.com/yoga_tomasz/"
+          href="https://www.instagram.com/magdalenakapelaart/"
           target="_blank"
           rel="noreferrer"
         >

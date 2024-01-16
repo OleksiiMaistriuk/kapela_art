@@ -64,7 +64,7 @@ const GallerySection = () => {
     };
   }, [isSliderOpen]);
   return (
-    <section className="container mx-auto p-4 ">
+    <section className="container bg-black mx-auto p-4 ">
       <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center sm:text-3xl md:text-3xl xl:text-4xl dark:text-white pt-14">
         Galeria
       </h1>

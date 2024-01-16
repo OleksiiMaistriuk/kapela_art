@@ -13,9 +13,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => (
-  <Seo
-    title="Strona Główna - Tomasz Słowioczek, Profesjonalny Trener Jogi"
-    description="Witaj na stronie Tomasza Słowioczka, trenera jogi w Bielsko-Białej. Dowiedz się więcej o jego zajęciach, filozofii jogi i jak możesz wziąć udział w sesjach."
-  />
-);
+export const Head = () => <Seo title="" description="" />;
