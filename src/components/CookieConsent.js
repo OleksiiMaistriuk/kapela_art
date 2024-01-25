@@ -93,7 +93,7 @@ const CookieConsent = () => {
                 cookies i chronimy Twoje dane.
               </p>
               <button
-                className="px-4 py-2 bg-green-500 hover:bg-green-900 text-white rounded mr-2"
+                className="px-4 py-2 bg-green-500 hover:bg-green-900rounded mr-2"
                 onClick={acceptCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -104,7 +104,7 @@ const CookieConsent = () => {
                 Akceptuj
               </button>
               <button
-                className="px-4 py-2 bg-red-500 hover:bg-red-900 text-white rounded"
+                className="px-4 py-2 bg-red-500 hover:bg-red-900rounded"
                 onClick={declineCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Esc" || e.key === " ") {

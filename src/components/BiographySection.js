@@ -1,57 +1,94 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
-import { biographyList } from "../constants/biographyList";
-import { useImageService } from "../elements/imageService";
 
 const BiographySection = () => {
-  const { getImageData } = useImageService();
-  const myImageData = getImageData("backgrounds/biography.JPG");
+  const data = useStaticQuery(graphql`
+    query {
+      photos: allFile(
+        filter: { absolutePath: { regex: "/src/images/photos/" } }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 4000, quality: 100)
+            }
+          }
+        }
+      }
+      rooms: allFile(
+        filter: { absolutePath: { regex: "/src/images/rooms/" } }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 4000, quality: 100)
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const groupedSmallPhotos = [];
+  for (let i = 0; i < data.photos.edges.length; i += 6) {
+    groupedSmallPhotos.push(data.photos.edges.slice(i, i + 6));
+  }
 
   return (
-    <section className="relative">
-      <div className="grid text-center  place-content-center  isolate">
-        {myImageData && (
-          <GatsbyImage
-            image={myImageData}
-            alt="Decorative Background Image"
-            className="h-full w-full object-right md:object-center -z-10"
-            style={{ position: "absolute" }}
-          />
-        )}
-        <span className="bg-black absolute w-full h-full opacity-40" />
-        <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xl text-white pt-5 z-10">
-          Biografia
-        </h1>
+    <div>
+      {data.rooms.edges.map((room, index) => {
+        const roomImage = getImage(room.node.childImageSharp.gatsbyImageData);
+        const smallPhotos = groupedSmallPhotos[index] || [];
 
-        {biographyList.map((biography, index) => (
-          <article
-            key={index}
-            className="grid max-w-screen-xl px-1 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 p-5 rounded-xl mb-5 z-10"
-          >
-            <div className={`m-auto place-self-center  `}>
-              <h2 className=" mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl text-white">
-                {biography.title}
-              </h2>
-              <p className="mb-6 font-light lg:mb-8 md:text-lg lg:text-xl text-white p-3">
-                {biography.description}
-              </p>
-
-              <GatsbyImage
-                image={getImageData(biography.imageUrl)}
-                alt={biography.altText}
-                className="object-fill rounded-lg max-w-xl"
-              />
+        return (
+          <div key={room.node.relativePath} className="flex flex-wrap mb-4">
+            <div className="w-1/3 flex-none p-1">
+              <div className="rounded overflow-hidden shadow-lg h-full">
+                <GatsbyImage
+                  image={roomImage}
+                  alt={room.node.relativePath}
+                  className="object-contain h-full w-full"
+                />
+              </div>
             </div>
-            <a
-              href={biography.link}
-              className=" m-6 font-light md:text-lg lg:text-xl text-bold text-white"
-            >
-              {biography.link}
-            </a>{" "}
-          </article>
-        ))}
-      </div>
-    </section>
+            <div className="w-2/3 flex-1">
+              <div className="flex flex-row flex-wrap">
+                {smallPhotos.slice(0, 3).map(({ node }) => (
+                  <div
+                    key={node.relativePath}
+                    className="rounded overflow-hidden shadow-lg w-1/3 p-1"
+                  >
+                    <GatsbyImage
+                      image={getImage(node.childImageSharp.gatsbyImageData)}
+                      alt={node.relativePath}
+                      className="object-contain h-full w-full"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-row flex-wrap flex-1">
+                {smallPhotos.slice(3, 6).map(({ node }) => (
+                  <div
+                    key={node.relativePath}
+                    className="rounded overflow-hidden shadow-lg w-1/3 p-1"
+                  >
+                    <GatsbyImage
+                      image={getImage(node.childImageSharp.gatsbyImageData)}
+                      alt={node.relativePath}
+                      className="object-contain h-full w-full"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

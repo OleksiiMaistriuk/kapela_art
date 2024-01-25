@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&display=swap");
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -12,4 +15,12 @@
 
 .slide-in {
   animation: slideInFromLeft 0.3s forwards;
+}
+body {
+  font-family: "Noto Sans Tagbanwa", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1;
+  color: #bf9b30 !important;
 }

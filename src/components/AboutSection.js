@@ -9,7 +9,7 @@ const AboutSection = () => {
 
   return (
     <section className=" bg-slate-950">
-      <div className="grid text-center text-white place-content-center min-h-[500px] relative isolate">
+      <div className="grid text-centerplace-content-center min-h-[500px] relative isolate">
         {/* <GatsbyImage
           image={myImageData}
           alt="Background Image"

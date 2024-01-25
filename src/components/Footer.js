@@ -10,7 +10,7 @@ const Footer = () => {
   const myImageData = getImageData("icon.png");
 
   return (
-    <footer className="bg-gradient-to-r from-[#e43838] via-[#e7c026] to-[#ffffff]">
+    <footer className="bg-gradient-to-r from-rich-black to-dark-blue text-white">
       <div className="max-w-screen px-4 py-5 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -24,17 +24,17 @@ const Footer = () => {
                   />
                 )}
               </span>
-              <p className="max-w-xs mt-4 text-sm font-semibold text-gray-600">
+              <p className="max-w-xs mt-4 text-sm font-semibold">
                 © 2024 Magdalena Kapela{" "}
               </p>
             </div>
 
-            <div className="flex mt-8 space-x-6 text-gray-600"></div>
+            <div className="flex mt-8 space-x-6 text-white"></div>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <p className="font-bold">Linki</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-base font-semibold text-gray-900">
+              <nav className="flex flex-col mt-4 space-y-2 text-base font-semibold text-white">
                 {footerLinks.map((item, index) => (
                   <Link key={index} className="hover:opacity-75" to={item.to}>
                     {item.label}
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="font-bold">Dane kontaktowe</p>
-              <address className="flex flex-col mt-4 space-y-2 text-base font-semibold text-gray-900">
+              <address className="flex flex-col mt-4 space-y-2 text-base font-semibold text-white">
                 <a
                   className="hover:opacity-75 "
                   href="mailto:    Magdalena Kapela@gmail.com"

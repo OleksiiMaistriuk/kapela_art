@@ -95,7 +95,7 @@ const GallerySection = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center pt-10">
           <div className="relative max-w-3xl w-full">
             <span
-              className="absolute top-1 right-4 text-white text-3xl md:text-4xl cursor-pointer z-50"
+              className="absolute top-1 right-4text-3xl md:text-4xl cursor-pointer z-50"
               onClick={() => setIsSliderOpen(false)}
               role="button"
               tabIndex={0}
@@ -111,7 +111,7 @@ const GallerySection = () => {
             <div className="relative flex items-center justify-center">
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-white z-50"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2z-50"
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     setIsSliderOpen(false);
@@ -142,7 +142,7 @@ const GallerySection = () => {
               />
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-white z-50"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2z-50"
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     setIsSliderOpen(false);

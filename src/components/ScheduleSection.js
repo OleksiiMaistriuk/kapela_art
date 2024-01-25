@@ -20,7 +20,7 @@ const ScheduleSection = () => {
       )}
       <span className="bg-black absolute w-full h-full opacity-40" />
       <div className="col-start-1 row-start-1 mx-auto my-auto z-10">
-        <h1 className="font-bold text-2xl text-white ">Harmonogram zajęc</h1>
+        <h1 className="font-bold text-2xl">Harmonogram zajęc</h1>
       </div>{" "}
       <Card className="p-4 md:p-10 m-4 md:m-20 bg-opacity-70" shadow={true}>
         <div className="flex flex-col">

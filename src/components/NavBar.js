@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50">
-      <nav className="relative px-4 py-2 flex justify-between items-center bg-black bg-opacity-95 ">
+      <nav className="relative px-4 py-2 flex justify-between items-center bg-smoky-black ">
         <span className="text-3xl font-bold   leading-none">
           {myImageData && (
             <GatsbyImage image={myImageData} alt="logo" className="h-14 w-14" />
@@ -19,7 +19,7 @@ const NavBar = () => {
         </span>
         <div className="lg:hidden">
           <button
-            className="navbar-burger flex items-center text-white p-3"
+            className="navbar-burger flex items-centerp-3"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -36,14 +36,12 @@ const NavBar = () => {
           {navLinks.map((item, index) => (
             <li
               key={index}
-              className=" lg:flex text-white lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+              className=" lg:flex  lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
             >
               <Link
                 to={item.to}
-                className={
-                  "text-sm  hover:text-amber-400 font-bold whitespace-nowrap"
-                }
-                activeClassName="text-gold-800 "
+                className={"text-sm  hover:text-amber-400  whitespace-nowrap"}
+                activeClassName="text-amber-400  "
               >
                 {item.label}
               </Link>
