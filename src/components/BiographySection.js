@@ -42,10 +42,10 @@ const BiographySection = () => {
       {data.rooms.edges.map((room, index) => {
         const roomImage = getImage(room.node.childImageSharp.gatsbyImageData);
         const smallPhotos = groupedSmallPhotos[index] || [];
-
+        const orderClass = index % 2 === 0 ? "order-last" : "order-first";
         return (
           <div key={room.node.relativePath} className="flex flex-wrap mb-4">
-            <div className="w-1/3 flex-none p-1">
+            <div className={`w-1/3 flex-none p-1 ${orderClass}`}>
               <div className="rounded overflow-hidden shadow-lg h-full">
                 <GatsbyImage
                   image={roomImage}
