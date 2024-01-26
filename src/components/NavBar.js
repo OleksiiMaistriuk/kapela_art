@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50">
-      <nav className="relative px-4 py-2 flex justify-between items-center bg-smoky-black ">
+      <nav className="relative px-4 py-2 flex justify-between items-center bg-rich-black ">
         <span className="text-3xl font-bold   leading-none">
           {myImageData && (
             <GatsbyImage image={myImageData} alt="logo" className="h-14 w-14" />
@@ -32,6 +32,7 @@ const NavBar = () => {
             </svg>
           </button>
         </div>
+
         <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
           {navLinks.map((item, index) => (
             <li
