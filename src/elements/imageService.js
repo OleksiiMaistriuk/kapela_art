@@ -24,5 +24,13 @@ export const useImageService = () => {
     return imageData;
   };
 
-  return { getImageData };
+  const getAllImagesFromDirectory = (directoryName) => {
+    const imagesData = data.allFile.edges
+      .filter((edge) => edge.node.relativePath.startsWith(directoryName + "/"))
+      .map((edge) => edge.node.childImageSharp.gatsbyImageData);
+
+    return imagesData;
+  };
+
+  return { getImageData, getAllImagesFromDirectory };
 };

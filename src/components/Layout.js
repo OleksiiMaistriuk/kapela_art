@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg">
+    <div className="min-h-screen bg-dark-purple fade-in scrollable-container">
       <NavBar />
       <main className="pt-[4.5rem]  ">{children}</main>
       <CookieConsent />

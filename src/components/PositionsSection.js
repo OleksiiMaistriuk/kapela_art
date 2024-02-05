@@ -19,7 +19,7 @@ const PositionsSection = () => {
           />
         )}
         <span className="bg-black absolute w-full h-full  opacity-80" />
-        <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xlpt-5 z-10">
+        <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xl pt-5 z-10">
           Podstawowe Pozycji Jogi
         </h1>
         {positionsList.map((position, index) => (
@@ -32,10 +32,10 @@ const PositionsSection = () => {
                 index % 2 === 0 ? "lg:order-1" : "lg:order-2"
               }`}
             >
-              <h2 className="max-w-2xl mb-4 text-2xlfont-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl ">
+              <h2 className="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl ">
                 {position.title}
               </h2>
-              <p className="max-w-2xl mb-6 font-lightlg:mb-8 md:text-lg lg:text-xl ">
+              <p className="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl ">
                 {position.description}
               </p>
             </div>

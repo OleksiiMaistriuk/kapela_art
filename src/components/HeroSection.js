@@ -1,29 +1,67 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { animated, useSpring } from "react-spring";
 import { heroLinks } from "../constants/heroLinks";
 import { useImageService } from "../elements/imageService";
+import "../styles/global.css";
+import { reloadPage } from "./../../.cache/fast-refresh-overlay/utils";
 
 const HeroSection = () => {
-  const { getImageData } = useImageService();
+  const { getAllImagesFromDirectory } = useImageService();
+  const backgroundImagesData = getAllImagesFromDirectory("backgrounds");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const backgroundImageData = getImageData("backgrounds/first.jpg");
-  const backgroundImage = getImage(backgroundImageData);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % backgroundImagesData.length
+      );
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [backgroundImagesData.length]);
+
+  const [props, set] = useSpring(() => ({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 500,
+  }));
+
+  useEffect(() => {
+    set({ opacity: 1 });
+    const timeout = setTimeout(() => set({ opacity: 0 }), 5000);
+
+    return () => clearTimeout(timeout);
+  }, [currentImageIndex, set]);
+
+  const backgroundImage = getImage(backgroundImagesData[currentImageIndex]);
+
+  const handleClearLocalStorage = () => {
+    localStorage.clear();
+    reloadPage();
+  };
 
   return (
-    <header className="grid relative isolate overflow-hidden h-screen">
+    <header className="grid relative isolate overflow-hidden h-screen ">
       {backgroundImage && (
-        <GatsbyImage
-          image={backgroundImage}
-          alt=""
-          className="inset-0 -z-10 h-full w-full object-right md:object-center fade-in"
-          style={{ position: "absolute" }}
-        />
+        <animated.div style={props}>
+          <GatsbyImage
+            image={backgroundImage}
+            alt=""
+            className="inset-0 -z-10 h-full w-full object-cover"
+            style={{ position: "absolute" }}
+          />
+        </animated.div>
       )}
       <span className="bg-black absolute inset-0 opacity-10 sm:opacity-30" />
       <div className="z-10 lg:flex justify-between">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
+            {" "}
+            <button onClick={handleClearLocalStorage}>
+              Clear Local Storage
+            </button>
             <h2 className="text-2xl tracking-tightsm:text-4xl">tekst</h2>
             <p className="mt-6 text-lg leading-8 text-white">tekst</p>
           </div>

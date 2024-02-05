@@ -94,13 +94,20 @@ const BiographySection = () => {
             </Button>
           </div>
         </DialogHeader>
+
         <DialogBody>
-          {selectedImage && (
+          {selectedImage ? (
             <GatsbyImage
               image={getImage(selectedImage)}
-              alt={selectedImage.node?.relativePath}
+              alt={selectedImage.node?.relativePath || "image"}
               className="rounded-lg object-contain object-center max-h-[calc(100vh-200px)] w-full"
             />
+          ) : (
+            <div className="text-center p-4">
+              <Typography color="gray" className="font-normal">
+                No image selected.
+              </Typography>
+            </div>
           )}
         </DialogBody>
         <DialogFooter className="justify-between">
@@ -147,7 +154,7 @@ const BiographySection = () => {
                 >
                   <GatsbyImage
                     image={roomImage}
-                    alt={room.node.relativePath}
+                    alt={room.node.relativePath || "image"}
                     className="object-contain h-full w-full"
                   />
                 </div>
@@ -164,7 +171,7 @@ const BiographySection = () => {
                     >
                       <GatsbyImage
                         image={getImage(node.childImageSharp.gatsbyImageData)}
-                        alt={node.relativePath}
+                        alt={node.relativePath || "image"}
                         className="object-contain h-full w-full"
                       />
                     </div>
@@ -182,7 +189,7 @@ const BiographySection = () => {
                     >
                       <GatsbyImage
                         image={getImage(node.childImageSharp.gatsbyImageData)}
-                        alt={node.relativePath}
+                        alt={node.relativePath || "image"}
                         className="object-contain h-full w-full"
                       />
                     </div>
