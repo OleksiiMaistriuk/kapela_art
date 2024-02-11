@@ -55,63 +55,6 @@
   box-sizing: border-box;
 }
 
-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section:nth-child(1) {
-  color: #e0ffff;
-}
-section:nth-child(2) {
-  color: #42455a;
-  background: #e0ffff;
-}
-section:nth-child(3) {
-  color: #e0ffff;
-}
-section:nth-child(4) {
-  color: #42455a;
-  background: #e0ffff;
-}
-section .container {
-  margin: 100px;
-}
-section h1 {
-  font-size: 3rem;
-  margin: 20px;
-}
-section h2 {
-  font-size: 40px;
-  text-align: center;
-  text-transform: uppercase;
-}
-section .text-container {
-  display: flex;
-}
-section .text-container .text-box {
-  margin: 20px;
-  padding: 20px;
-  background: #00c2cb;
-}
-section .text-container .text-box h3 {
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 900px) {
-  section h1 {
-    font-size: 2rem;
-    text-align: center;
-  }
-  section .text-container {
-    flex-direction: column;
-  }
-}
-
 .reveal {
   position: relative;
   transform: translateY(150px);
@@ -122,4 +65,40 @@ section .text-container .text-box h3 {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+
+.overlay-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure it covers the full width */
+  height: 100vh; /* Cover the full viewport height */
+  z-index: 10; /* Adjust z-index as needed to ensure it's above the content it should cover */
+  background-color: black; /* Starting color */
+  animation: fadeOut 2s ease-in forwards; /* Use the defined animation */
+  pointer-events: none; /* Keep the overlay from capturing clicks */
+}
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  height: 100vh;
+}
+
+.scrollText {
+  font-size: 1.5rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  height: 10rem;
+  width: 25%;
+  text-align: center;
+  border-radius: 10px;
 }

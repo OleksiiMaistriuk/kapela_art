@@ -171,7 +171,7 @@ const GallerySection = () => {
               <span
                 key={i}
                 role="button" // Indicate that this is an interactive element
-                tabIndex={0} // Make it focusable
+                tabIndex={0}
                 className={`block h-1 cursor-pointer rounded-2xl transition-all ${
                   activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
                 }`}
@@ -185,7 +185,7 @@ const GallerySection = () => {
                     setCurrentImage(i);
                   }
                 }}
-                aria-label={`Select image ${i + 1}`} // Add aria-label for screen readers
+                aria-label={`Select image ${i + 1}`}
               />
             ))}
           </div>

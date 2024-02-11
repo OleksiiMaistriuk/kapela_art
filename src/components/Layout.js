@@ -1,16 +1,15 @@
 import React from "react";
 import "../styles/global.css";
 import CookieConsent from "./CookieConsent";
-import Footer from "./Footer.js";
 import NavBar from "./NavBar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-dark-purple fade-in scrollable-container">
+    <div className="min-h-screen bg-dark-purple relative">
+      <div className="overlay-black" />
       <NavBar />
-      <main className="pt-[4.5rem]  ">{children}</main>
+      <main>{children}</main>
       <CookieConsent />
-      <Footer />
     </div>
   );
 };

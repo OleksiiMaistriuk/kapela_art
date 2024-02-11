@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import HeroSection from "../components/HeroSection";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
+import Trail from "../elements/trail";
 const IndexPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -29,9 +30,12 @@ const IndexPage = () => {
           className="fixed inset-0 bg-dark-purple flex justify-center items-center z-50 cursor-pointer"
           onClick={handleModalClick}
         >
-          <h1 className="text-3xl font-extrabold text-center xl:text-4xl">
-            Magdalena Kapela
-          </h1>
+          <Trail>
+            {" "}
+            <h1 className="text-3xl font-extrabold text-center xl:text-4xl">
+              Magdalena Kapela
+            </h1>
+          </Trail>
         </div>
       )}
 
