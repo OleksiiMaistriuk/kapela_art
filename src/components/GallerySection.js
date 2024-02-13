@@ -63,18 +63,19 @@ const GallerySection = () => {
       document.body.style.overflow = "";
     };
   }, [isSliderOpen]);
+
   return (
     <section className="container bg-black mx-auto p-4 ">
-      <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center sm:text-3xl md:text-3xl xl:text-4xl dark:text-white pt-14">
+      {/* <h1 className="max-w-2xl mx-auto mb-10 text-2xl font-extrabold text-center sm:text-3xl md:text-3xl xl:text-4xl dark:text-white pt-14">
         Galeria
-      </h1>
+      </h1> */}
 
       <div className="gap-3 md:gap-4 lg:gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {columns.map((columnImages, columnIndex) => (
           <ul key={columnIndex} className="grid grid-cols-1 gap-y-2">
             {columnImages.map(({ image, originalIndex }) => (
               <li key={originalIndex} className="relative h-full">
-                <button
+                <div
                   className="rounded-xl focus:outline-none focus-visible:ring"
                   onClick={() => handleImageClick(originalIndex)}
                   aria-label={`Open image ${originalIndex}`}
@@ -84,7 +85,7 @@ const GallerySection = () => {
                     alt={`photo ${originalIndex}`}
                     className="rounded-xl"
                   />
-                </button>
+                </div>
               </li>
             ))}
           </ul>
@@ -170,7 +171,7 @@ const GallerySection = () => {
             {new Array(allImages.length).fill("").map((_, i) => (
               <span
                 key={i}
-                role="button" // Indicate that this is an interactive element
+                role="button"
                 tabIndex={0}
                 className={`block h-1 cursor-pointer rounded-2xl transition-all ${
                   activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
