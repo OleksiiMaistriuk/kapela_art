@@ -13,9 +13,4 @@ const StatutePage = () => {
 
 export default StatutePage;
 
-export const Head = () => (
-  <Seo
-    title="Regulamin - Tomasz Słowioczek, Trener Jogi"
-    description="Zapoznaj się z regulaminem i zasadami uczestnictwa w zajęciach jogi u Tomasza Słowioczka. Znajdziesz tu ważne informacje dotyczące polityki, procedur i wytycznych."
-  />
-);
+export const Head = () => <Seo title="" description="" />;

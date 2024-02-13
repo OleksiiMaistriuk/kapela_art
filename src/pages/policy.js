@@ -13,9 +13,4 @@ const PolicyPage = () => {
 
 export default PolicyPage;
 
-export const Head = () => (
-  <Seo
-    title="Polityka Prywatności - Tomasz Słowioczek, Trener Jogi"
-    description="Zapoznaj się z polityką prywatności na stronie Tomasza Słowioczka. Dowiedz się, jak chronimy Twoje dane i jakie są zasady korzystania ze strony."
-  />
-);
+export const Head = () => <Seo title="Polityka Prywatności" description="" />;

@@ -14,8 +14,5 @@ const AboutPage = () => {
 export default AboutPage;
 
 export const Head = () => (
-  <Seo
-    title="O Mnie - Magdalena Kapelaart"
-    description="Tomasz Słowioczek - wykwalifikowany trener jogi z pasją i doświadczeniem. Dowiedz się więcej o jego podejściu do jogi, kwalifikacjach i filozofii nauczania, które pomagają uczniom osiągnąć harmonię ciała i umysłu."
-  />
+  <Seo title="O Mnie - Magdalena Kapelaart" description="" />
 );

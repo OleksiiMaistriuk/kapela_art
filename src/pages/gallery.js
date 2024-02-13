@@ -13,9 +13,4 @@ const GalleryPage = () => {
 
 export default GalleryPage;
 
-export const Head = () => (
-  <Seo
-    title="Galeria - Tomasz Słowioczek, Trener Jogi"
-    description="Obejrzyj galerię zdjęć Tomasza Słowioczka, pokazującą jego sesje jogi i warsztaty. Zdjęcia odzwierciedlają atmosferę zajęć i techniki nauczania jogi."
-  />
-);
+export const Head = () => <Seo title="Galeria" description="" />;

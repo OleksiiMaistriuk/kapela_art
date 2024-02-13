@@ -13,9 +13,4 @@ const PositionsPage = () => {
 
 export default PositionsPage;
 
-export const Head = () => (
-  <Seo
-    title="Pozycje Jogi - Tomasz Słowioczek, Trener Jogi"
-    description="Poznaj różne pozycje jogi z Tomaszem Słowioczkiem. Znajdziesz tutaj przewodnik po asanach, ich korzyściach i wskazówkach dotyczących praktyki."
-  />
-);
+export const Head = () => <Seo title="" description="" />;

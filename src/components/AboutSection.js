@@ -109,7 +109,7 @@ const AboutSection = () => {
       </div>{" "}
       <div
         ref={revealRef2}
-        className="flex w-full px-4 py-8 z-10 reveal bg-slate-950/75"
+        className="flex w-full px-4 py-8 z-10 reveal bg-dark-licorice/75"
       >
         <TextSection
           title="Rozwój i eksploracja nowych technik"
