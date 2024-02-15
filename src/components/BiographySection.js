@@ -1,10 +1,7 @@
 import {
-  Button,
   Dialog,
   DialogBody,
-  DialogFooter,
   DialogHeader,
-  IconButton,
   Typography,
 } from "@material-tailwind/react";
 import { graphql, useStaticQuery } from "gatsby";
@@ -31,7 +28,12 @@ const BiographySection = () => {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 4000, quality: 100)
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width: 600
+                quality: 100
+                transformOptions: { fit: CONTAIN }
+              )
             }
           }
         }
@@ -58,7 +60,7 @@ const BiographySection = () => {
 
   return (
     <div>
-      <Dialog size="xs" open={open} handler={handleClose}>
+      <Dialog size="xs" open={open} handler={handleClose} className="bg-black">
         <DialogHeader className="justify-between">
           <div className="flex items-center gap-3">
             <div className="-mt-px flex flex-col">
@@ -67,19 +69,19 @@ const BiographySection = () => {
                 color="blue-gray"
                 className="font-medium"
               >
-                Tania Andrew
+                Nazwa obrazu
               </Typography>
               <Typography
                 variant="small"
                 color="gray"
                 className="text-xs font-normal"
               >
-                @emmaroberts
+                @kod obrazu
               </Typography>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <IconButton variant="text" size="sm" color={"red"}>
+            {/* <IconButton variant="text" size="sm" color={"red"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -88,56 +90,42 @@ const BiographySection = () => {
               >
                 <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
               </svg>
-            </IconButton>
-            <Button color="gray" size="sm">
+            </IconButton> */}
+            {/* <Button color="gray" size="sm">
               Free Download
-            </Button>
+            </Button> */}
           </div>
         </DialogHeader>
-
-        <DialogBody>
-          {selectedImage ? (
-            <GatsbyImage
-              image={getImage(selectedImage)}
-              alt={selectedImage.node?.relativePath || "image"}
-              className="rounded-lg object-contain object-center max-h-[calc(100vh-200px)] w-full"
-            />
-          ) : (
-            <div className="text-center p-4">
-              <Typography color="gray" className="font-normal">
-                No image selected.
-              </Typography>
-            </div>
-          )}
-        </DialogBody>
-        <DialogFooter className="justify-between">
-          <div className="flex items-center gap-16">
-            <div>
-              <Typography variant="small" color="gray" className="font-normal">
-                Views
-              </Typography>
-              <Typography color="blue-gray" className="font-medium">
-                44,082,044
-              </Typography>
-            </div>
-            <div>
-              <Typography variant="small" color="gray" className="font-normal">
-                Downloads
-              </Typography>
-              <Typography color="blue-gray" className="font-medium">
-                553,031
-              </Typography>
-            </div>
-          </div>
-          <Button
-            size="sm"
-            variant="outlined"
-            color="blue-gray"
-            className="mr-5 flex items-center"
-          >
-            Share
-          </Button>
-        </DialogFooter>
+        <div className="flex flex-wrap overflow-auto max-h-[90vh]">
+          {" "}
+          {/* Added overflow-auto and max height */}
+          <DialogBody>
+            {selectedImage ? (
+              <GatsbyImage
+                image={getImage(selectedImage)}
+                alt={selectedImage.node?.relativePath || "image"}
+                className="object-contain h-auto w-auto max-w-full"
+              />
+            ) : (
+              <div className="text-center p-4">
+                <Typography color="gray" className="font-normal">
+                  No image selected.
+                </Typography>
+              </div>
+            )}
+          </DialogBody>
+          <DialogBody>
+            <Typography className="min-w-64 max-w-72">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Typography>
+          </DialogBody>
+        </div>
       </Dialog>
 
       <div>
