@@ -21,12 +21,8 @@ const HeroSection = () => {
 
   useEffect(() => {
     const updateIsMobile = () => setIsMobile(window.innerWidth <= 768);
-    updateIsMobile(); // Call it initially
-
-    // Add event listener for window resize
+    updateIsMobile();
     window.addEventListener("resize", updateIsMobile);
-
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
@@ -138,7 +134,7 @@ const HeroSection = () => {
         </ParallaxLayer>
 
         <ParallaxLayer
-          sticky={{ start: isMobile ? 7.7 : 3, end: isMobile ? 7.7 : 3 }}
+          sticky={{ start: isMobile ? 8.7 : 3, end: isMobile ? 8.7 : 3 }}
         >
           <BiographySection />
         </ParallaxLayer>
