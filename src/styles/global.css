@@ -102,3 +102,23 @@
   text-align: center;
   border-radius: 10px;
 }
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #bf9b30 #050f18;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #050f18;
+  border-radius: 20px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #bf9b30;
+  border-radius: 20px;
+  border: 3px solid #050f18;
+}

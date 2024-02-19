@@ -7,6 +7,7 @@ import "../styles/global.css";
 
 import Trail from "../elements/trail";
 import AboutSection from "./AboutSection";
+import BiographySection from "./BiographySection";
 const HeroSection = () => {
   const parallaxRef = useRef(null);
   const [parallaxApi, setParallaxApi] = useState(null);
@@ -14,7 +15,7 @@ const HeroSection = () => {
   const { getAllImagesFromDirectory } = useImageService();
   const backgroundImagesData = getAllImagesFromDirectory("backgrounds");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const [currentPage, setCurrentPage] = useState(0); //
   const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -46,13 +47,20 @@ const HeroSection = () => {
     }
   }, [parallaxRef, parallaxApi]);
 
-  const scrollToNext = () => {
+  const scrollToNext = (e) => {
     if (parallaxApi) {
-      parallaxApi.scrollTo(1);
+      parallaxApi.scrollTo(e);
     }
   };
-
+  const scrollToPage = (page) => {
+    if (parallaxRef.current) {
+      parallaxRef.current.scrollTo(page);
+      setCurrentPage(page); // Update the current page state
+    }
+  };
   const alignCenter = { display: "flex", alignItems: "center" };
+
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <>
@@ -79,7 +87,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <Parallax pages={3} ref={parallaxRef}>
+      <Parallax pages={10} ref={parallaxRef}>
         <ParallaxLayer
           offset={0}
           speed={0.5}
@@ -90,9 +98,11 @@ const HeroSection = () => {
               Magdalena Kapela
             </h1>
           </Trail>
-          <div className="absolute bottom-5 w-full flex justify-center">
+          {/* <div className="absolute bottom-5 w-full flex justify-center">
             <button
-              onClick={scrollToNext}
+              onClick={() => {
+                scrollToNext(1);
+              }}
               className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border"
             >
               <svg
@@ -103,95 +113,45 @@ const HeroSection = () => {
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 1, end: 1 }}>
-          <AboutSection />
+          <AboutSection />{" "}
         </ParallaxLayer>
 
-        {/* Arrow button layer */}
+        <ParallaxLayer
+          sticky={{ start: isMobile ? 7.7 : 3, end: isMobile ? 7.7 : 3 }}
+        >
+          <BiographySection />
+        </ParallaxLayer>
       </Parallax>
-
-      {/* <span className="bg-black absolute inset-0 opacity-10 sm:opacity-30" /> */}
-      {/* <div className="z-20 lg:flex justify-between">
-            <div className="px-6 lg:px-8">
-              <div className="mx-auto max-w-2xl">
-                {" "}
-                <h2 className="text-2xl tracking-tightsm:text-4xl">tekst</h2>
-                  <p className="mt-6 text-lg leading-8 text-white">tekst</p>
-              </div>
-            </div>
-            <div className="px-6 mr-0 lg:px-8">
-                <div className="hidden mx-auto max-w-2xl md:block lg:mx-0">
-                  <p className="mt-6 text-lg leading-8 text-white">tekst</p>
-                </div>
-                <nav className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none"></nav>{" "}
-                <h1 className="z-50 mx-auto mt-10 max-w-2xl text-3xl font-extrabold text-centerxl:text-4xl">
-                  Magdalena Kapela
-                </h1>
-              </div>
-          </div>{" "}
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7sm:grid-cols-2 md:flex lg:gap-x-10">
-              {heroLinks.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href}>
-                    {link.name} <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </li>
-              ))}
-            </ul> */}
-      {/* <header className="grid relative isolate overflow-hidden h-screen">
-        {backgroundImage && (
-          <animated.div style={props}>
-            <GatsbyImage
-              image={backgroundImage}
-              alt=""
-              className="inset-0 -z-10 h-full w-full object-cover"
-              style={{ position: "absolute" }}
+      <div className="fixed bottom-4 left-0 right-0 z-50 pb-4 flex justify-center">
+        <button
+          onClick={() => scrollToPage(currentPage + 1)}
+          className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-6 h-6 text-black"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
-          </animated.div>
-        )}
-        <span className="bg-black absolute inset-0 opacity-10 sm:opacity-30" />
-        <div className="z-20 lg:flex justify-between">
-          <div className="px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl">
-              {" "}
-              <button onClick={handleClearLocalStorage}>
-                Clear Local Storage
-              </button>
-              <h2 className="text-2xl tracking-tight  sm:text-4xl">tekst</h2>
-              <p className="mt-6 text-lg leading-8 text-white">tekst</p>
-            </div>
-          </div>
-          <div className="px-6 mr-0 lg:px-8">
-            <div className="hidden mx-auto max-w-2xl md:block lg:mx-0">
-              <p className="mt-6 text-lg leading-8 text-white">tekst</p>
-            </div>
-            <nav className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none"></nav>{" "}
-            <h1 className="z-50 mx-auto mt-10 max-w-2xl text-3xl font-extrabold text-centerxl:text-4xl">
-              Magdalena Kapela
-            </h1>
-          </div>
-        </div>{" "}
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7sm:grid-cols-2 md:flex lg:gap-x-10">
-          {heroLinks.map((link) => (
-            <li key={link.name}>
-              <Link to={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </header>
-      <div className="relative z-30">
-        <AboutSection />
-      </div> */}
+          </svg>
+        </button>
+      </div>
     </>
   );
 };

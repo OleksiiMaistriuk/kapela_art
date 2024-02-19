@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import React, { useState } from "react";
+import React from "react";
 import useRevealAnimation from "../useRevealAnimation"; // Ensure the path is correct
 
 const TextSection = ({ title, description }) => (
-  <div className="w-1/2 flex justify-center items-center flex-col m-5 p-0">
+  <div className="w-full md:w-1/2 flex justify-center items-center flex-col m-5 p-0">
     <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">
       {title}
     </h2>
@@ -15,7 +15,7 @@ const TextSection = ({ title, description }) => (
 );
 
 const ImageGallerySection = ({ columnImages }) => (
-  <div className="w-1/2 flex justify-center items-center p-0">
+  <div className="w-full md:w-1/2 flex justify-center items-center p-0">
     <div className="gap-3 md:gap-4 lg:gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
       {columnImages.map((images, columnIndex) => (
         <ul
@@ -82,41 +82,36 @@ const AboutSection = () => {
     }
   `);
 
-  const aboutImages = data.aboutImages.edges.map(
-    (edge) => edge.node.childImageSharp.gatsbyImageData
+  const aboutColumns = splitImagesIntoColumns(
+    data.aboutImages.edges.map(
+      (edge) => edge.node.childImageSharp.gatsbyImageData
+    )
   );
-  const biographyImages = data.biographyImages.edges.map(
-    (edge) => edge.node.childImageSharp.gatsbyImageData
+  const biographyColumns = splitImagesIntoColumns(
+    data.biographyImages.edges.map(
+      (edge) => edge.node.childImageSharp.gatsbyImageData
+    )
   );
-
-  // We'll assume you want to keep the same column split logic
-  const [aboutColumns] = useState(splitImagesIntoColumns(aboutImages));
-  const [biographyColumns] = useState(splitImagesIntoColumns(biographyImages));
 
   return (
     <>
       <div
         ref={revealRef}
-        className="flex w-full px-4 py-8 z-10 reveal bg-slate-950/75"
+        className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-slate-950/75"
       >
         <ImageGallerySection columnImages={aboutColumns} />
         <TextSection
           title="Warsztaty i wystawy artystyczne"
-          description="Regularnie organizuję warsztaty i wystawy, aby dzielić się moją
-            pasją i wiedzą z innymi. Te wydarzenia są okazją do spotkań z
-            ludźmi, wymiany doświadczeń i prezentowania moich najnowszych prac."
+          description="Regularnie organizuję warsztaty i wystawy, aby dzielić się moją pasją i wiedzą z innymi. Te wydarzenia są okazją do spotkań z ludźmi, wymiany doświadczeń i prezentowania moich najnowszych prac."
         />
-      </div>{" "}
+      </div>
       <div
         ref={revealRef2}
-        className="flex w-full px-4 py-8 z-10 reveal bg-dark-licorice/75"
+        className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-dark-licorice/75"
       >
         <TextSection
           title="Rozwój i eksploracja nowych technik"
-          description="Jestem zawsze otwarta na nowe techniki i podejścia w sztuce. Uważam,
-            że ciągła nauka i eksploracja są kluczowe dla rozwoju artystycznego.
-            Regularnie uczestniczę w warsztatach i szkoleniach, aby rozwijać
-            moje umiejętności i wprowadzać świeże pomysły do moich prac."
+          description="Jestem zawsze otwarta na nowe techniki i podejścia w sztuce. Uważam, że ciągła nauka i eksploracja są kluczowe dla rozwoju artystycznego. Regularnie uczestniczę w warsztatach i szkoleniach, aby rozwijać moje umiejętności i wprowadzać świeże pomysły do moich prac."
         />
         <ImageGallerySection columnImages={biographyColumns} />
       </div>

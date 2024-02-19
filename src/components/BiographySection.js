@@ -7,6 +7,7 @@ import {
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useState } from "react";
+import useRevealAnimation from "../useRevealAnimation";
 
 const BiographySection = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,10 @@ const BiographySection = () => {
     setSelectedImage(node);
     setOpen(true);
   };
-
+  const revealRef = useRevealAnimation("animate__fadeInUp", {
+    threshold: 0,
+    triggerOnce: true,
+  });
   const handleClose = () => setOpen(false);
 
   const data = useStaticQuery(graphql`
@@ -59,8 +63,13 @@ const BiographySection = () => {
   }
 
   return (
-    <div>
-      <Dialog size="xs" open={open} handler={handleClose} className="bg-black">
+    <div ref={revealRef} className="reveal bg-slate-950 p-6">
+      <Dialog
+        size="xxl"
+        open={open}
+        handler={handleClose}
+        className="bg-black "
+      >
         <DialogHeader className="justify-between">
           <div className="flex items-center gap-3">
             <div className="-mt-px flex flex-col">
@@ -81,30 +90,35 @@ const BiographySection = () => {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            {/* <IconButton variant="text" size="sm" color={"red"}>
+            <button
+              onClick={handleClose}
+              className="text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
+                stroke="currentColor"
+                className="w-6 h-6"
               >
-                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
-            </IconButton> */}
-            {/* <Button color="gray" size="sm">
-              Free Download
-            </Button> */}
+            </button>
           </div>
         </DialogHeader>
-        <div className="flex flex-wrap overflow-auto max-h-[90vh]">
+        <div className="flex flex-wrap justify-center overflow-auto max-h-[90vh] scrollbar-custom">
           {" "}
-          {/* Added overflow-auto and max height */}
           <DialogBody>
             {selectedImage ? (
               <GatsbyImage
                 image={getImage(selectedImage)}
                 alt={selectedImage.node?.relativePath || "image"}
-                className="object-contain h-auto w-auto max-w-full"
+                className="object-contain h-auto w-auto max-w-full "
               />
             ) : (
               <div className="text-center p-4">
@@ -115,7 +129,7 @@ const BiographySection = () => {
             )}
           </DialogBody>
           <DialogBody>
-            <Typography className="min-w-64 max-w-72">
+            <Typography className="min-w-64 max-w-screen-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

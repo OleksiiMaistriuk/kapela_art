@@ -25,7 +25,7 @@ const NavBar = () => {
         </span>{" "}
         <div className="lg:hidden">
           <button
-            className="navbar-burger flex items-centerp-3"
+            className="navbar-burger flex items-center p-3"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -110,11 +110,11 @@ const NavBar = () => {
         </div>
       </nav>
       <div
-        className={`navbar-menu relative z-50 ${isOpen ? "block" : "hidden"}`}
+        className={`navbar-menu  relative z-50 ${isOpen ? "block" : "hidden"}`}
       >
         <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
         <nav
-          className={`fixed top-0 left-0 bottom-0 flex flex-col w-48 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto ${
+          className={`fixed  top-0 left-0 bottom-0 flex flex-col w-48 max-w-sm py-6 px-6 bg-rich-black border-r overflow-y-auto ${
             isOpen ? "slide-in" : ""
           }`}
         >
@@ -131,7 +131,7 @@ const NavBar = () => {
 
             <button className="navbar-close" onClick={() => setIsOpen(false)}>
               <svg
-                className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                className="h-6 w-6 cursor-pointer hover:text-amber-400"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -151,7 +151,7 @@ const NavBar = () => {
             {navLinks.map((item, index) => (
               <li key={index} className="mb-1">
                 <Link
-                  className="block p-4 text-sm font-semibold text-gray-800 hover:text-blue-600 rounded"
+                  className="block p-4 text-sm font-semibold  hover:text-amber-400 rounded"
                   activeClassName="text-blue-800"
                   to={item.to}
                 >

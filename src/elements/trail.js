@@ -9,7 +9,7 @@ const Trail = ({ children }) => {
     x: 0,
     height: 110,
     from: { opacity: 0, x: 20, height: 0 },
-    delay: 300, // Add a delay if needed
+    delay: 300,
   });
 
   return (
