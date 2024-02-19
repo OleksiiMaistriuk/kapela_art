@@ -15,7 +15,21 @@ const HeroSection = () => {
   const { getAllImagesFromDirectory } = useImageService();
   const backgroundImagesData = getAllImagesFromDirectory("backgrounds");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0); //
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth <= 768);
+    updateIsMobile(); // Call it initially
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateIsMobile);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
   const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -59,8 +73,6 @@ const HeroSection = () => {
     }
   };
   const alignCenter = { display: "flex", alignItems: "center" };
-
-  const isMobile = window.innerWidth <= 768;
 
   return (
     <>
