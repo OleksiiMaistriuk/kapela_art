@@ -4,12 +4,12 @@ import React from "react";
 const Trail = ({ children }) => {
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
-    config: { mass: 10, tension: 5000, friction: 500 },
+    config: { mass: 10, tension: 200, friction: 50 }, // Reduced tension and friction
     opacity: 1,
     x: 0,
     height: 110,
     from: { opacity: 0, x: 20, height: 0 },
-    delay: 300,
+    delay: 500,
   });
 
   return (

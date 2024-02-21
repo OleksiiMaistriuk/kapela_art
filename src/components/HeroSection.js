@@ -25,9 +25,9 @@ const HeroSection = () => {
     return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
   const transition = useTransition(isModalOpen, {
-    from: { opacity: 0, transform: "translateY(-100%)" }, // Initial animation state
-    enter: { opacity: 1, transform: "translateY(0)" }, // Final animation state
-    leave: { opacity: 0, transform: "translateY(-100%)" }, // Animation state when removed
+    enter: { opacity: 1, transform: "translateY(0)" },
+    leave: { opacity: 0, transform: "translateY(-100%)" },
+    config: { duration: 3000 },
   });
   const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0 },
@@ -121,7 +121,7 @@ const HeroSection = () => {
       )}
       <div className="background">
         <div className="grid relative isolate overflow-hidden h-screen">
-          {transitions((style, i) => (
+          {transition((style, i) => (
             <animated.div
               key={i}
               style={{
@@ -207,7 +207,7 @@ const HeroSection = () => {
           <BiographySection />
         </ParallaxLayer>
       </Parallax>
-      <div className="fixed bottom-4 left-0 right-0 z-50 pb-4 flex justify-center">
+      <div className="fixed bottom-4 left-0 right-0 z-40 pb-4 flex justify-center">
         <button
           onClick={() => scrollToPage(currentPage + 1)}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border "
