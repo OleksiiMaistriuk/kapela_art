@@ -142,8 +142,7 @@ const HeroSection = () => {
                 autoPlay
                 muted
                 loop
-                className="inset-0 h-full w-full object-cover"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                className="inset-0 h-full w-full object-contain"
               >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
