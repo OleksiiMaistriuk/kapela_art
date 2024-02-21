@@ -1,11 +1,10 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import { useImageService } from "../elements/imageService";
-import "../styles/global.css";
-
 import Trail from "../elements/trail";
+import video from "../images/Magdalena.mp4";
+import "../styles/global.css";
 import AboutSection from "./AboutSection";
 import BiographySection from "./BiographySection";
 const HeroSection = () => {
@@ -16,7 +15,7 @@ const HeroSection = () => {
   const backgroundImagesData = getAllImagesFromDirectory("backgrounds");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -25,7 +24,11 @@ const HeroSection = () => {
     window.addEventListener("resize", updateIsMobile);
     return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
-
+  const transition = useTransition(isModalOpen, {
+    from: { opacity: 0, transform: "translateY(-100%)" }, // Initial animation state
+    enter: { opacity: 1, transform: "translateY(0)" }, // Final animation state
+    leave: { opacity: 0, transform: "translateY(-100%)" }, // Animation state when removed
+  });
   const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -57,6 +60,20 @@ const HeroSection = () => {
     }
   }, [parallaxRef, parallaxApi]);
 
+  useEffect(() => {
+    if (isLocalStorageAvailable()) {
+      const modalShown = localStorage.getItem("modalShown");
+      if (!modalShown) {
+        setIsModalOpen(true);
+        localStorage.setItem("modalShown", "true");
+
+        setTimeout(() => {
+          setIsModalOpen(false);
+        }, 3000);
+      }
+    }
+  }, []);
+
   const scrollToNext = (e) => {
     if (parallaxApi) {
       parallaxApi.scrollTo(e);
@@ -70,8 +87,38 @@ const HeroSection = () => {
   };
   const alignCenter = { display: "flex", alignItems: "center" };
 
+  const handleModalClick = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    if (isLocalStorageAvailable()) {
+      const modalShown = localStorage.getItem("modalShown");
+      if (!modalShown) {
+        setIsModalOpen(true);
+        localStorage.setItem("modalShown", "true");
+      }
+    }
+  }, []);
   return (
     <>
+      {transition((style, item) =>
+        item ? (
+          <animated.div
+            style={style}
+            className="fixed inset-0 bg-dark-purple flex justify-center items-center z-50 cursor-pointer"
+            onClick={handleModalClick}
+          >
+            <Trail>
+              <h1 className="text-3xl font-extrabold text-center xl:text-4xl">
+                Magdalena Kapela
+              </h1>
+            </Trail>
+          </animated.div>
+        ) : (
+          ""
+        )
+      )}
       <div className="background">
         <div className="grid relative isolate overflow-hidden h-screen">
           {transitions((style, i) => (
@@ -84,17 +131,38 @@ const HeroSection = () => {
                 height: "100%",
               }}
             >
-              <GatsbyImage
+              {" "}
+              {/* <GatsbyImage
                 image={getImage(backgroundImagesData[i])}
                 alt=""
                 className="inset-0 h-full w-full object-cover"
                 style={{ position: "absolute" }}
-              />
+              /> */}
+              <video
+                autoPlay
+                muted
+                loop
+                className="inset-0 h-full w-full object-cover"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>{" "}
             </animated.div>
           ))}
         </div>
       </div>
-
+      {/* <div className="absolute top-0 left-0 w-full h-full z-[-10]">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto min-w-full min-h-full h-auto  object-cover"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      </div> */}
       <Parallax pages={10} ref={parallaxRef}>
         <ParallaxLayer
           offset={0}
@@ -165,3 +233,13 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+function isLocalStorageAvailable() {
+  try {
+    localStorage.setItem("test", "test");
+    localStorage.removeItem("test");
+    console.log("location");
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
