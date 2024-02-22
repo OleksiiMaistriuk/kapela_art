@@ -20,20 +20,21 @@ const ImageGallerySection = ({ columnImages }) => (
       {columnImages.map((images, columnIndex) => (
         <ul
           key={columnIndex}
-          className="flex flex-wrap justify-center items-center gap-4"
+          className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4"
         >
           {images.map(({ image, originalIndex }, index) => {
             const rotationClass = index % 2 === 0 ? "rotate-2" : "-rotate-2";
             return (
               <li
                 key={originalIndex}
-                className={`relative overflow-hidden ${rotationClass}`}
+                className={`relative overflow-hidden ${rotationClass} w-1/3 `}
               >
                 <div className="rounded-xl focus:outline-none focus-visible:ring shadow-lg transition-transform hover:border">
                   <GatsbyImage
                     image={image}
                     alt={`photo ${originalIndex}`}
-                    className="rounded-xl transform transition duration-500 hover:scale-110 m-3"
+                    className="rounded-xl transform transition duration-500 hover:scale-110 w-full sm:w-auto m-1 sm:m-2 "
+                    imgClassName="object-cover"
                   />
                 </div>
               </li>

@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useContext, useState } from "react";
 import { navLinks } from "../constants/navLinks";
@@ -8,31 +7,31 @@ import { reloadPage } from "./../../.cache/fast-refresh-overlay/utils";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLinkIndex, setActiveLinkIndex] = useState(null);
   const { getImageData } = useImageService();
   const myImageData = getImageData("icon.png");
+  const { parallaxApi } = useContext(ParallaxContext);
 
   const handleClearLocalStorage = () => {
     localStorage.clear();
     reloadPage();
   };
-  const { parallaxApi } = useContext(ParallaxContext);
 
-  const scrollToNext = (page) => {
-    console.log();
+  const scrollToNext = (index) => {
+    setActiveLinkIndex(index);
     if (parallaxApi) {
-      console.log("Attempting to scroll to page:", page);
-      parallaxApi.scrollTo(page);
+      parallaxApi.scrollTo(index);
     }
   };
+
   return (
     <div className="fixed top-0 left-0 w-full z-50">
-      <nav className="relative px-4 py-2 flex justify-between items-center bg-rich-black ">
-        <span className="text-3xl font-bold   leading-none">
+      <nav className="relative px-4 py-2 flex justify-between items-center bg-rich-black">
+        <span className="text-3xl font-bold leading-none">
           {myImageData && (
             <GatsbyImage image={myImageData} alt="logo" className="h-14 w-14" />
-          )}{" "}
-          {/* <button onClick={() => scrollToNext(3)}>Go to Next Page</button> */}
-        </span>{" "}
+          )}
+        </span>
         <div className="lg:hidden">
           <button
             className="navbar-burger flex items-center p-3"
@@ -49,7 +48,38 @@ const NavBar = () => {
           </button>
         </div>
         <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
-          {navLinks.map((item, index) => (
+          {navLinks.map((link, index) => (
+            <li
+              key={index}
+              className="lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+            >
+              <button
+                onClick={() => scrollToNext(index)}
+                className={`text-sm hover:text-amber-400 whitespace-nowrap ${
+                  activeLinkIndex === index ? "activeButtonClass" : ""
+                }`}
+              >
+                {link.label}
+              </button>
+              <span className="text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  className="w-4 h-4 current-fill"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                  />
+                </svg>
+              </span>
+            </li>
+          ))}
+          {/* {navLinks.map((item, index) => (
             <li
               key={index}
               className=" lg:flex  lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
@@ -79,7 +109,7 @@ const NavBar = () => {
                 </svg>
               </span>
             </li>
-          ))}
+          ))} */}
         </ul>
         <div className="flex">
           {" "}
@@ -158,15 +188,16 @@ const NavBar = () => {
           </div>
 
           <ul>
-            {navLinks.map((item, index) => (
+            {navLinks.map((link, index) => (
               <li key={index} className="mb-1">
-                <Link
-                  className="block p-4 text-sm font-semibold  hover:text-amber-400 rounded"
-                  activeClassName="text-blue-800"
-                  to={item.to}
+                <button
+                  onClick={() => scrollToNext(index)}
+                  className={`text-sm hover:text-amber-400 whitespace-nowrap ${
+                    activeLinkIndex === index ? "activeButtonClass" : ""
+                  }`}
                 >
-                  {item.label}
-                </Link>
+                  {link.label}
+                </button>
               </li>
             ))}
           </ul>
