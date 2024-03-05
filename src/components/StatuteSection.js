@@ -1,5 +1,5 @@
 import React from "react";
-import { statuteList } from "../constants/constant";
+import { statuteList } from "../constants/statuteList";
 import "../styles/global.css";
 
 const StatuteSection = () => {

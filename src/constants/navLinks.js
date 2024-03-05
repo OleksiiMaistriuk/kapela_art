@@ -1,7 +1,7 @@
 export const navLinks = [
-  { to: "/", label: "Glówna" },
-  // { to: "/about", label: "O mnie" },
-  { to: "/biography", label: "Galeria" },
+  { to: 0, label: "Glówna" },
+  { to: 1, label: "O mnie" },
+  { to: 3, label: "Galeria" },
   // { to: "/gallery", label: "Galeria" },
   // { to: "/schedule", label: "Harmonogram" },
   // { to: "/positions", label: "Pozycji" },

@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
+import Footer from "./Footer";
 
 const imageDetails = [
   {
@@ -453,6 +454,8 @@ const BiographySection = () => {
           );
         })}
       </div>
+
+      <Footer />
     </div>
   );
 };

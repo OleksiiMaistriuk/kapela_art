@@ -9,17 +9,31 @@ import videoMobile from "../images/mobile.mp4";
 import "../styles/global.css";
 import AboutSection from "./AboutSection";
 import BiographySection from "./BiographySection";
-const HeroSection = () => {
-  const parallaxRef = useRef(null);
-  const [parallaxApi, setParallaxApi] = useState(null);
 
+function isLocalStorageAvailable() {
+  try {
+    localStorage.setItem("test", "test");
+    localStorage.removeItem("test");
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+const HeroSection = () => {
   const { getAllImagesFromDirectory } = useImageService();
   const backgroundImagesData = getAllImagesFromDirectory("backgrounds");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [buttonToUp, setButtonToUp] = useState(false);
+  const [parallaxApi, setParallaxApi] = useState(null);
+
   const { updateParallaxApi } = useContext(ParallaxContext);
+
+  const parallaxRef = useRef(null);
+
   useEffect(() => {
     const updateIsMobile = () => setIsMobile(window.innerWidth <= 768);
     updateIsMobile();
@@ -32,6 +46,21 @@ const HeroSection = () => {
     leave: { opacity: 0, transform: "translateY(-100%)" },
     config: { duration: 3000 },
   });
+
+  useEffect(() => {
+    if (parallaxRef.current && !parallaxApi) {
+      setParallaxApi(parallaxRef.current);
+
+      updateParallaxApi(parallaxRef.current);
+    }
+  }, [parallaxRef, parallaxApi]);
+
+  const scrollToNext = (e) => {
+    if (parallaxApi) {
+      parallaxApi.scrollTo(e);
+    }
+  };
+
   const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -58,13 +87,6 @@ const HeroSection = () => {
   }, [backgroundImagesData.length]);
 
   useEffect(() => {
-    if (parallaxRef.current && !parallaxApi) {
-      setParallaxApi(parallaxRef.current);
-      updateParallaxApi(parallaxRef.current);
-    }
-  }, [parallaxRef, parallaxApi]);
-
-  useEffect(() => {
     if (isLocalStorageAvailable()) {
       const modalShown = localStorage.getItem("modalShown");
       if (!modalShown) {
@@ -78,19 +100,17 @@ const HeroSection = () => {
     }
   }, []);
 
-  const scrollToNext = (e) => {
-    if (parallaxApi) {
-      parallaxApi.scrollTo(e);
-    }
-  };
   const scrollToPage = (page) => {
-    if (parallaxRef.current) {
+    if (parallaxRef.current.offset >= 4.5) {
+      setCurrentPage(0);
+      parallaxRef.current.scrollTo(0);
+    } else {
       parallaxRef.current.scrollTo(page);
       setCurrentPage(page);
+      setButtonToUp(false);
     }
   };
   const alignCenter = { display: "flex", alignItems: "center" };
-
   const handleModalClick = () => {
     setIsModalOpen(false);
   };
@@ -104,6 +124,46 @@ const HeroSection = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    const container = document.querySelector(".parallax-container");
+    if (container) {
+      const handleScroll = () => {
+        const currentValue = parallaxRef.current
+          ? parallaxRef.current.current
+          : 0;
+        const conditions = [
+          { threshold: 1, setPage: 0, setButton: false },
+          { threshold: 500, setPage: 1, setButton: false },
+          { threshold: 1000, setPage: 2, setButton: false },
+          { threshold: 2000, setPage: 3, setButton: false },
+          { threshold: 3000, setPage: 4, setButton: false },
+          { threshold: 4000, setPage: 5, setButton: true },
+        ];
+        let actionApplied = false;
+        conditions.forEach((condition, index, array) => {
+          if (
+            currentValue > condition.threshold &&
+            (index === array.length - 1 ||
+              currentValue < array[index + 1].threshold)
+          ) {
+            setCurrentPage(condition.setPage);
+            setButtonToUp(condition.setButton);
+            actionApplied = true;
+          }
+        });
+
+        if (!actionApplied && currentValue <= conditions[0].threshold) {
+          setCurrentPage(0);
+          setButtonToUp(false);
+        }
+      };
+
+      container.addEventListener("scroll", handleScroll);
+      return () => container.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
     <>
       {transition((style, item) =>
@@ -136,12 +196,6 @@ const HeroSection = () => {
               }}
             >
               {" "}
-              {/* <GatsbyImage
-                image={getImage(backgroundImagesData[i])}
-                alt=""
-                className="inset-0 h-full w-full object-cover"
-                style={{ position: "absolute" }}
-              /> */}
               <video
                 autoPlay
                 muted
@@ -169,7 +223,7 @@ const HeroSection = () => {
       </div>
       <span className="bg-black absolute w-full h-full  opacity-50" />
 
-      <Parallax pages={6} ref={parallaxRef}>
+      <Parallax pages={5} ref={parallaxRef} className="parallax-container">
         <ParallaxLayer
           offset={0}
           speed={0.5}
@@ -192,25 +246,43 @@ const HeroSection = () => {
           <BiographySection />
         </ParallaxLayer>
       </Parallax>
-      <div className="fixed bottom-4 left-0 right-0 z-40 pb-4 flex justify-center">
+
+      <div className="fixed bottom-4 left-0 right-0 pb-4 flex justify-center">
         <button
           onClick={() => scrollToPage(currentPage + 1)}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border "
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6 text-black"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          {buttonToUp ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6 text-black "
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6 text-black "
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          )}
         </button>
       </div>
     </>
@@ -218,13 +290,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-function isLocalStorageAvailable() {
-  try {
-    localStorage.setItem("test", "test");
-    localStorage.removeItem("test");
-    console.log("location");
-    return true;
-  } catch (e) {
-    return false;
-  }
-}

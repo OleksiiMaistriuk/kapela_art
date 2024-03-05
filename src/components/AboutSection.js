@@ -27,7 +27,7 @@ const ImageGallerySection = ({ columnImages }) => (
             return (
               <li
                 key={originalIndex}
-                className={`relative overflow-hidden ${rotationClass} w-1/3 `}
+                className={`relative overflow-hidden ${rotationClass} w-1/3 md:w-full`}
               >
                 <div className="rounded-xl focus:outline-none focus-visible:ring shadow-lg transition-transform hover:border">
                   <GatsbyImage
@@ -98,7 +98,7 @@ const AboutSection = () => {
     <>
       <div
         ref={revealRef}
-        className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-slate-950/75"
+        className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-slate-950/75 h-screen"
       >
         <ImageGallerySection columnImages={aboutColumns} />
         <TextSection
@@ -108,7 +108,7 @@ const AboutSection = () => {
       </div>
       <div
         ref={revealRef2}
-        className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-dark-licorice/75"
+        className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-dark-licorice/75 h-screen"
       >
         <TextSection
           title="Rozwój i eksploracja nowych technik"
