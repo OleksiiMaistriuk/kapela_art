@@ -1,12 +1,12 @@
 import * as React from "react";
-import BiographySection from "../components/BiographySection";
+import GallerySection from "../components/GallerySection";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
 const BiographyPage = () => {
   return (
     <Layout>
-      <BiographySection />
+      <GallerySection />
     </Layout>
   );
 };

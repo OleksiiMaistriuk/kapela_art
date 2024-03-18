@@ -1,6 +1,9 @@
+import { useLocation } from "@reach/router";
+import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useContext, useState } from "react";
-import { navLinks } from "../constants/navLinks";
+import { footerLinks } from "../constants/footerLinks";
+import { navIndex } from "../constants/navLinks";
 import ParallaxContext from "../elements/ParallaxContext";
 import { useImageService } from "../elements/imageService";
 import { reloadPage } from "./../../.cache/fast-refresh-overlay/utils";
@@ -11,6 +14,7 @@ const NavBar = () => {
   const { getImageData } = useImageService();
   const myImageData = getImageData("icon.png");
   const { parallaxApi } = useContext(ParallaxContext);
+  const location = useLocation();
 
   const handleClearLocalStorage = () => {
     localStorage.clear();
@@ -21,6 +25,7 @@ const NavBar = () => {
     setActiveLinkIndex(index);
     if (parallaxApi) {
       parallaxApi.scrollTo(index);
+      console.log("parallaxApi", parallaxApi);
     }
   };
 
@@ -32,85 +37,90 @@ const NavBar = () => {
             <GatsbyImage image={myImageData} alt="logo" className="h-14 w-14" />
           )}
         </span>
-        <div className="lg:hidden">
-          <button
-            className="navbar-burger flex items-center p-3"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <svg
-              className="block h-8 w-8 fill-current"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Mobile menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-          </button>
-        </div>
-        <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className="lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
-            >
-              <button
-                onClick={() => scrollToNext(link.to)}
-                className={`text-sm hover:text-amber-400 whitespace-nowrap ${
-                  activeLinkIndex === index ? "activeButtonClass" : ""
-                }`}
-              >
-                {link.label}
-              </button>
-              <span className="text-gray-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  className="w-4 h-4 current-fill"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  />
-                </svg>
-              </span>
-            </li>
-          ))}
-          {/* {navLinks.map((item, index) => (
-            <li
-              key={index}
-              className=" lg:flex  lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
-            >
-              <Link
-                to={item.to}
-                className={"text-sm  hover:text-amber-400  whitespace-nowrap"}
-                activeClassName="text-amber-400 border-b h-6 "
-              >
-                {item.label}
-              </Link>
 
-              <span className="text-gray-300">
+        {location.pathname === "/" ? (
+          <>
+            {" "}
+            <div className="lg:hidden">
+              <button
+                className="navbar-burger flex items-center p-3"
+                onClick={() => setIsOpen(!isOpen)}
+              >
                 <svg
+                  className="block h-8 w-8 fill-current"
+                  viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  className="w-4 h-4 current-fill"
-                  viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  />
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                 </svg>
-              </span>
-            </li>
-          ))} */}
-        </ul>
+              </button>
+            </div>
+            <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+              {navIndex.map((link, index) => (
+                <li
+                  key={index}
+                  className="lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+                >
+                  {" "}
+                  <span className="text-gray-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      stroke="currentColor"
+                      className="w-4 h-4 current-fill"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                      />
+                    </svg>
+                  </span>
+                  <button
+                    onClick={() => scrollToNext(link.to)}
+                    className={`text-sm hover:text-amber-400 whitespace-nowrap ${
+                      activeLinkIndex === index ? "activeButtonClass" : ""
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                  <span className="text-gray-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      stroke="currentColor"
+                      className="w-4 h-4 current-fill"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                      />
+                    </svg>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <div>
+            <span className="h-1/3">
+              {" "}
+              <Link
+                to={"/"}
+                className="  hover:text-amber-400 block  text-center "
+                activeClassName=" "
+              >
+                Wrócić na główną
+              </Link>
+            </span>
+          </div>
+        )}
+
         <div className="flex align-top justify-between">
           {" "}
           <button onClick={handleClearLocalStorage} className="  h-0">
@@ -177,57 +187,61 @@ const NavBar = () => {
         </div>
       </nav>
       <div
-        className={`navbar-menu  relative z-50 ${isOpen ? "block" : "hidden"}`}
+        className={`navbar-menu relative z-50 ${isOpen ? "block" : "hidden"}`}
       >
-        <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
+        <div
+          className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
+          onClick={() => setIsOpen(false)}
+        />
         <nav
-          className={`fixed  top-0 left-0 bottom-0 flex flex-col w-48 max-w-sm py-6 px-6 bg-rich-black border-r overflow-y-auto ${
+          className={`fixed inset-0 flex items-start justify-center  bg-rich-black ${
             isOpen ? "slide-in" : ""
           }`}
         >
-          <div className="flex items-center mb-8">
-            <span className="mr-auto text-3xl font-bold leading-none">
+          <div className="text-center">
+            <div className="flex justify-center mt-8 mb-8">
               {myImageData && (
                 <GatsbyImage
                   image={myImageData}
                   alt="logo"
-                  className="h-14 w-14"
+                  className="h-20 w-20"
                 />
               )}
-            </span>
-
-            <button className="navbar-close" onClick={() => setIsOpen(false)}>
-              <svg
-                className="h-6 w-6 cursor-pointer hover:text-amber-400"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            </button>
-          </div>
-
-          <ul>
-            {navLinks.map((link, index) => (
-              <li key={index} className="mb-1">
-                <button
-                  onClick={() => scrollToNext(index)}
-                  className={`text-sm hover:text-amber-400 whitespace-nowrap ${
-                    activeLinkIndex === index ? "activeButtonClass" : ""
-                  }`}
+            </div>
+            {/* {location.pathname === "/" ? (       ) : (
+              <div className=" lg:flex  lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+                <Link
+                  to={"/"}
+                  className={"text-sm  hover:text-amber-400  whitespace-nowrap"}
+                  activeClassName="text-amber-400 border-b h-6 "
                 >
-                  {link.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+                  Wrócić na stronę główną
+                </Link>
+              </div>
+            )} */}
+            <ul className="">
+              {navIndex.map((link, index) => (
+                <li key={index} className={"w-56 border-b  "}>
+                  <button
+                    onClick={() => {
+                      scrollToNext(link.to);
+                      setIsOpen(false);
+                    }}
+                    className="hover:opacity-75 "
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+              {footerLinks.map((item, index) => (
+                <li key={index} className={"w-56 border-b  "}>
+                  <Link className="hover:opacity-75  text-sm" to={item.to}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       </div>
     </div>

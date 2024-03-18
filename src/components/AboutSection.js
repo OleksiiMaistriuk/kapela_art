@@ -46,7 +46,7 @@ const ImageGallerySection = ({ columnImages }) => (
   </div>
 );
 
-const AboutSection = () => {
+const AboutSection = ({ isMobile }) => {
   const revealRef = useRevealAnimation("animate__fadeInUp", {
     threshold: 0.1,
     triggerOnce: true,
@@ -100,7 +100,7 @@ const AboutSection = () => {
         ref={revealRef}
         className="flex flex-col md:flex-row w-full px-4 py-8 z-10 reveal bg-slate-950/75 h-screen"
       >
-        <ImageGallerySection columnImages={aboutColumns} />
+        {!isMobile && <ImageGallerySection columnImages={aboutColumns} />}
         <TextSection
           title="Warsztaty i wystawy artystyczne"
           description="Regularnie organizuję warsztaty i wystawy, aby dzielić się moją pasją i wiedzą z innymi. Te wydarzenia są okazją do spotkań z ludźmi, wymiany doświadczeń i prezentowania moich najnowszych prac."
@@ -114,7 +114,7 @@ const AboutSection = () => {
           title="Rozwój i eksploracja nowych technik"
           description="Jestem zawsze otwarta na nowe techniki i podejścia w sztuce. Uważam, że ciągła nauka i eksploracja są kluczowe dla rozwoju artystycznego. Regularnie uczestniczę w warsztatach i szkoleniach, aby rozwijać moje umiejętności i wprowadzać świeże pomysły do moich prac."
         />
-        <ImageGallerySection columnImages={biographyColumns} />
+        {!isMobile && <ImageGallerySection columnImages={biographyColumns} />}
       </div>
     </>
   );

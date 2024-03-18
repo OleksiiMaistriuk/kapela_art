@@ -66,15 +66,15 @@ const Footer = () => {
     //     </div>
     //   </div>
     // </footer>
-    <footer className="relative bg-blueGray-200 pt-8 pb-6 z-50">
+    <footer className=" bg-dark-blue pt-8 pb-6 z-50">
       <div className="container mx-auto px-4 z-50">
         <div className="flex flex-wrap text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
-            <h4 className="text-3xl font-semibold text-blueGray-700">
-              Bądź ze mną w kontakcie!
-            </h4>
+            <h4 className="text-3xl font-semibold ">Magdalena Kapela</h4>
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-              Znajdź mnie na dowolnej z tych platform
+              Żyję dla sztuki. Łączę sztukę z biznesem, wprowadzając standardy
+              jakości i wartości artystycznych, gdzie rzemiosło łączy się z
+              ideą.
             </h5>
             <div className="mt-6 lg:mb-0 mb-6 flex align-center p-4">
               <a

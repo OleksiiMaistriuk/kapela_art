@@ -8,7 +8,7 @@ import video from "../images/Magdalena.mp4";
 import videoMobile from "../images/mobile.mp4";
 import "../styles/global.css";
 import AboutSection from "./AboutSection";
-import BiographySection from "./BiographySection";
+import GallerySection from "./GallerySection";
 
 function isLocalStorageAvailable() {
   try {
@@ -55,26 +55,20 @@ const HeroSection = () => {
     }
   }, [parallaxRef, parallaxApi]);
 
-  const scrollToNext = (e) => {
-    if (parallaxApi) {
-      parallaxApi.scrollTo(e);
-    }
-  };
-
-  const transitions = useTransition(currentImageIndex, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: { duration: 4000 },
-    onRest: (_a, _b, item) => {
-      if (currentImageIndex === item) {
-        setCurrentImageIndex(
-          (state) => (state + 1) % backgroundImagesData.length
-        );
-      }
-    },
-    exitBeforeEnter: true,
-  });
+  // const transitions = useTransition(currentImageIndex, {
+  //   from: { opacity: 0 },
+  //   enter: { opacity: 1 },
+  //   leave: { opacity: 0 },
+  //   config: { duration: 4000 },
+  //   onRest: (_a, _b, item) => {
+  //     if (currentImageIndex === item) {
+  //       setCurrentImageIndex(
+  //         (state) => (state + 1) % backgroundImagesData.length
+  //       );
+  //     }
+  //   },
+  //   exitBeforeEnter: true,
+  // });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -237,13 +231,11 @@ const HeroSection = () => {
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 1, end: 1 }}>
-          <AboutSection />{" "}
+          <AboutSection isMobile={isMobile} />{" "}
         </ParallaxLayer>
 
-        <ParallaxLayer
-          sticky={{ start: isMobile ? 3.8 : 3, end: isMobile ? 3.8 : 3 }}
-        >
-          <BiographySection />
+        <ParallaxLayer sticky={{ start: 3, end: 3 }}>
+          <GallerySection />
         </ParallaxLayer>
       </Parallax>
 
