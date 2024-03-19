@@ -234,7 +234,7 @@ const HeroSection = () => {
           <AboutSection isMobile={isMobile} />{" "}
         </ParallaxLayer>
 
-        <ParallaxLayer sticky={{ start: 3, end: 3 }}>
+        <ParallaxLayer sticky={{ start: 3.5, end: 3.5 }}>
           <GallerySection />
         </ParallaxLayer>
       </Parallax>
