@@ -1,11 +1,9 @@
 import "animate.css";
 import * as React from "react";
-
 import HeroSection from "../components/HeroSection";
 import Seo from "../components/seo";
 import ParallaxContext from "../elements/ParallaxContext";
 import "../styles/global.css";
-
 import CookieConsent from "../components/CookieConsent";
 import NavBar from "../components/NavBar";
 

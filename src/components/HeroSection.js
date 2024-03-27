@@ -5,7 +5,9 @@ import ParallaxContext from "../elements/ParallaxContext";
 import { useImageService } from "../elements/imageService";
 import Trail from "../elements/trail";
 import video from "../images/Magdalena.mp4";
-import videoMobile from "../images/mobile.mp4";
+import videoMobile1 from "../images/mobile1.mp4";
+import videoMobile2 from "../images/mobile2.mp4";
+import videoMobile3 from "../images/mobile3.mp4";
 import "../styles/global.css";
 import AboutSection from "./AboutSection";
 import GallerySection from "./GallerySection";
@@ -29,15 +31,21 @@ const HeroSection = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [buttonToUp, setButtonToUp] = useState(false);
   const [parallaxApi, setParallaxApi] = useState(null);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
 
   const { updateParallaxApi } = useContext(ParallaxContext);
 
   const parallaxRef = useRef(null);
 
+  const videos = [videoMobile1, videoMobile2, videoMobile3];
+
   useEffect(() => {
     const updateIsMobile = () => setIsMobile(window.innerWidth <= 768);
     updateIsMobile();
     window.addEventListener("resize", updateIsMobile);
+
+    setCurrentVideoIndex(Math.floor(Math.random() * videos.length));
+
     return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
@@ -199,18 +207,20 @@ const HeroSection = () => {
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <video
-                autoPlay
-                muted
-                loop
-                className="md:hidden inset-0 h-full w-full object-cover"
-                onLoadedMetadata={(e) => {
-                  e.currentTarget.playbackRate = 0.7;
-                }}
-              >
-                <source src={videoMobile} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {videos.map((videoSrc, index) => (
+                <video
+                  key={index}
+                  autoPlay
+                  muted
+                  loop
+                  className={`md:hidden inset-0 h-full w-full object-cover ${
+                    index === currentVideoIndex ? "" : "hidden"
+                  }`}
+                >
+                  <source src={videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ))}
             </animated.div>
           ))}
         </div>
@@ -234,7 +244,9 @@ const HeroSection = () => {
           <AboutSection isMobile={isMobile} />{" "}
         </ParallaxLayer>
 
-        <ParallaxLayer sticky={{ start: 3.5, end: 3.5 }}>
+        <ParallaxLayer
+          sticky={{ start: isMobile ? 4 : 3.5, end: isMobile ? 4 : 3.5 }}
+        >
           <GallerySection />
         </ParallaxLayer>
       </Parallax>
