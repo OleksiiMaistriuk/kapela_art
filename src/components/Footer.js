@@ -6,10 +6,12 @@ import { footerLinks } from "./../constants/footerLinks";
 
 const Footer = () => {
   const { getImageData } = useImageService();
-  const myImageData = getImageData("icon.png");
+  const myImageData = getImageData("Izabela.png");
+  
   const getCurrentYear = () => {
     return new Date().getFullYear();
   };
+
   return (
     // <footer className="bg-gradient-to-r from-rich-black to-dark-blue text-white z-50">
     //   <div className="max-w-screen px-4 py-5 mx-auto sm:px-6 lg:px-8">
@@ -70,12 +72,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 z-50">
         <div className="flex flex-wrap text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
-            <h4 className="text-3xl font-semibold ">Magdalena Kapela</h4>
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-              Żyję dla sztuki. Łączę sztukę z biznesem, wprowadzając standardy
-              jakości i wartości artystycznych, gdzie rzemiosło łączy się z
-              ideą.
+              "Artysta powinien być jak Bóg: niewidzialny a wszechmocny."
             </h5>
+            <h4 className="text-xl font-semibold ">Gustave Flaubert</h4>
             <div className="mt-6 lg:mb-0 mb-6 flex align-center p-4">
               <a
                 className="hover:opacity-75"

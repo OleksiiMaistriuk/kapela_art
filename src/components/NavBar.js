@@ -1,10 +1,9 @@
 import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { footerLinks } from "../constants/footerLinks";
 import { navIndex } from "../constants/navLinks";
-import ParallaxContext from "../elements/ParallaxContext";
 import { useImageService } from "../elements/imageService";
 import { reloadPage } from "./../../.cache/fast-refresh-overlay/utils";
 
@@ -13,19 +12,18 @@ const NavBar = () => {
   const [activeLinkIndex, setActiveLinkIndex] = useState(null);
   const { getImageData } = useImageService();
   const myImageData = getImageData("icon.png");
-  const { parallaxApi } = useContext(ParallaxContext);
+
   const location = useLocation();
 
   const handleClearLocalStorage = () => {
     localStorage.clear();
     reloadPage();
   };
-
-  const scrollToNext = (index) => {
-    setActiveLinkIndex(index);
-    if (parallaxApi) {
-      parallaxApi.scrollTo(index);
-      console.log("parallaxApi", parallaxApi);
+  const scrollToNext = (sectionId) => {
+    setActiveLinkIndex(sectionId);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

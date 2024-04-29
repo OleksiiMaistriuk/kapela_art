@@ -455,7 +455,7 @@ const GallerySection = () => {
         })}
       </div>
 
-      <Footer />
+   
     </div>
   );
 };
