@@ -30,7 +30,7 @@ const CookieConsent = () => {
     <>
       {showConsent && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 scrollbar-custom"
           onClick={declineCookies}
           role="button"
           aria-label="Decline cookies"

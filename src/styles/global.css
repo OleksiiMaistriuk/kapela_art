@@ -4,13 +4,30 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+/* Custom Scrollbar Styles */
+:root {
+  --scrollbar-color-thumb: #bf9b30;
+  --scrollbar-color-track: #050f18;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar-color-track);
+  border-radius: 20px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color-thumb);
+  border-radius: 20px;
+  border: 3px solid var(--scrollbar-color-track);
 }
 
 .slide-in {
@@ -78,6 +95,7 @@
   animation: fadeOut 2s ease-in forwards;
   pointer-events: none;
 }
+
 .background {
   position: absolute;
   top: 0;
@@ -102,25 +120,6 @@
   border-radius: 10px;
 }
 
-.scrollbar-custom {
-  scrollbar-width: thin;
-  scrollbar-color: #bf9b30 #050f18;
-}
-
-.scrollbar-custom::-webkit-scrollbar {
-  width: 8px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: #050f18;
-  border-radius: 20px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: #bf9b30;
-  border-radius: 20px;
-  border: 3px solid #050f18;
-}
 @media (max-width: 640px) {
   .responsive-video {
     position: absolute;
@@ -130,6 +129,7 @@
     height: 100%;
   }
 }
+
 .activeButtonClass {
   color: #d97706;
   border-bottom: 1px solid;

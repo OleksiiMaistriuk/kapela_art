@@ -29,7 +29,7 @@ const NavBar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50">
-      <nav className="relative px-4 py-2 flex justify-between items-center bg-rich-black">
+      <nav className="relative px-4 py-2 flex justify-between items-center bg-rich-black/90">
         <span className="text-3xl font-bold leading-none">
           {myImageData && (
             <GatsbyImage image={myImageData} alt="logo" className="h-14 w-14" />

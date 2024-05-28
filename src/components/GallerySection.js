@@ -10,7 +10,6 @@ import React, { useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
-import Footer from "./Footer";
 
 const imageDetails = [
   {
@@ -232,7 +231,7 @@ const GallerySection = () => {
   }
 
   return (
-    <div ref={revealRef} className="reveal bg-slate-950 p-6">
+    <div ref={revealRef} className="reveal bg-slate-950/90 p-6">
       <Dialog
         size="xxl"
         open={open}
@@ -454,8 +453,6 @@ const GallerySection = () => {
           );
         })}
       </div>
-
-   
     </div>
   );
 };
