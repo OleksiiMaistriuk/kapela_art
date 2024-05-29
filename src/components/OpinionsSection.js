@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import { opinions } from "../constants/opinions";
 import { useImageService } from "../elements/imageService";
+import useRevealAnimation from "../useRevealAnimation";
 
 const TextSection = ({ title, description, subTitle }) => (
   <div className="flex flex-col items-center justify-center w-full p-4 md:w-1/2 border-l-2 border-gray-200 h-full md:h-screen animate-fadeInUp">
@@ -64,10 +65,10 @@ function SamplePrevArrow(props) {
 }
 
 const OpinionsSection = () => {
-  // const revealRef = useRevealAnimation("animate__fadeInUp", {
-  //   threshold: 0.1,
-  //   triggerOnce: true,
-  // });
+  const revealRef = useRevealAnimation("animate__fadeInUp", {
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   const settings = {
     dots: true,
@@ -87,7 +88,7 @@ const OpinionsSection = () => {
 
   return (
     <div
-      // ref={revealRef}
+      ref={revealRef}
       className="h-full bg-stone-300/90 flex flex-col justify-center relative"
     >
       <Slider {...settings}>
@@ -96,7 +97,7 @@ const OpinionsSection = () => {
           return (
             <div key={index} className="px-2 py-6 sm:px-4 sm:py-8">
               <div className="flex flex-col md:flex-row items-center justify-center w-full">
-                <div className="w-full sm:w-1/3 p-2 transition-transform duration-300 ease-in-out transform hover:scale-105">
+                <div className="w-full sm:w-2/5 mr-5 p-2 transition-transform duration-300 ease-in-out transform ">
                   <GatsbyImage
                     image={photo}
                     alt={item.title}

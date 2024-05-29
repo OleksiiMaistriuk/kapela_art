@@ -4,8 +4,8 @@ import "../styles/global.css";
 
 const PolicySection = () => {
   return (
-    <section className=" ">
-      <h1 className="max-w-2xl z-50 mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xl ">
+    <section className=" pt-32">
+      <h1 className="max-w-2xl z-50 mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xl  ">
         "Polityka prywatności i cookies"
       </h1>
 

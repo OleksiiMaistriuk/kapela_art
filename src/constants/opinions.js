@@ -50,14 +50,14 @@ export const opinions = [
       "Z Magdaleną Kapelą współpracujemy od wielu lat, nie ma dla niej rzeczy niemożliwych,  to artystka wszechstronna łącząca to co w sztuce najważniejsze miłość i autentyczność.",
   },
   {
-    image: "sejm",
+    image: "nykel",
     title: "Mirosława Nykiel",
     subTitle: "Posłanka na Sejm RP",
     description:
       "Z Magdaleną Kapelą znamy się od wielu lat. Bardzo cenię jej sztukę i wiem, jakim szacunkiem darzą ją mieszkańcy Bielska-Białej i całego regionu. Oprócz tego, że jest wspaniałą artystką, ma również wielką wrażliwość społeczną. Współpracowałyśmy w ramach Regionalnego Kongresu Kobiet Podbeskidzia oraz licznych akcji charytatywnych.",
   },
   {
-    image: "jarek",
+    image: "Jarek",
     title: "Jarosław Klimaszewski",
     subTitle: "Prezydent Bielska-Białej",
     description:

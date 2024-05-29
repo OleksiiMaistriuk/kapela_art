@@ -27,20 +27,17 @@ function Seo({ description, title, children }) {
     >
       <title>
         {defaultTitle
-          ? `${title} - Certyfikowany Trener Jogi | ${defaultTitle}`
-          : `${title} - Indywidualne Zajęcia Jogi`}
+          ? `${title} -  ${defaultTitle}`
+          : `${title} - Sztuka Magdalena Kapela`}
       </title>
       <meta
         name="description"
-        content={`${metaDescription} Oferuję indywidualne sesje jogi, profesjonalne doradztwo oraz Treningi personalne na wszystkich poziomach zaawansowania.`}
+        content={`${metaDescription} Tworzę wyjątkowe obrazy, które oddają emocje i piękno otaczającego świata. Moje dzieła to połączenie pasji, talentu i unikalnej wizji artystycznej.`}
       />
-      <meta
-        property="og:title"
-        content="Certyfikowany Trener Jogi - Indywidualne Zajęcia Jogi i Treningi personalne"
-      />
+      <meta property="og:title" content="Magdalena Kapela - Artystka Malarka" />
       <meta
         property="og:description"
-        content="Odkryj drogę do wewnętrznego spokoju i fizycznego zdrowia z naszym certyfikowanym trenerem jogi. Dostosowane sesje jogi dla początkujących i zaawansowanych."
+        content="Zapraszam do odkrycia mojej kolekcji obrazów, które oddają niepowtarzalne emocje i piękno otaczającego nas świata. Każde dzieło jest wyjątkowe i tworzę je z pasją oraz zaangażowaniem."
       />
       <meta property="og:type" content="website" />
       {children}

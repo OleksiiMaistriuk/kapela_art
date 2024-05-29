@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { footerLinks } from "../constants/footerLinks";
 import { navIndex } from "../constants/navLinks";
 import { useImageService } from "../elements/imageService";
-import { reloadPage } from "./../../.cache/fast-refresh-overlay/utils";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +14,6 @@ const NavBar = () => {
 
   const location = useLocation();
 
-  const handleClearLocalStorage = () => {
-    localStorage.clear();
-    reloadPage();
-  };
   const scrollToNext = (sectionId) => {
     setActiveLinkIndex(sectionId);
     const section = document.getElementById(sectionId);
@@ -121,9 +116,6 @@ const NavBar = () => {
 
         <div className="flex align-top justify-between">
           {" "}
-          <button onClick={handleClearLocalStorage} className="  h-0">
-            Clear
-          </button>
           <a
             className="hover:opacity-75"
             href="https://www.instagram.com/magdalenakapelaart/"

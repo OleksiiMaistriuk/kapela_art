@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 const StatuteSection = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white dark:bg-gray-900 pt-32">
       <h1 className="max-w-2xl z-50 mx-auto mb-10 text-2xl font-extrabold text-center md:text-3xl xl:text-4xl dark:text-white ">
         Regulamin
       </h1>
