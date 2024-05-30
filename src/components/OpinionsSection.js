@@ -6,7 +6,7 @@ import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
 
 const TextSection = ({ title, description, subTitle }) => (
-  <div className="flex flex-col items-center justify-center w-full p-4 md:w-1/2 border-l-2 border-gray-200 h-full md:h-screen animate-fadeInUp">
+  <div className="flex flex-col items-center justify-center w-full p-4 md:w-1/2 md:border-l-2 border-gray-200 h-full md:h-screen animate-fadeInUp">
     <h2 className="text-2xl font-semibold tracking-tight sm:text-4xl md:text-5xl text-center text-black">
       {title}
     </h2>
@@ -97,7 +97,7 @@ const OpinionsSection = () => {
           return (
             <div key={index} className="px-2 py-6 sm:px-4 sm:py-8">
               <div className="flex flex-col md:flex-row items-center justify-center w-full">
-                <div className="w-full sm:w-2/5 mr-5 p-2 transition-transform duration-300 ease-in-out transform ">
+                <div className="w-full sm:w-2/5 md:mr-5 p-2 transition-transform duration-300 ease-in-out transform ">
                   <GatsbyImage
                     image={photo}
                     alt={item.title}

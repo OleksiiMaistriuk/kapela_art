@@ -1,5 +1,12 @@
 export const opinions = [
   {
+    image: "zbigniew",
+    title: "Fundacja Rozwoju Kardiochirurgii im. prof. Zbigniewa Religi",
+    subTitle: "",
+    description:
+      "Magdalena Kapela, artystka – ambasadorka Fundacji Rozwoju Kardiochirurgii im. prof. Zbigniewa Religi. Przez wiele lat naszej współpracy dała się poznać jako ucieleśnienie dobra i wspaniałej, pozytywnej energii. Magda przekazała nam wiele pięknych obrazów, które zlicytowanie podczas aukcji charytatywnych znacząco wsparły naszą Fundację. Zawsze możemy na Nią liczyć, jest obecna podczas ważnych dla nas wydarzeń i promuje naszą działalność w kraju i na świecie.",
+  },
+  {
     image: "Izabela",
     title: "Izabela Połatyńska Janik",
     subTitle: "Specialista ds.nieruchomości",

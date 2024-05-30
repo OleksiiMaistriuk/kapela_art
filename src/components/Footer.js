@@ -4,6 +4,23 @@ import { useImageService } from "../elements/imageService";
 import "../styles/global.css";
 import { footerLinks } from "./../constants/footerLinks";
 
+function Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
 const Footer = () => {
   const { getImageData } = useImageService();
   const myImageData = getImageData("Izabela.png");
@@ -13,14 +30,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" bg-dark-blue/90 pt-8 pb-6 z-50">
-      <div className="container mx-auto px-4 z-50">
-        <div className="flex flex-wrap text-left lg:text-left">
-          <div className="w-full lg:w-6/12 px-4">
+    <footer className="bg-dark-blue/90 pt-8 pb-6 z-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-50">
+        <div className="flex flex-col lg:flex-row text-left lg:text-left">
+          <div className="w-full lg:w-6/12 px-4 mb-6 lg:mb-0">
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
               "Artysta powinien być jak Bóg: niewidzialny a wszechmocny."
             </h5>
-            <h4 className="text-xl font-semibold ">Gustave Flaubert</h4>
+            <h4 className="text-xl font-semibold">Gustave Flaubert</h4>
             <div className="mt-6 lg:mb-0 mb-6 flex align-center p-4">
               <a
                 className="hover:opacity-75"
@@ -28,7 +45,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="sr-only"> Instagram </span>
+                <span className="sr-only">Instagram</span>
                 <svg
                   className="w-10 h-10"
                   viewBox="0 0 24 24"
@@ -90,10 +107,34 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          <div className="w-full lg:w-6/12 px-4 mb-6 lg:mb-0">
+            <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">
+              Contact Information
+            </span>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <Icon />
+                <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
+                  123 Main Street, Los Angeles, CA
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Icon />
+                <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
+                  +1 123 456 7890
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Icon />
+                <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
+                  info@example.com
+                </p>
+              </div>
+            </div>
+          </div>{" "}
           <div className="w-full lg:w-6/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
               <div className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2"></span>
                 <ul className="flex flex-col mt-4 space-y-2 text-base font-semibold text-white">
                   {footerLinks.map((item, index) => (
                     <li key={index}>
@@ -111,7 +152,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="my-6 border-blueGray-300" />
-        <div className="flex flex-wrap items-center md:justify-between justify-center">
+        <div className="flex flex-wrap items-center justify-center md:justify-between">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blueGray-500 font-semibold py-1">
               Copyright © <span id="get-current-year">{getCurrentYear()}</span>{" "}

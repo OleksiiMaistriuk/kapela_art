@@ -1,3 +1,4 @@
+import { useForm } from "@formspree/react";
 import { Input, Textarea } from "@material-tailwind/react";
 import { Link } from "gatsby";
 import React, { useState } from "react";
@@ -23,7 +24,7 @@ function Icon() {
 const ContactSection = () => {
   const { getImageData } = useImageService();
   const myImageData = getImageData("backgrounds/about.avif");
-  const [state, handleSubmit] = useState("xoqopyrb");
+  const [state, handleSubmit] = useForm("xleqyryr");
   const [formData, setFormData] = useState({
     name: "",
     email: "",

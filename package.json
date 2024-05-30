@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@material-tailwind/react": "^2.1.1",
     "@react-spring/parallax": "^9.7.3",
     "animate.css": "^4.1.1",

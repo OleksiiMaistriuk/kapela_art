@@ -307,6 +307,7 @@ const GallerySection = () => {
             </DialogBody>
           )}
         </div>
+        <button className="border p-3 w-24 rounded">Kontakt</button>
       </Dialog>
 
       <div>
