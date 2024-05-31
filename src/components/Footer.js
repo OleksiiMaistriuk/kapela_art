@@ -22,9 +22,6 @@ function Icon() {
 }
 
 const Footer = () => {
-  const { getImageData } = useImageService();
-  const myImageData = getImageData("Izabela.png");
-
   const getCurrentYear = () => {
     return new Date().getFullYear();
   };
@@ -151,7 +148,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <hr className="my-6 border-blueGray-300" />
+
         <div className="flex flex-wrap items-center justify-center md:justify-between">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blueGray-500 font-semibold py-1">

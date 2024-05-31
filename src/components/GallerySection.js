@@ -8,131 +8,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
+import { imageDetails } from "../constants/galery";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
-
-const imageDetails = [
-  {
-    id: "photo(1)",
-    title: "Sunset Boulevard",
-    description:
-      "A stunning sunset view over the urban landscape, capturing the golden hour's serene beauty.",
-  },
-  {
-    id: "photo(2)",
-    title: "Forest Whisper",
-    description:
-      "The dense foliage of an ancient forest, where sunlight barely touches the moss-covered ground.",
-  },
-  {
-    id: "photo(3)",
-    title: "Urban Rhythm",
-    description:
-      "The dynamic hustle of city life, with streaks of light illustrating the fast pace of urban dwellers.",
-  },
-  {
-    id: "photo(4)",
-    title: "Mountain Solitude",
-    description:
-      "A solitary peak rising above the clouds, embodying the majestic isolation of nature.",
-  },
-  {
-    id: "photo(5)",
-    title: "Ocean's Embrace",
-    description:
-      "The endless expanse of the ocean, where waves meet the shore in a gentle embrace.",
-  },
-  {
-    id: "photo(6)",
-    title: "Desert Mirage",
-    description:
-      "The deceptive calm of the desert, with mirages blurring the lines between reality and illusion.",
-  },
-  {
-    id: "photo(7)",
-    title: "Frozen in Time",
-    description:
-      "A landscape caught in the grip of winter, where every detail is crystallized in ice.",
-  },
-  {
-    id: "photo(8)",
-    title: "City at Night",
-    description:
-      "The city comes alive at night, with lights twinkling like stars in a concrete sky.",
-  },
-  {
-    id: "photo(9)",
-    title: "Spring Awakening",
-    description:
-      "Nature reborn, with flowers blooming and trees bursting into life, heralding the arrival of spring.",
-  },
-  {
-    id: "photo(10)",
-    title: "Autumn's Palette",
-    description:
-      "The warm hues of autumn leaves creating a tapestry of color, signaling the change of seasons.",
-  },
-  {
-    id: "photo(11)",
-    title: "Summer Vibes",
-    description:
-      "The joyful energy of summer, with bright skies and a sense of endless possibilities.",
-  },
-  {
-    id: "photo(12)",
-    title: "Winter Wonderland",
-    description:
-      "A serene, snowy landscape, transforming the world into a magical winter wonderland.",
-  },
-  {
-    id: "photo(13)",
-    title: "Rainforest Canopy",
-    description:
-      "The vibrant life of the rainforest, with a canopy teeming with diverse flora and fauna.",
-  },
-  {
-    id: "photo(14)",
-    title: "Ancient Ruins",
-    description:
-      "The mysterious allure of ancient ruins, whispering stories of civilizations long past.",
-  },
-  {
-    id: "photo(15)",
-    title: "Cosmic Dance",
-    description:
-      "The mesmerizing beauty of the night sky, adorned with stars in a cosmic dance.",
-  },
-  {
-    id: "photo(16)",
-    title: "Garden Tranquility",
-    description:
-      "A tranquil garden, offering a peaceful retreat from the hustle and bustle of daily life.",
-  },
-  {
-    id: "photo(17)",
-    title: "Mountain Reflection",
-    description:
-      "A pristine lake reflecting the majestic beauty of surrounding mountains, creating a symphony of nature.",
-  },
-  {
-    id: "photo(18)",
-    title: "Golden Fields",
-    description:
-      "Vast fields of golden crops swaying in the breeze, heralding a season of abundance.",
-  },
-  {
-    id: "photo(19)",
-    title: "Seaside Serenity",
-    description:
-      "The tranquil sound of waves lapping at the shore, offering a moment of serenity by the seaside.",
-  },
-  {
-    id: "photo(20)",
-    title: "Urban Oasis",
-    description:
-      "A lush green space amidst the urban sprawl, providing a much-needed oasis of calm.",
-  },
-];
 
 const GallerySection = () => {
   const [open, setOpen] = useState(false);
@@ -140,6 +18,7 @@ const GallerySection = () => {
   const [imageTitle, setImageTitle] = useState("");
   const [imageDescription, setImageDescription] = useState("");
   const [imageId, setImageId] = useState("");
+  const [size, setSize] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const { getAllImagesFromDirectory } = useImageService();
@@ -181,6 +60,7 @@ const GallerySection = () => {
     setImageTitle(imageDetail?.title || "Default Title");
     setImageDescription(imageDetail?.description || "Default Description");
     setImageId(imageDetail?.id || nodeName);
+    setSize(imageDetail?.size || nodeName);
     setOpen(true);
   };
 
@@ -257,6 +137,15 @@ const GallerySection = () => {
                   className="font-medium"
                 >
                   {imageId}
+                </Typography>
+              )}
+              {size && (
+                <Typography
+                  variant="small"
+                  color="blue-gray"
+                  className="font-medium"
+                >
+                  {size}
                 </Typography>
               )}
             </div>
@@ -432,7 +321,6 @@ const GallerySection = () => {
                           );
                         }}
                       >
-                        {" "}
                         <div className="relative w-full h-full">
                           <GatsbyImage
                             image={getImage(

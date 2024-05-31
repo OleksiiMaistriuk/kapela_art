@@ -73,6 +73,7 @@ const AboutSection = () => {
         ref={revealRef2}
         className="relative flex w-full md:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
       >
+        <TextSection description="Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej." />
         <div
           style={{ position: "absolute" }}
           className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
@@ -87,7 +88,6 @@ const AboutSection = () => {
             className="absolute inset-0 md:bg-gradient-to-r from-slate-950 to-transparent bg-slate-950/50"
           ></div>
         </div>
-        <TextSection description="Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej." />
       </div>
 
       <div
