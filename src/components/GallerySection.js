@@ -1,14 +1,9 @@
-import {
-  Dialog,
-  DialogBody,
-  DialogHeader,
-  Typography,
-} from "@material-tailwind/react";
+import { Dialog, DialogHeader, Typography } from "@material-tailwind/react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
-import { imageDetails } from "../constants/galery";
+import { imageDetails } from "../constants/gallery";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
 
@@ -80,12 +75,7 @@ const GallerySection = () => {
             name
             relativePath
             childImageSharp {
-              gatsbyImageData(
-                layout: CONSTRAINED
-                width: 600
-                quality: 100
-                transformOptions: { fit: CONTAIN }
-              )
+              gatsbyImageData(layout: CONSTRAINED, height: 800, quality: 100)
             }
           }
         }
@@ -97,7 +87,7 @@ const GallerySection = () => {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 2000, quality: 100)
+              gatsbyImageData(layout: CONSTRAINED, height: 800, quality: 100)
             }
           }
         }
@@ -112,91 +102,79 @@ const GallerySection = () => {
 
   return (
     <div ref={revealRef} className="reveal bg-slate-950/90 p-6">
-      <Dialog
-        size="xxl"
-        open={open}
-        handler={handleClose}
-        className="bg-black "
-      >
-        <DialogHeader className="justify-between">
-          <div className="flex items-center gap-3">
-            <div className="-mt-px flex flex-col">
-              {imageTitle && (
-                <Typography
-                  variant="small"
-                  color="blue-gray"
-                  className="font-medium"
-                >
-                  {imageTitle}
-                </Typography>
-              )}
-              {imageId && (
-                <Typography
-                  variant="small"
-                  color="blue-gray"
-                  className="font-medium"
-                >
-                  {imageId}
-                </Typography>
-              )}
-              {size && (
-                <Typography
-                  variant="small"
-                  color="blue-gray"
-                  className="font-medium"
-                >
-                  {size}
-                </Typography>
-              )}
+      <Dialog size="xxl" open={open} handler={handleClose} className="bg-black">
+        <div>
+          <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
+            <div className="flex items-center gap-3">
+              <div className="-mt-px flex flex-col">
+                {imageTitle && (
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium"
+                  >
+                    {imageTitle}
+                  </Typography>
+                )}
+                {imageId && (
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium"
+                  >
+                    {imageId}
+                  </Typography>
+                )}
+                {size && (
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium"
+                  >
+                    {size}
+                  </Typography>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handleClose}
-              className="text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-6 h-6"
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleClose}
+                className="text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </DialogHeader>
-        <div className="flex flex-wrap justify-center overflow-auto max-h-[90vh] scrollbar-custom">
-          <DialogBody>
-            {selectedImage ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </DialogHeader>
+          <div className="flex flex-wrap justify-center items-start max-h-full p-5 mt-16 md:mt-7">
+            {selectedImage && (
               <GatsbyImage
                 image={getImage(selectedImage)}
                 alt={selectedImage.node?.relativePath || "image"}
-                className="object-contain h-auto w-auto max-w-full "
+                className="max-h-min object-contain"
               />
-            ) : (
-              <div className="text-center p-4">
-                <Typography color="gray" className="font-normal">
-                  No image selected.
-                </Typography>
+            )}{" "}
+            {imageDescription && (
+              <div className="p-5 ">
+                <Typography className="min-w-64 max-w-screen-sm">
+                  {imageDescription}{" "}
+                </Typography>{" "}
               </div>
-            )}
-          </DialogBody>
-          {imageDescription && (
-            <DialogBody>
-              <Typography className="min-w-64 max-w-screen-sm">
-                {imageDescription}
-              </Typography>
-            </DialogBody>
-          )}
+            )}{" "}
+          </div>{" "}
         </div>
-        <button className="border p-3 w-24 rounded">Kontakt</button>
       </Dialog>
 
       <div>

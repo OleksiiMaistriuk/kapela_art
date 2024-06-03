@@ -8,7 +8,7 @@ import "../styles/global.css";
 
 const IndexPage = () => {
   return (
-    <div className="min-h-screen bg-dark-purple relative scrollbar-custom">
+    <div className="min-h-screen bg-dark-purple relative  ">
       <div className="overlay-black" />
       <NavBar />
       <CookieConsent />

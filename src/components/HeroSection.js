@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
-import Trail from "../elements/trail";
 import video from "../images/Magdalena.mp4";
 import videoMobile1 from "../images/mobile1.mp4";
 import videoMobile2 from "../images/mobile2.mp4";
@@ -55,7 +54,7 @@ const HeroSection = () => {
 
   return (
     <>
-      {transitions(
+      {/* {transitions(
         (style, item) =>
           item && (
             <animated.div
@@ -70,8 +69,8 @@ const HeroSection = () => {
               </Trail>
             </animated.div>
           )
-      )}
-      <div className="relative isolate overflow-hidden h-screen scrollbar-custom">
+      )} */}
+      <div className="relative isolate overflow-hidden h-screen  ">
         {transition((style, i) => (
           <animated.div
             key={i}
@@ -105,7 +104,7 @@ const HeroSection = () => {
         ))}
       </div>
       <span className="bg-black absolute inset-0 opacity-50" />
-      <div className="relative bg-transparent z-10 text-white pt-[100vh] sm:pt-[50vh] scrollbar-custom">
+      <div className="relative bg-transparent z-10 text-white pt-[100vh] sm:pt-[50vh]  ">
         <div id="1" className="my-10">
           <AboutSection />
         </div>
