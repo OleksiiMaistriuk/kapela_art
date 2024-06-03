@@ -76,7 +76,7 @@ const AboutSection = () => {
         <TextSection description="Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej." />
         <div
           style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
+          className=" inset-0 rounded-sm overflow-hidden w-1/2 left-auto right-0 z-0"
         >
           <GatsbyImage
             image={photo2}
