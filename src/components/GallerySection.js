@@ -6,15 +6,32 @@ import { animated, useTransition } from "react-spring";
 import { imageDetails } from "../constants/gallery";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
+const shuffleArray = (array) => {
+  let currentIndex = array.length,
+    randomIndex;
 
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+};
 const GallerySection = () => {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [smallRandomImage, setSmallRandomImage] = useState(null);
+  const [renderedImage, setRenderedImage] = useState(null);
   const [imageTitle, setImageTitle] = useState("");
   const [imageDescription, setImageDescription] = useState("");
   const [imageId, setImageId] = useState("");
   const [size, setSize] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [shuffledRooms, setShuffledRooms] = useState([]);
 
   const { getAllImagesFromDirectory } = useImageService();
 
@@ -45,9 +62,15 @@ const GallerySection = () => {
     return () => clearInterval(timer);
   }, [backgroundImagesData.length]);
 
-  const handleOpen = (node, nodeName) => {
+  useEffect(() => {
+    shuffleRooms();
+  }, []);
+  const shuffleRooms = () => {
+    setShuffledRooms(shuffleArray([...data.rooms.edges]).slice(0, 3));
+  };
+  const handleOpen = (node, smallNode, nodeName) => {
     setSelectedImage(node);
-
+    setSmallRandomImage(smallNode);
     const imageDetail = imageDetails.find(
       (detail) => detail.id === nodeName || detail.name === nodeName
     );
@@ -160,25 +183,45 @@ const GallerySection = () => {
           </DialogHeader>
           <div className="flex flex-wrap justify-center items-start max-h-full p-5 mt-16 md:mt-7">
             {selectedImage && (
-              <GatsbyImage
-                image={getImage(selectedImage)}
-                alt={selectedImage.node?.relativePath || "image"}
-                className="max-h-min object-contain"
-              />
-            )}{" "}
+              <div className="relative">
+                <GatsbyImage
+                  image={getImage(selectedImage)}
+                  alt={"image"}
+                  className="max-h-min object-contain"
+                />
+
+                {smallRandomImage && (
+                  <div
+                    className="absolute w-1/3 h-2/5 flex justify-center items-center"
+                    style={{
+                      top: "40%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  >
+                    <GatsbyImage
+                      image={getImage(smallRandomImage)}
+                      alt="small random"
+                      className="inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                )}
+              </div>
+            )}
             {imageDescription && (
               <div className="p-5 ">
                 <Typography className="min-w-64 max-w-screen-sm">
-                  {imageDescription}{" "}
-                </Typography>{" "}
+                  {imageDescription}
+                </Typography>
               </div>
-            )}{" "}
-          </div>{" "}
+            )}
+          </div>
         </div>
       </Dialog>
 
       <div>
-        {data.rooms.edges.map((room, roomIndex) => {
+        {" "}
+        {shuffledRooms.map((room, roomIndex) => {
           const roomImage = getImage(room.node.childImageSharp.gatsbyImageData);
           const smallPhotos = groupedSmallPhotos[roomIndex] || [];
           const randomIndex = Math.floor(Math.random() * smallPhotos.length);
@@ -187,14 +230,22 @@ const GallerySection = () => {
           return (
             <div key={room.node.relativePath} className="flex flex-wrap mb-4 ">
               <div className={`w-1/3 flex-none p-1 ${orderClass}`}>
+                <button
+                  onClick={shuffleRooms}
+                  className="  rounded-xl border absolute p-1 m-5 z-30 bg-slate-800/70"
+                >
+                  Change rooms
+                </button>
+
                 <div
                   className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
                   onClick={() => {
-                    handleOpen(roomImage, roomIndex);
+                    handleOpen(roomImage, renderedImage, roomIndex);
                     setImageTitle(null);
                     setImageDescription(null);
                   }}
                 >
+                  {" "}
                   <GatsbyImage
                     image={roomImage}
                     alt={room.node.relativePath || "image"}
@@ -202,32 +253,42 @@ const GallerySection = () => {
                   />
                   {randomSmallPhoto && (
                     <div
-                      className="absolute w-1/3 h-1/3 flex justify-center items-center"
+                      className="absolute inset-0 flex justify-center items-center bg-gradient-to-r  from-white/50 to-transparent border rounded-sm border-slate-600 p-4"
                       style={{
-                        top: "40%",
+                        top: "41%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
+                        width: "auto",
+                        height: "auto",
+                        maxWidth: "70%",
+                        maxHeight: "33%",
                       }}
                     >
-                      {transitions((style, i) => (
-                        <animated.div
-                          key={i}
-                          style={{
-                            ...style,
-                            position: "absolute",
-                            width: "100%",
-                            height: "100%",
-                            boxShadow: `0 0 10px white, inset 0 0 10px white`,
-                          }}
-                        >
-                          {" "}
-                          <GatsbyImage
-                            image={getImage(backgroundImagesData[i])}
-                            alt=""
-                            className="inset-0 h-full w-full object-cover"
-                          />
-                        </animated.div>
-                      ))}
+                      {transitions((style, i) => {
+                        const currentRenderedImage = backgroundImagesData[i];
+                        return (
+                          <animated.div
+                            key={i}
+                            style={{
+                              ...style,
+                              position: "absolute",
+                              width: "100%",
+                              height: "100%",
+                              boxShadow: `0 0 50px black, inset 0 0 50px white`,
+                            }}
+                          >
+                            <GatsbyImage
+                              image={getImage(currentRenderedImage)}
+                              alt="room image"
+                              className="inset-0 h-full w-full object-cover"
+                              onLoad={() =>
+                                setRenderedImage(currentRenderedImage)
+                              }
+                            />{" "}
+                            <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent "></div>
+                          </animated.div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -247,6 +308,7 @@ const GallerySection = () => {
                         onClick={() => {
                           handleOpen(
                             node.childImageSharp.gatsbyImageData,
+                            null,
                             imageName
                           );
                           setImageTitle(
@@ -288,6 +350,7 @@ const GallerySection = () => {
                         onClick={() => {
                           handleOpen(
                             node.childImageSharp.gatsbyImageData,
+                            null,
                             imageName
                           );
                           setImageTitle(
