@@ -118,13 +118,13 @@ const Footer = () => {
               <div className="flex items-center gap-4">
                 <Icon />
                 <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
-                  +1 123 456 7890
+                  +(48) 501 686 882
                 </p>
               </div>
               <div className="flex items-center gap-4">
                 <Icon />
                 <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
-                  info@example.com
+                  kontakt@magdalenakapela.pl
                 </p>
               </div>
             </div>

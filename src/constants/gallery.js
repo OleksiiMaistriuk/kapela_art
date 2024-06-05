@@ -1,7 +1,6 @@
 export const imageDetails = [
   {
     id: "photo (1)",
-    size: "",
     title: "Feng huang",
     size: "100x80",
     description:
