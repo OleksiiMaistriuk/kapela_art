@@ -275,8 +275,11 @@ const GallerySection = () => {
                       image={getImage(smallRandomImage)}
                       alt="small random"
                       className="inset-0 h-full w-full object-cover"
+                      style={{
+                        boxShadow: `0 0 50px black, inset 0 0 50px white`,
+                      }}
                     />{" "}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/30 to-black/50 "></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20  to-black/50 "></div>
                   </div>
                 )}
               </div>
@@ -374,6 +377,9 @@ const GallerySection = () => {
                       image={getImage(smallRandomImage)}
                       alt="small random"
                       className="inset-0 h-full w-full object-cover"
+                      style={{
+                        boxShadow: `0 0 50px black, inset 0 0 50px white`,
+                      }}
                     />{" "}
                     {/* <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/30 to-black/50 "></div> */}
                   </div>
@@ -410,13 +416,13 @@ const GallerySection = () => {
                 <div className={`w-1/3 flex-none p-1 ${orderClass}`}>
                   <button
                     onClick={shuffleRooms}
-                    className="  rounded-xl border absolute p-1 m-5 z-30 bg-slate-800/70"
+                    className="  absolute p-1 m-5 z-30 "
                   >
                     Change rooms
                   </button>
-                  <p className=" bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                    {room.node.relativePath} hello
-                  </p>
+                  {/* <p className=" bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                    {room.node.relativePath}
+                  </p> */}
                   <div
                     className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
                     onClick={() => {
@@ -444,40 +450,6 @@ const GallerySection = () => {
                           maxHeight: "33%",
                         }}
                       >
-                        {/* {backgroundImagesData.map((image, index) => (
-                          <div
-                            key={`background-${index}`}
-                            className={`image ${
-                              index === currentImageIndex ? "image-enter" : ""
-                            } ${
-                              index ===
-                              (currentImageIndex -
-                                1 +
-                                backgroundImagesData.length) %
-                                backgroundImagesData.length
-                                ? "image-leave"
-                                : ""
-                            }`}
-                            style={{
-                              display:
-                                index === currentImageIndex ||
-                                index ===
-                                  (currentImageIndex -
-                                    1 +
-                                    backgroundImagesData.length) %
-                                    backgroundImagesData.length
-                                  ? "block"
-                                  : "none",
-                            }}
-                          >
-                            <GatsbyImage
-                              image={getImage(image)}
-                              alt={`Room image ${index}`}
-                              className="inset-0 h-full w-full object-cover"
-                              onLoad={() => setRenderedImage(image)}
-                            />
-                          </div>
-                        ))} */}
                         {transitions((style, i) => {
                           const currentRenderedImage = backgroundImagesData[i];
                           return (
@@ -543,7 +515,7 @@ const GallerySection = () => {
                               className="object-cover w-full h-full"
                             />
                             <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                              {node.name}
+                              {smallPhotoDetails.title}
                             </p>
                           </div>
                         </div>
@@ -585,7 +557,7 @@ const GallerySection = () => {
                               className="object-cover w-full h-full"
                             />
                             <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                              {node.name}
+                              {smallPhotoDetails.title}
                             </p>
                           </div>
                         </div>
@@ -615,13 +587,13 @@ const GallerySection = () => {
                 <div className={`w-1/3 flex-none p-1 `}>
                   <button
                     onClick={shuffleSecondRooms}
-                    className="  rounded-xl border absolute p-1 m-5 z-30 bg-slate-800/70"
+                    className="  absolute p-1 m-5 z-30 "
                   >
                     Change rooms
                   </button>
-                  <p className=" bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                  {/* <p className=" bg-black bg-opacity-50 text-xs sm:text-sm p-1">
                     {room.node.relativePath}
-                  </p>
+                  </p> */}
                   <div
                     className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
                     onClick={() => {
@@ -651,42 +623,6 @@ const GallerySection = () => {
                           maxHeight: "23%",
                         }}
                       >
-                        {/* {secondBackgroundImagesData.map((image, index) => (
-                          <div
-                            key={`secondbackground-${index}`}
-                            className={`image ${
-                              index === secondCurrentImageIndex
-                                ? "image-enter"
-                                : ""
-                            } ${
-                              index ===
-                              (secondCurrentImageIndex -
-                                1 +
-                                secondBackgroundImagesData.length) %
-                                secondBackgroundImagesData.length
-                                ? "image-leave"
-                                : ""
-                            }`}
-                            style={{
-                              display:
-                                index === secondCurrentImageIndex ||
-                                index ===
-                                  (secondCurrentImageIndex -
-                                    1 +
-                                    secondBackgroundImagesData.length) %
-                                    secondBackgroundImagesData.length
-                                  ? "block"
-                                  : "none",
-                            }}
-                          >
-                            <GatsbyImage
-                              image={getImage(image)}
-                              alt={`Room image ${index}`}
-                              className="inset-0 h-full w-full object-cover"
-                              onLoad={() => setRenderedImage(image)}
-                            />
-                          </div>
-                        ))} */}
                         {secondTransitions((style, i) => {
                           const currentRenderedImage =
                             secondBackgroundImagesData[i];
@@ -709,7 +645,6 @@ const GallerySection = () => {
                                   setSecondRenderedImage(currentRenderedImage)
                                 }
                               />{" "}
-                              <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/30 to-black/50 "></div>
                             </animated.div>
                           );
                         })}
@@ -724,7 +659,7 @@ const GallerySection = () => {
                       const smallPhotoDetails = imageDetails.find(
                         (detail) => detail.id === imageName
                       );
-                      console.log("node", node);
+
                       return (
                         <div
                           key={`secondsmallphoto-1-${node.relativePath}`}
@@ -753,7 +688,7 @@ const GallerySection = () => {
                               className="object-cover w-full h-full"
                             />
                             <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                              {node.name}
+                              {smallPhotoDetails.title}
                             </p>
                           </div>
                         </div>

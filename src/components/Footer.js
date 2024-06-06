@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import React from "react";
-import { useImageService } from "../elements/imageService";
 import "../styles/global.css";
 import { footerLinks } from "./../constants/footerLinks";
 
@@ -112,7 +111,7 @@ const Footer = () => {
               <div className="flex items-center gap-4">
                 <Icon />
                 <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
-                  123 Main Street, Los Angeles, CA
+                  adres ?????
                 </p>
               </div>
               <div className="flex items-center gap-4">
