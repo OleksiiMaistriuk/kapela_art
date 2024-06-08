@@ -6,6 +6,7 @@ import { animated, useTransition } from "react-spring";
 import { imageDetails } from "../constants/gallery";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
+
 const shuffleArray = (array) => {
   let currentIndex = array.length,
     randomIndex;
@@ -31,7 +32,6 @@ const GallerySection = () => {
   const [secondRenderedImage, setSecondRenderedImage] = useState(null);
   const [imageTitle, setImageTitle] = useState("");
   const [imageDescription, setImageDescription] = useState("");
-  const [imageId, setImageId] = useState("");
   const [rate, setRate] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [secondCurrentImageIndex, setSecondCurrentImageIndex] = useState(0);
@@ -44,10 +44,10 @@ const GallerySection = () => {
   const secondBackgroundImagesData = getAllImagesFromDirectory("nsphotos");
 
   const transitions = useTransition(currentImageIndex, {
-    from: { opacity: 0, config: { duration: 1000 } },
-    enter: { opacity: 1, config: { duration: 10000 } },
-    leave: { opacity: 0, config: { duration: 1000 } },
-    config: { duration: 8000 },
+    from: { opacity: 0, config: { duration: 500 } },
+    enter: { opacity: 1, config: { duration: 11000 } },
+    leave: { opacity: 0, config: { duration: 500 } },
+
     onRest: (_a, _b, item) => {
       if (currentImageIndex === item) {
         setCurrentImageIndex(
@@ -63,20 +63,20 @@ const GallerySection = () => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % backgroundImagesData.length
       );
-    }, 10000);
+    }, 12000);
 
     return () => clearInterval(timer);
   }, [backgroundImagesData.length]);
 
   const secondTransitions = useTransition(secondCurrentImageIndex, {
-    from: { opacity: 0, config: { duration: 1000 } },
-    enter: { opacity: 1, config: { duration: 10000 } },
-    leave: { opacity: 0, config: { duration: 1000 } },
-    config: { duration: 8000 },
+    from: { opacity: 0, config: { duration: 500 } },
+    enter: { opacity: 1, config: { duration: 11000 } },
+    leave: { opacity: 0, config: { duration: 500 } },
+
     onRest: (_a, _b, item) => {
       if (secondCurrentImageIndex === item) {
         setSecondCurrentImageIndex(
-          (state) => (state + 1) % backgroundImagesData.length
+          (state) => (state + 1) % secondBackgroundImagesData.length
         );
       }
     },
@@ -86,12 +86,12 @@ const GallerySection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setSecondCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % backgroundImagesData.length
+        (prevIndex) => (prevIndex + 1) % secondBackgroundImagesData.length
       );
-    }, 10000);
+    }, 12000);
 
     return () => clearInterval(timer);
-  }, [backgroundImagesData.length]);
+  }, [secondBackgroundImagesData.length]);
 
   useEffect(() => {
     shuffleRooms();
@@ -113,8 +113,8 @@ const GallerySection = () => {
     );
     setImageTitle(imageDetail?.title || "Default Title");
     setImageDescription(imageDetail?.description || "Default Description");
-    setImageId(imageDetail?.id || nodeName);
-    setRate(imageDetail?.rate || nodeName);
+
+    setRate(imageDetail?.size || nodeName);
     setOpen(true);
   };
   const handleSecondOpen = (node, smallNode, nodeName) => {
@@ -125,8 +125,8 @@ const GallerySection = () => {
     );
     setImageTitle(imageDetail?.title || "Default Title");
     setImageDescription(imageDetail?.description || "Default Description");
-    setImageId(imageDetail?.id || nodeName);
-    setRate(imageDetail?.rate || nodeName);
+
+    setRate(imageDetail?.size || nodeName);
     setOpenSecond(true);
   };
 
@@ -191,13 +191,19 @@ const GallerySection = () => {
       groupedPhotosNS.push(data.photosNS.edges.slice(i, i + 4));
     }
   }
+
   for (let i = 0; i < data.photos.edges.length; i += 6) {
     groupedSmallPhotos.push(data.photos.edges.slice(i, i + 6));
   }
 
   return (
-    <div ref={revealRef} className="reveal bg-slate-950/90 p-6">
-      <Dialog size="xxl" open={open} handler={handleClose} className="bg-black">
+    <div ref={revealRef} className="reveal bg-slate-950/90 p-1 sm:p-6">
+      <Dialog
+        size="xxl"
+        open={open}
+        handler={handleClose}
+        className="bg-black h-full"
+      >
         <div>
           <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
             <div className="flex items-center gap-3">
@@ -211,22 +217,14 @@ const GallerySection = () => {
                     {imageTitle}
                   </Typography>
                 )}
-                {imageId && (
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    {imageId}
-                  </Typography>
-                )}
+
                 {rate && (
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-medium"
                   >
-                    {rate}
+                    Rozmiar: {rate}
                   </Typography>
                 )}
               </div>
@@ -264,7 +262,7 @@ const GallerySection = () => {
 
                 {smallRandomImage && (
                   <div
-                    className="absolute w-1/4 h-1/3 flex justify-center items-center"
+                    className="absolute w-1/4  flex justify-center items-center"
                     style={{
                       top: "39%",
                       left: "50%",
@@ -294,11 +292,12 @@ const GallerySection = () => {
           </div>
         </div>
       </Dialog>
+
       <Dialog
         size="xxl"
         open={openSecond}
         handler={handleClose}
-        className="bg-black"
+        className="bg-black h-full"
       >
         <div>
           <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
@@ -313,22 +312,14 @@ const GallerySection = () => {
                     {imageTitle}
                   </Typography>
                 )}
-                {imageId && (
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    {imageId}
-                  </Typography>
-                )}
+
                 {rate && (
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-medium"
                   >
-                    {rate}
+                    Rozmiar: {rate}
                   </Typography>
                 )}
               </div>
@@ -366,7 +357,7 @@ const GallerySection = () => {
 
                 {smallRandomImage && (
                   <div
-                    className="absolute w-1/3 h-1/4 flex justify-center items-center"
+                    className="absolute w-1/3  flex justify-center items-center"
                     style={{
                       top: "40%",
                       left: "50%",
@@ -376,12 +367,11 @@ const GallerySection = () => {
                     <GatsbyImage
                       image={getImage(smallRandomImage)}
                       alt="small random"
-                      className="inset-0 h-full w-full object-cover"
+                      className="inset-0 h-full w-full object-cover bg-gradient-to-r from-white/50 via-white/30 to-black/50"
                       style={{
                         boxShadow: `0 0 50px black, inset 0 0 50px white`,
                       }}
                     />{" "}
-                    {/* <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/30 to-black/50 "></div> */}
                   </div>
                 )}
               </div>
@@ -402,7 +392,6 @@ const GallerySection = () => {
         {shuffledRooms.map((room, roomIndex) => {
           const roomImage = getImage(room.node.childImageSharp.gatsbyImageData);
           const smallPhotos = groupedSmallPhotos[roomIndex] || [];
-
           const randomIndex = Math.floor(Math.random() * smallPhotos.length);
           const randomSmallPhoto = smallPhotos[randomIndex];
           const orderClass = roomIndex % 2 === 0 ? "order-last" : "order-first";
@@ -413,16 +402,14 @@ const GallerySection = () => {
                 key={`room-${room.node.relativePath}`}
                 className="flex flex-wrap mb-4 "
               >
-                <div className={`w-1/3 flex-none p-1 ${orderClass}`}>
+                {" "}
+                <div className={`w-1/3 flex-none p-1 ${orderClass} relative `}>
                   <button
                     onClick={shuffleRooms}
-                    className="  absolute p-1 m-5 z-30 "
+                    className="absolute p-1 m-2 z-30 bottom-0  text-xs md-text:base text-black hover:text-white md:bottom-4 md:right-4 sm:p-2 sm:text-base md:m-3"
                   >
-                    Change rooms
+                    Change room
                   </button>
-                  {/* <p className=" bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                    {room.node.relativePath}
-                  </p> */}
                   <div
                     className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
                     onClick={() => {
@@ -432,11 +419,15 @@ const GallerySection = () => {
                     }}
                   >
                     {" "}
-                    <GatsbyImage
-                      image={roomImage}
-                      alt={room.node.relativePath || "image"}
-                      className="object-contain h-full w-full"
-                    />
+                    {roomImage ? (
+                      <GatsbyImage
+                        image={roomImage}
+                        alt={room.node.relativePath || "image"}
+                        className="object-contain h-full w-full"
+                      />
+                    ) : (
+                      <p>Image not found</p>
+                    )}
                     {randomSmallPhoto && (
                       <div
                         className="absolute inset-0 flex justify-center items-center bg-gradient-to-r  from-white/50 to-transparent  rounded-sm  p-4"
@@ -450,8 +441,10 @@ const GallerySection = () => {
                           maxHeight: "33%",
                         }}
                       >
+                        {" "}
                         {transitions((style, i) => {
                           const currentRenderedImage = backgroundImagesData[i];
+
                           return (
                             <animated.div
                               key={i}
@@ -460,24 +453,29 @@ const GallerySection = () => {
                                 position: "absolute",
                                 width: "100%",
                                 height: "100%",
-                                boxShadow: `0 0 50px black, inset 0 0 50px white`,
                               }}
                             >
-                              <GatsbyImage
-                                image={getImage(currentRenderedImage)}
-                                alt="room image"
-                                className="inset-0 h-full w-full object-cover"
-                                onLoad={() =>
-                                  setRenderedImage(currentRenderedImage)
-                                }
-                              />{" "}
-                              <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent "></div>
+                              {currentRenderedImage ? (
+                                <GatsbyImage
+                                  image={getImage(currentRenderedImage)}
+                                  alt="room image"
+                                  className="inset-0 h-full w-full object-cover absolute bg-gradient-to-r from-white/50 to-transparent"
+                                  style={{
+                                    boxShadow: `0 0 50px black, inset 0 0 50px white`,
+                                  }}
+                                  onLoad={() =>
+                                    setRenderedImage(currentRenderedImage)
+                                  }
+                                />
+                              ) : (
+                                <p>Image not found</p>
+                              )}
                             </animated.div>
                           );
-                        })}
+                        })}{" "}
                       </div>
                     )}
-                  </div>
+                  </div>{" "}
                 </div>
                 <div className="w-2/3 flex-1">
                   <div className="flex flex-row flex-wrap">
@@ -485,6 +483,9 @@ const GallerySection = () => {
                       const imageName = node.name;
                       const smallPhotoDetails = imageDetails.find(
                         (detail) => detail.id === imageName
+                      );
+                      const smallPhotoImage = getImage(
+                        node.childImageSharp.gatsbyImageData
                       );
 
                       return (
@@ -507,14 +508,16 @@ const GallerySection = () => {
                           }}
                         >
                           <div className="relative w-full h-full">
-                            <GatsbyImage
-                              image={getImage(
-                                node.childImageSharp.gatsbyImageData
-                              )}
-                              alt={node.relativePath || "image"}
-                              className="object-cover w-full h-full"
-                            />
-                            <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                            {smallPhotoImage ? (
+                              <GatsbyImage
+                                image={smallPhotoImage}
+                                alt={node.relativePath || "image"}
+                                className="object-cover w-full h-full"
+                              />
+                            ) : (
+                              <p>Image not found</p>
+                            )}
+                            <p className="absolute bottom-0  left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
                               {smallPhotoDetails.title}
                             </p>
                           </div>
@@ -527,6 +530,9 @@ const GallerySection = () => {
                       const imageName = node.name;
                       const smallPhotoDetails = imageDetails.find(
                         (detail) => detail.id === imageName
+                      );
+                      const smallPhotoImage = getImage(
+                        node.childImageSharp.gatsbyImageData
                       );
 
                       return (
@@ -549,13 +555,15 @@ const GallerySection = () => {
                           }}
                         >
                           <div className="relative w-full h-full">
-                            <GatsbyImage
-                              image={getImage(
-                                node.childImageSharp.gatsbyImageData
-                              )}
-                              alt={node.relativePath || "image"}
-                              className="object-cover w-full h-full"
-                            />
+                            {smallPhotoImage ? (
+                              <GatsbyImage
+                                image={smallPhotoImage}
+                                alt={node.relativePath || "image"}
+                                className="object-cover w-full h-full"
+                              />
+                            ) : (
+                              <p>Image not found</p>
+                            )}
                             <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
                               {smallPhotoDetails.title}
                             </p>
@@ -584,16 +592,13 @@ const GallerySection = () => {
                 key={`secondroom-${room.node.relativePath}`}
                 className="flex flex-wrap mb-4 "
               >
-                <div className={`w-1/3 flex-none p-1 `}>
+                <div className={`w-1/3 flex-none p-1 relative`}>
                   <button
-                    onClick={shuffleSecondRooms}
-                    className="  absolute p-1 m-5 z-30 "
+                    onClick={shuffleRooms}
+                    className="absolute p-1 m-2 z-30 bottom-0 text-xs md-text:base text-black hover:text-white md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
                   >
-                    Change rooms
+                    Change room
                   </button>
-                  {/* <p className=" bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                    {room.node.relativePath}
-                  </p> */}
                   <div
                     className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
                     onClick={() => {
@@ -607,11 +612,15 @@ const GallerySection = () => {
                     }}
                   >
                     {" "}
-                    <GatsbyImage
-                      image={roomImage}
-                      alt={room.node.relativePath || "image"}
-                      className="object-contain h-full w-full"
-                    />
+                    {roomImage ? (
+                      <GatsbyImage
+                        image={roomImage}
+                        alt={room.node.relativePath || "image"}
+                        className="object-contain h-full w-full"
+                      />
+                    ) : (
+                      <p>Image not found</p>
+                    )}
                     {randomSmallPhoto && (
                       <div
                         className="absolute inset-0 flex justify-center items-center   rounded-sm  p-4"
@@ -620,31 +629,33 @@ const GallerySection = () => {
                           left: "50%",
                           transform: "translate(-50%, -50%)",
                           maxWidth: "100%",
-                          maxHeight: "23%",
+                          maxHeight: "24%",
                         }}
                       >
                         {secondTransitions((style, i) => {
                           const currentRenderedImage =
                             secondBackgroundImagesData[i];
+
                           return (
                             <animated.div
                               key={i}
                               style={{
                                 ...style,
                                 position: "absolute",
-                                width: "100%",
-                                height: "100%",
-                                boxShadow: `0 0 50px black, inset 0 0 50px white`,
                               }}
                             >
-                              <GatsbyImage
-                                image={getImage(currentRenderedImage)}
-                                alt="room image"
-                                className="inset-0 h-full w-full object-cover"
-                                onLoad={() =>
-                                  setSecondRenderedImage(currentRenderedImage)
-                                }
-                              />{" "}
+                              {currentRenderedImage ? (
+                                <GatsbyImage
+                                  image={getImage(currentRenderedImage)}
+                                  alt="room image"
+                                  className="inset-0 h-full w-full object-cover"
+                                  onLoad={() =>
+                                    setSecondRenderedImage(currentRenderedImage)
+                                  }
+                                />
+                              ) : (
+                                <p>Image not found</p>
+                              )}
                             </animated.div>
                           );
                         })}
@@ -659,13 +670,16 @@ const GallerySection = () => {
                       const smallPhotoDetails = imageDetails.find(
                         (detail) => detail.id === imageName
                       );
+                      const smallPhotoImage = getImage(
+                        node.childImageSharp.gatsbyImageData
+                      );
 
                       return (
                         <div
                           key={`secondsmallphoto-1-${node.relativePath}`}
                           className="rounded overflow-hidden shadow-lg w-1/2 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer"
                           onClick={() => {
-                            handleOpen(
+                            handleSecondOpen(
                               node.childImageSharp.gatsbyImageData,
                               null,
                               imageName
@@ -680,14 +694,16 @@ const GallerySection = () => {
                           }}
                         >
                           <div className="relative w-full h-full">
-                            <GatsbyImage
-                              image={getImage(
-                                node.childImageSharp.gatsbyImageData
-                              )}
-                              alt={node.relativePath || "image"}
-                              className="object-cover w-full h-full"
-                            />
-                            <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                            {smallPhotoImage ? (
+                              <GatsbyImage
+                                image={smallPhotoImage}
+                                alt={node.relativePath || "image"}
+                                className="object-cover w-full h-full"
+                              />
+                            ) : (
+                              <p>Image not found</p>
+                            )}
+                            <p className="absolute bottom-0 left-0  bg-black bg-opacity-50 text-xs sm:text-sm p-1">
                               {smallPhotoDetails.title}
                             </p>
                           </div>

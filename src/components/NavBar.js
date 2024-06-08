@@ -16,6 +16,7 @@ const NavBar = () => {
 
   const scrollToNext = (sectionId) => {
     setActiveLinkIndex(sectionId);
+
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -73,9 +74,7 @@ const NavBar = () => {
                   </span>
                   <button
                     onClick={() => scrollToNext(link.to)}
-                    className={`text-sm hover:text-amber-400 whitespace-nowrap ${
-                      activeLinkIndex === index ? "activeButtonClass" : ""
-                    }`}
+                    className={`text-sm hover:text-amber-400 whitespace-nowrap `}
                   >
                     {link.label}
                   </button>
@@ -100,17 +99,25 @@ const NavBar = () => {
             </ul>
           </>
         ) : (
-          <div>
-            <span className="h-1/3">
-              {" "}
-              <Link
-                to={"/"}
-                className="  hover:text-amber-400 block  text-center "
-                activeClassName=" "
+          <div className="">
+            <Link
+              to="/"
+              className="hover:text-amber-400 text-center font-bold p-0 m-0 flex items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-6 h-6 mr-2"
               >
-                Wrócić na główną
-              </Link>
-            </span>
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Wrócić
+            </Link>
           </div>
         )}
 
@@ -198,17 +205,7 @@ const NavBar = () => {
                 />
               )}
             </div>
-            {/* {location.pathname === "/" ? (       ) : (
-              <div className=" lg:flex  lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
-                <Link
-                  to={"/"}
-                  className={"text-sm  hover:text-amber-400  whitespace-nowrap"}
-                  activeClassName="text-amber-400 border-b h-6 "
-                >
-                  Wrócić na stronę główną
-                </Link>
-              </div>
-            )} */}
+
             <ul className="">
               {navIndex.map((link, index) => (
                 <li key={index} className={"w-56 border-b  "}>

@@ -4,7 +4,7 @@ import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation"; // Ensure the path is correct
 
 const TextSection = ({ title, description }) => (
-  <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center items-center flex-col p-4 md:m-5 md:p-7 bg-slate-950/50 md:bg-transparent rounded-md">
+  <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center items-center flex-col p-4 md:m-5 md:p-7 bg-slate-950/50 md:bg-transparent rounded-md z">
     <p className="relative text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
       {description}
     </p>
@@ -28,7 +28,7 @@ const AboutSection = () => {
   const { getImageData } = useImageService();
   const photo1 = getImageData("about/photo(4).jpg");
   const photo2 = getImageData("about/photo(2).jpg");
-  const photo3 = getImageData("about/photo(5).jpg");
+  const photo3 = getImageData("about/photo(1).jpg");
 
   return (
     <>
@@ -73,45 +73,11 @@ const AboutSection = () => {
         ref={revealRef2}
         className="relative flex w-full md:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
       >
-        <TextSection description="Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej." />
-        <div
-          style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-1/2 left-auto right-0 z-0"
-        >
-          <GatsbyImage
-            image={photo2}
-            alt="photo2"
-            className="object-cover h-full"
-          />
-          <div
-            style={{ position: "absolute" }}
-            className="absolute inset-0 md:bg-gradient-to-r from-slate-950 to-transparent bg-slate-950/50"
-          ></div>
-        </div>
-      </div>
-
-      <div
-        ref={revealRef3}
-        className="relative flex w-full md:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
-      >
-        <div
-          style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
-        >
-          <GatsbyImage
-            image={photo3}
-            alt="photo301"
-            className="rounded-lg shadow-sm m-1 opacity-90"
-          />
-          <div
-            style={{ position: "absolute" }}
-            className="absolute inset-0 md:bg-gradient-to-l from-slate-950 to-transparent bg-slate-950/50"
-          ></div>
-        </div>
         <div
           style={{ position: "absolute" }}
           className=" z-20 top-0 right-0 bottom-0 flex items-center justify-end p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
         >
+          {" "}
           <TextSection
             description="    Możesz mieć piękne wnętrze, które zdecydowanie ożyje i sprawi, że
             Twoje samopoczucie – rzecz bezcenna – będzie na wyższym poziomie
@@ -126,6 +92,46 @@ const AboutSection = () => {
             ścianie, zależy od ciebie. Podaruj sobie patrząc na wyjątkowy obraz,
             marzenia, natchnienie, coś bezcennego."
           />
+        </div>{" "}
+        <div
+          style={{ position: "absolute" }}
+          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
+        >
+          <GatsbyImage
+            image={photo2}
+            alt="photo2"
+            className="object-contain h-full"
+          />
+          <div
+            style={{ position: "absolute" }}
+            className="inset-0 md:bg-gradient-to-r md:from-slate-950 md:to-transparent bg-slate-950/50"
+          ></div>
+        </div>
+      </div>
+
+      <div
+        ref={revealRef3}
+        className="relative flex w-full md:first:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 "
+      >
+        <div
+          style={{ position: "absolute" }}
+          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
+        >
+          <GatsbyImage
+            image={photo3}
+            alt="photo301"
+            className="object-cover h-full"
+          />
+          <div
+            style={{ position: "absolute" }}
+            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/50"
+          ></div>
+        </div>
+        <div
+          style={{ position: "absolute" }}
+          className=" z-20 top-0 right-0 bottom-0 flex items-center justify-end p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
+        >
+          <TextSection description="Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej." />
         </div>
       </div>
     </>

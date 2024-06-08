@@ -23,10 +23,10 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
+      className="hidden md:block"
       style={{
         ...style,
-        display: "block",
+
         position: "absolute",
         right: "10px",
         top: "50%",
@@ -42,13 +42,12 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <div
-      className={className}
+      className="hidden md:block"
       style={{
         ...style,
-        display: "block",
 
         position: "absolute",
         left: "10px",

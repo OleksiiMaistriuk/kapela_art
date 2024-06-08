@@ -73,7 +73,7 @@ const HeroSection = () => {
       <div className="relative isolate overflow-hidden h-screen  ">
         {transition((style, i) => (
           <animated.div
-            key={i}
+            key={"big" + i}
             style={style}
             className="fixed top-0 left-0 w-full h-full"
           >
@@ -88,7 +88,7 @@ const HeroSection = () => {
             </video>
             {videos.map((videoSrc, index) => (
               <video
-                key={index}
+                key={index + "mobile"}
                 autoPlay
                 muted
                 loop

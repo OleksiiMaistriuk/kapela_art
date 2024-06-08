@@ -108,30 +108,36 @@ const Footer = () => {
               Contact Information
             </span>
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4 ">
                 <Icon />
                 <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
                   adres ?????
                 </p>
-              </div>
-              <div className="flex items-center gap-4">
+              </div> */}
+              <div className="flex items-center gap-4 text-sm">
                 <Icon />
-                <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
+                <a
+                  href="tel:+48501686882"
+                  className="block antialiased font-sans text-sm  md:text-baseleading-relaxed text-inherit font-bold"
+                >
                   +(48) 501 686 882
-                </p>
+                </a>
               </div>
               <div className="flex items-center gap-4">
                 <Icon />
-                <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-bold">
+                <a
+                  href="mailto:kontakt@magdalenakapela.pl"
+                  className="block antialiased font-sans text-sm  md:text-base leading-relaxed text-inherit font-bold"
+                >
                   kontakt@magdalenakapela.pl
-                </p>
+                </a>
               </div>
             </div>
           </div>{" "}
           <div className="w-full lg:w-6/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
               <div className="w-full lg:w-4/12 px-4 ml-auto">
-                <ul className="flex flex-col mt-4 space-y-2 text-base font-semibold text-white">
+                <ul className="flex flex-col mt-4 space-y-2 text-base font-semibold ">
                   {footerLinks.map((item, index) => (
                     <li key={index}>
                       <Link
