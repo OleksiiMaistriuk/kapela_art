@@ -1,5 +1,5 @@
 import { Dialog, DialogHeader, Typography } from "@material-tailwind/react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, navigate, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
@@ -58,16 +58,6 @@ const GallerySection = () => {
     exitBeforeEnter: true,
   });
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % backgroundImagesData.length
-      );
-    }, 12000);
-
-    return () => clearInterval(timer);
-  }, [backgroundImagesData.length]);
-
   const secondTransitions = useTransition(secondCurrentImageIndex, {
     from: { opacity: 0, config: { duration: 500 } },
     enter: { opacity: 1, config: { duration: 11000 } },
@@ -85,13 +75,16 @@ const GallerySection = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % backgroundImagesData.length
+      );
       setSecondCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % secondBackgroundImagesData.length
       );
     }, 12000);
 
     return () => clearInterval(timer);
-  }, [secondBackgroundImagesData.length]);
+  }, [backgroundImagesData.length, secondBackgroundImagesData.length]);
 
   useEffect(() => {
     shuffleRooms();
@@ -287,6 +280,15 @@ const GallerySection = () => {
                 <Typography className="min-w-64 max-w-screen-sm">
                   {imageDescription}
                 </Typography>
+                <button
+                  onClick={() =>
+                    navigate("/contact", { state: { imageTitle } })
+                  }
+                  className="border p-2 rounded  hover:bg-gray-700 focus:outline-none w-15 mt-10 "
+                >
+                  Dowiedz się więcej
+                  <br />o tym obrazie
+                </button>
               </div>
             )}
           </div>
@@ -367,10 +369,7 @@ const GallerySection = () => {
                     <GatsbyImage
                       image={getImage(smallRandomImage)}
                       alt="small random"
-                      className="inset-0 h-full w-full object-cover bg-gradient-to-r from-white/50 via-white/30 to-black/50"
-                      style={{
-                        boxShadow: `0 0 50px black, inset 0 0 50px white`,
-                      }}
+                      className="inset-0 h-full w-full object-cover "
                     />{" "}
                   </div>
                 )}
@@ -381,13 +380,22 @@ const GallerySection = () => {
                 <Typography className="min-w-64 max-w-screen-sm">
                   {imageDescription}
                 </Typography>
+                <button
+                  onClick={() =>
+                    navigate("/contact", { state: { imageTitle } })
+                  }
+                  className="border p-2 rounded  hover:bg-gray-700 focus:outline-none w-15 m-10"
+                >
+                  Dowiedz się więcej
+                  <br />o tym obrazie
+                </button>
               </div>
             )}
           </div>
         </div>
       </Dialog>
 
-      <div>
+      <div className="mt-5">
         {" "}
         {shuffledRooms.map((room, roomIndex) => {
           const roomImage = getImage(room.node.childImageSharp.gatsbyImageData);
@@ -578,7 +586,7 @@ const GallerySection = () => {
           );
         })}
       </div>
-      <div>
+      <div className="mt-5">
         {" "}
         {shuffledSecondRooms.map((room, roomIndex) => {
           const roomImage = getImage(room.node.childImageSharp.gatsbyImageData);

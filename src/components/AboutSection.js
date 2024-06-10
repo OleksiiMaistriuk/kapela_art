@@ -47,7 +47,7 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/50"
+            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/20"
           ></div>
         </div>
         <div
@@ -75,7 +75,7 @@ const AboutSection = () => {
       >
         <div
           style={{ position: "absolute" }}
-          className=" z-20 top-0 right-0 bottom-0 flex items-center justify-end p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
+          className=" z-20 top-0 right-0 bottom-0 flex items-center justify-start p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
         >
           {" "}
           <TextSection
@@ -95,7 +95,7 @@ const AboutSection = () => {
         </div>{" "}
         <div
           style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
+          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 left-auto right-0 z-0"
         >
           <GatsbyImage
             image={photo2}
@@ -104,14 +104,14 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className="inset-0 md:bg-gradient-to-r md:from-slate-950 md:to-transparent bg-slate-950/50"
+            className="inset-0 md:bg-gradient-to-r md:from-slate-950 md:to-transparent bg-slate-950/20"
           ></div>
         </div>
       </div>
 
       <div
         ref={revealRef3}
-        className="relative flex w-full md:first:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 "
+        className="relative flex w-full md:first:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
       >
         <div
           style={{ position: "absolute" }}
@@ -124,7 +124,7 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/50"
+            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/20"
           ></div>
         </div>
         <div
