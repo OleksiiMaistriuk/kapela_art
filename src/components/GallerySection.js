@@ -110,6 +110,7 @@ const GallerySection = () => {
     setRate(imageDetail?.size || nodeName);
     setOpen(true);
   };
+
   const handleSecondOpen = (node, smallNode, nodeName) => {
     setSelectedImage(node);
     setSmallRandomImage(smallNode);
@@ -190,12 +191,12 @@ const GallerySection = () => {
   }
 
   return (
-    <div ref={revealRef} className="reveal bg-slate-950/90 p-1 sm:p-6">
+    <div ref={revealRef} className="reveal bg-black/90 p-1 sm:p-6">
       <Dialog
         size="xxl"
         open={open}
         handler={handleClose}
-        className="bg-black h-full"
+        className="bg-black h-full md:h-screen"
       >
         <div>
           <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
@@ -217,7 +218,7 @@ const GallerySection = () => {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    Rozmiar: {rate}
+                    Rozmiar: {rate} cm.
                   </Typography>
                 )}
               </div>
@@ -299,7 +300,7 @@ const GallerySection = () => {
         size="xxl"
         open={openSecond}
         handler={handleClose}
-        className="bg-black h-full"
+        className=" bg-black h-full md:h-screen"
       >
         <div>
           <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
@@ -321,7 +322,7 @@ const GallerySection = () => {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    Rozmiar: {rate}
+                    Rozmiar: {rate} cm.
                   </Typography>
                 )}
               </div>
@@ -329,7 +330,7 @@ const GallerySection = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleClose}
-                className="text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none"
+                className=" p-2 rounded-full hover:bg-gray-700 focus:outline-none"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -414,7 +415,7 @@ const GallerySection = () => {
                 <div className={`w-1/3 flex-none p-1 ${orderClass} relative `}>
                   <button
                     onClick={shuffleRooms}
-                    className="absolute p-1 m-2 z-30 bottom-0  text-xs md-text:base text-black hover:text-white md:bottom-4 md:right-4 sm:p-2 sm:text-base md:m-3"
+                    className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
                   >
                     Change room
                   </button>
@@ -515,12 +516,12 @@ const GallerySection = () => {
                             );
                           }}
                         >
-                          <div className="relative w-full h-full">
+                          <div className="relative w-full h-full flex items-center">
                             {smallPhotoImage ? (
                               <GatsbyImage
                                 image={smallPhotoImage}
                                 alt={node.relativePath || "image"}
-                                className="object-cover w-full h-full"
+                                className="object-cover "
                               />
                             ) : (
                               <p>Image not found</p>
@@ -546,7 +547,7 @@ const GallerySection = () => {
                       return (
                         <div
                           key={`smallphoto-2-${node.relativePath}`}
-                          className="rounded overflow-hidden shadow-lg w-1/3 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer"
+                          className="rounded overflow-hidden shadow-lg w-1/3 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer flex justify-center items-center"
                           onClick={() => {
                             handleOpen(
                               node.childImageSharp.gatsbyImageData,
@@ -562,12 +563,12 @@ const GallerySection = () => {
                             );
                           }}
                         >
-                          <div className="relative w-full h-full">
+                          <div className="relative w-full h-full flex items-center">
                             {smallPhotoImage ? (
                               <GatsbyImage
                                 image={smallPhotoImage}
                                 alt={node.relativePath || "image"}
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full "
                               />
                             ) : (
                               <p>Image not found</p>
@@ -603,7 +604,7 @@ const GallerySection = () => {
                 <div className={`w-1/3 flex-none p-1 relative`}>
                   <button
                     onClick={shuffleRooms}
-                    className="absolute p-1 m-2 z-30 bottom-0 text-xs md-text:base text-black hover:text-white md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
+                    className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
                   >
                     Change room
                   </button>
@@ -685,7 +686,7 @@ const GallerySection = () => {
                       return (
                         <div
                           key={`secondsmallphoto-1-${node.relativePath}`}
-                          className="rounded overflow-hidden shadow-lg w-1/2 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer"
+                          className="rounded overflow-hidden shadow-lg w-1/2 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer flex justify-center items-center"
                           onClick={() => {
                             handleSecondOpen(
                               node.childImageSharp.gatsbyImageData,
@@ -701,12 +702,12 @@ const GallerySection = () => {
                             );
                           }}
                         >
-                          <div className="relative w-full h-full">
+                          <div className="relative w-full h-full flex items-center">
                             {smallPhotoImage ? (
                               <GatsbyImage
                                 image={smallPhotoImage}
                                 alt={node.relativePath || "image"}
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full "
                               />
                             ) : (
                               <p>Image not found</p>

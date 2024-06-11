@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark-purple": "#060007",
-        "dark-licorice": "#0A0004",
-        "dark-blue": "#070411",
-        "rich-black": "#050F18",
-        "smoky-black": "#070600",
+        "dark-purple": "#000000;",
+        "dark-licorice": "#000000;",
+        "dark-blue": "#000000;",
+        "rich-black": "#000000;",
+        "smoky-black": "#000000;",
         "gold-text ": {
           light: "#f1d6a8bb",
           default: "#f1d6a8bb",

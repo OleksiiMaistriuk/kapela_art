@@ -43,7 +43,7 @@ const CookieConsent = () => {
         />
       )}
       {showConsent && (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 md:w-3/5 lg:w-1/2 bg-white bg-opacity-90 rounded-lg p-5 md:p-10 z-20 overflow-y-auto max-h-4/5">
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 md:w-3/5 lg:w-1/2 bg-dark-licorice bg-opacity-90 rounded-lg p-5 md:p-10 z-20 overflow-y-auto max-h-4/5">
           {showPolicyDetails ? (
             <ul className="max-h-96 overflow-y-auto">
               {policyDetails.map((detail) => (
@@ -93,7 +93,7 @@ const CookieConsent = () => {
                 cookies i chronimy Twoje dane.
               </p>
               <button
-                className="px-4 py-2 bg-green-500 hover:bg-green-900rounded mr-2"
+                className="px-4 py-2 border hover:border-gray-700  hover:text-gray-700  rounded mr-2"
                 onClick={acceptCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -104,7 +104,7 @@ const CookieConsent = () => {
                 Akceptuj
               </button>
               <button
-                className="px-4 py-2 bg-red-500 hover:bg-red-900rounded"
+                className="px-4 py-2 border hover:border-gray-700  hover:text-gray-700  rounded"
                 onClick={declineCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Esc" || e.key === " ") {
@@ -123,4 +123,3 @@ const CookieConsent = () => {
 };
 
 export default CookieConsent;
-

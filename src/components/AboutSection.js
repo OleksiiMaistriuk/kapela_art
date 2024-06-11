@@ -34,7 +34,7 @@ const AboutSection = () => {
     <>
       <div
         ref={revealRef}
-        className="relative flex w-full md:first:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 "
+        className="relative flex w-full md:first:px-4 py-2 z-10 bg-black h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 "
       >
         <div
           style={{ position: "absolute" }}
@@ -47,7 +47,7 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/20"
+            className=" inset-0 md:bg-gradient-to-l md:from-black md:to-transparent bg-slate-950/20"
           ></div>
         </div>
         <div
@@ -71,14 +71,30 @@ const AboutSection = () => {
 
       <div
         ref={revealRef2}
-        className="relative flex w-full md:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
+        className="relative flex w-full md:px-4 py-2 z-10 bg-stone-300 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
       >
         <div
           style={{ position: "absolute" }}
           className=" z-20 top-0 right-0 bottom-0 flex items-center justify-start p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
         >
-          {" "}
-          <TextSection
+          <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center items-center flex-col p-4 md:m-5 md:p-7 bg-slate-950/50 md:bg-transparent rounded-md z">
+            <p className="relative text-black text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
+              Możesz mieć piękne wnętrze, które zdecydowanie ożyje i sprawi, że
+              Twoje samopoczucie – rzecz bezcenna – będzie na wyższym poziomie
+              energetycznym. Sztuka jest potrzebą duchową. Jest sensem nie tylko
+              kolekcjonerskim, ale często zaskoczeniem, ponieważ odczytujemy ją
+              za każdym razem inaczej. Sztuka potrafi zaskakiwać nas samych. W
+              twoim otoczeniu twój wzrok zawsze kieruje się horyzontalnie, czyli
+              w pomieszczeniu to zawsze ściana, patrzymy na wprost – to nasze
+              główne pole widzenia, reszta to pole poboczne, dla naszego wzroku
+              rzeczy mniej ważne. Tak samo, gdy patrzymy na człowieka,
+              koncentrujemy się na twarzy i oczach. Więc to, w jaki sposób i co
+              chcesz widzieć na ścianie, zależy od ciebie. Podaruj sobie patrząc
+              na wyjątkowy obraz, marzenia, natchnienie, coś bezcennego.
+            </p>
+          </div>
+          {/* <TextSection
+            text={black}
             description="    Możesz mieć piękne wnętrze, które zdecydowanie ożyje i sprawi, że
             Twoje samopoczucie – rzecz bezcenna – będzie na wyższym poziomie
             energetycznym. Sztuka jest potrzebą duchową. Jest sensem nie tylko
@@ -91,7 +107,7 @@ const AboutSection = () => {
             na twarzy i oczach. Więc to, w jaki sposób i co chcesz widzieć na
             ścianie, zależy od ciebie. Podaruj sobie patrząc na wyjątkowy obraz,
             marzenia, natchnienie, coś bezcennego."
-          />
+          /> */}
         </div>{" "}
         <div
           style={{ position: "absolute" }}
@@ -104,14 +120,14 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className="inset-0 md:bg-gradient-to-r md:from-slate-950 md:to-transparent bg-slate-950/20"
+            className="inset-0 md:bg-gradient-to-r md:from-stone-300               md:to-transparent bg-slate-950/20"
           ></div>
         </div>
       </div>
 
       <div
         ref={revealRef3}
-        className="relative flex w-full md:first:px-4 py-2 z-10 bg-slate-950 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
+        className="relative flex w-full md:first:px-4 py-2 z-10 bg-black h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
       >
         <div
           style={{ position: "absolute" }}
@@ -124,7 +140,7 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className=" inset-0 md:bg-gradient-to-l md:from-slate-950 md:to-transparent bg-slate-950/20"
+            className=" inset-0 md:bg-gradient-to-l md:from-black md:to-transparent bg-slate-950/20"
           ></div>
         </div>
         <div
