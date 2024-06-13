@@ -13,4 +13,9 @@ const PolicyPage = () => {
 
 export default PolicyPage;
 
-export const Head = () => <Seo title="Polityka Prywatności" description="" />;
+export const Head = () => (
+  <Seo
+    title="Polityka Prywatności"
+    description="Zapoznaj się z naszą polityką prywatności i dowiedz się, jak chronimy Twoje dane osobowe."
+  />
+);

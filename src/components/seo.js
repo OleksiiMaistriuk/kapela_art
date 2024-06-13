@@ -27,7 +27,7 @@ function Seo({ description, title, children }) {
     >
       <title>
         {defaultTitle
-          ? `${title} -  ${defaultTitle}`
+          ? `${title} - ${defaultTitle}`
           : `${title} - Sztuka Magdalena Kapela`}
       </title>
       <meta
@@ -40,6 +40,17 @@ function Seo({ description, title, children }) {
         content="Zapraszam do odkrycia mojej kolekcji obrazów, które oddają niepowtarzalne emocje i piękno otaczającego nas świata. Każde dzieło jest wyjątkowe i tworzę je z pasją oraz zaangażowaniem."
       />
       <meta property="og:type" content="website" />
+      <meta property="og:image" content="/src/images/icon.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="Magdalena Kapela - Artystka Malarka"
+      />
+      <meta
+        name="twitter:description"
+        content="Tworzę wyjątkowe obrazy, które oddają emocje i piękno otaczającego świata. Moje dzieła to połączenie pasji, talentu i unikalnej wizji artystycznej."
+      />
+      <meta name="twitter:image" content="/src/images/icon.png" />
       {children}
     </Helmet>
   );

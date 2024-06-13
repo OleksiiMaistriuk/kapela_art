@@ -9,4 +9,9 @@ const ContactPage = () => {
 
 export default ContactPage;
 
-<Seo title="" description="" />;
+export const Head = () => (
+  <Seo
+    title="Kontakt"
+    description="Skontaktuj się z nami w celu uzyskania więcej informacji o moich pracach artystycznych."
+  />
+);

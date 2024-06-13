@@ -13,4 +13,9 @@ const DeliveryPage = () => {
 
 export default DeliveryPage;
 
-export const Head = () => <Seo title="Warunki dostawy" description="" />;
+export const Head = () => (
+  <Seo
+    title="Warunki dostawy"
+    description="Sprawdź warunki dostawy moich obrazów. Zapewniam bezpieczny i szybki transport."
+  />
+);

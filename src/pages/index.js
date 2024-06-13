@@ -20,4 +20,10 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <Seo title="" description="" />;
+export const Head = () => (
+  <Seo
+    title="Strona główna"
+    description="Witamy na stronie Magdaleny Kapeli. Odkryj wyjątkowe obrazy pełne emocji i piękna. Sprawdź opinie naszych klientów i zobacz galerię naszych dzieł."
+    keywords="obrazy, sztuka, galeria, opinie, Magdalena Kapela, malarstwo, kontakt,"
+  />
+);

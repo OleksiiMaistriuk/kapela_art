@@ -135,3 +135,11 @@ html::-webkit-scrollbar-thumb {
   border-bottom: 1px solid;
   height: 1.5rem;
 }
+/* .shadow {
+  box-shadow: rgba(243, 0, 0, 0.4) 0px 2px 4px,
+    rgba(184, 26, 26, 0.3) 0px 7px 13px -3px,
+    rgba(255, 0, 0, 0.2) 0px -3px 0px inset;
+} */
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.61) 0px 30px 25px -20px;
+}

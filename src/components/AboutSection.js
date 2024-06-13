@@ -4,8 +4,8 @@ import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation"; // Ensure the path is correct
 
 const TextSection = ({ title, description }) => (
-  <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center items-center flex-col p-4 md:m-5 md:p-7 bg-slate-950/50 md:bg-transparent rounded-md z">
-    <p className="relative text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
+  <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center items-center flex-col p-4 md:m-5 md:p-7 bg-black/50 md:bg-transparent rounded-md z">
+    <p className="relative p-5 md:p-0 text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
       {description}
     </p>
   </div>
@@ -38,7 +38,7 @@ const AboutSection = () => {
       >
         <div
           style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
+          className=" inset-0  rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0 hidden md:flex"
         >
           <GatsbyImage
             image={photo1}
@@ -47,12 +47,12 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className=" inset-0 md:bg-gradient-to-l md:from-black md:to-transparent bg-slate-950/20"
+            className=" inset-0 md:bg-gradient-to-l md:from-black md:to-transparent bg-black/20"
           ></div>
         </div>
         <div
           style={{ position: "absolute" }}
-          className=" z-20 top-0 right-0 bottom-0 flex items-center justify-end p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
+          className=" z-20 top-0 right-0 bottom-0 flex items-center justify-end  sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
         >
           <TextSection
             description="Jestem artystką malarką, twórczynią licznych wystaw indywidualnych i
@@ -77,8 +77,8 @@ const AboutSection = () => {
           style={{ position: "absolute" }}
           className=" z-20 top-0 right-0 bottom-0 flex items-center justify-start p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
         >
-          <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center items-center flex-col p-4 md:m-5 md:p-7 bg-slate-950/50 md:bg-transparent rounded-md z">
-            <p className="relative text-black text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
+          <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center  items-center flex-col p-4 md:m-5 md:p-7 bg-black/50 md:bg-transparent rounded-md z">
+            <p className="relative p-5 md:p-0 text-black text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
               Możesz mieć piękne wnętrze, które zdecydowanie ożyje i sprawi, że
               Twoje samopoczucie – rzecz bezcenna – będzie na wyższym poziomie
               energetycznym. Sztuka jest potrzebą duchową. Jest sensem nie tylko
@@ -111,7 +111,7 @@ const AboutSection = () => {
         </div>{" "}
         <div
           style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 left-auto right-0 z-0"
+          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 left-auto right-0 z-0 hidden md:flex"
         >
           <GatsbyImage
             image={photo2}
@@ -120,7 +120,7 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className="inset-0 md:bg-gradient-to-r md:from-stone-300               md:to-transparent bg-slate-950/20"
+            className="inset-0 md:bg-gradient-to-r md:from-stone-300   md:to-transparent bg-black/20"
           ></div>
         </div>
       </div>
@@ -131,7 +131,7 @@ const AboutSection = () => {
       >
         <div
           style={{ position: "absolute" }}
-          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0"
+          className=" inset-0 rounded-sm overflow-hidden w-full md:w-1/2 right-auto left-0 z-0 hidden md:flex"
         >
           <GatsbyImage
             image={photo3}
@@ -140,12 +140,12 @@ const AboutSection = () => {
           />
           <div
             style={{ position: "absolute" }}
-            className=" inset-0 md:bg-gradient-to-l md:from-black md:to-transparent bg-slate-950/20"
+            className=" inset-0 md:bg-gradient-to-l md:from-black md:to-transparent bg-black/20"
           ></div>
         </div>
         <div
           style={{ position: "absolute" }}
-          className=" z-20 top-0 right-0 bottom-0 flex items-center justify-end p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
+          className=" z-20 top-0 right-0 bottom-0 flex  items-center justify-end p-0 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14"
         >
           <TextSection description="Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej." />
         </div>

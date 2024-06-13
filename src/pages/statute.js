@@ -13,4 +13,9 @@ const StatutePage = () => {
 
 export default StatutePage;
 
-export const Head = () => <Seo title="" description="" />;
+export const Head = () => (
+  <Seo
+    title="Regulamin"
+    description="Przeczytaj nasz regulamin, aby poznać zasady korzystania z naszej strony internetowej."
+  />
+);

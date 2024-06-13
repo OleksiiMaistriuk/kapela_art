@@ -72,19 +72,25 @@ const GallerySection = () => {
     },
     exitBeforeEnter: true,
   });
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % backgroundImagesData.length
       );
+    }, 12000);
+
+    return () => clearInterval(timer);
+  }, [backgroundImagesData.length]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
       setSecondCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % secondBackgroundImagesData.length
       );
     }, 12000);
 
     return () => clearInterval(timer);
-  }, [backgroundImagesData.length, secondBackgroundImagesData.length]);
+  }, [secondBackgroundImagesData.length]);
 
   useEffect(() => {
     shuffleRooms();
@@ -99,6 +105,7 @@ const GallerySection = () => {
   };
 
   const handleOpen = (node, smallNode, nodeName) => {
+    console.log(node, smallNode, nodeName);
     setSelectedImage(node);
     setSmallRandomImage(smallNode);
     const imageDetail = imageDetails.find(
@@ -106,7 +113,6 @@ const GallerySection = () => {
     );
     setImageTitle(imageDetail?.title || "Default Title");
     setImageDescription(imageDetail?.description || "Default Description");
-
     setRate(imageDetail?.size || nodeName);
     setOpen(true);
   };
@@ -266,10 +272,10 @@ const GallerySection = () => {
                     <GatsbyImage
                       image={getImage(smallRandomImage)}
                       alt="small random"
-                      className="inset-0 h-full w-full object-cover"
-                      style={{
-                        boxShadow: `0 0 50px black, inset 0 0 50px white`,
-                      }}
+                      className="inset-0 h-full w-full object-cover shadow"
+                      // style={{
+                      //   boxShadow: `0 0 50px black, inset 0 0 50px white`,
+                      // }}
                     />{" "}
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20  to-black/50 "></div>
                   </div>
@@ -406,184 +412,176 @@ const GallerySection = () => {
           const orderClass = roomIndex % 2 === 0 ? "order-last" : "order-first";
 
           return (
-            <>
-              <div
-                key={`room-${room.node.relativePath}`}
-                className="flex flex-wrap mb-4 "
-              >
-                {" "}
-                <div className={`w-1/3 flex-none p-1 ${orderClass} relative `}>
-                  <button
-                    onClick={shuffleRooms}
-                    className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
-                  >
-                    Change room
-                  </button>
-                  <div
-                    className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
-                    onClick={() => {
-                      handleOpen(roomImage, renderedImage, roomIndex);
-                      setImageTitle(null);
-                      setImageDescription(null);
-                    }}
-                  >
-                    {" "}
-                    {roomImage ? (
-                      <GatsbyImage
-                        image={roomImage}
-                        alt={room.node.relativePath || "image"}
-                        className="object-contain h-full w-full"
-                      />
-                    ) : (
-                      <p>Image not found</p>
-                    )}
-                    {randomSmallPhoto && (
+            <div
+              key={`room-${room.node.relativePath}`}
+              className="flex flex-wrap mb-4 "
+            >
+              {" "}
+              <div className={`w-1/3 flex-none p-1 ${orderClass} relative `}>
+                {/* <p>{room.node.relativePath}</p> */}
+                <button
+                  onClick={shuffleRooms}
+                  className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
+                >
+                  Change room
+                </button>
+                <div
+                  className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
+                  onClick={() => {
+                    handleOpen(roomImage, renderedImage, roomIndex);
+                    setImageTitle(null);
+                    setImageDescription(null);
+                  }}
+                >
+                  {" "}
+                  {roomImage ? (
+                    <GatsbyImage
+                      image={roomImage}
+                      alt={room.node.relativePath || "image"}
+                      className="object-contain h-full w-full"
+                    />
+                  ) : (
+                    <p>Image not found</p>
+                  )}
+                  {randomSmallPhoto && (
+                    <div
+                      className="absolute inset-0 flex justify-center items-center bg-gradient-to-r   rounded-sm  p-4"
+                      style={{
+                        top: "41%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        maxWidth: "100%",
+                        maxHeight: "25%",
+                      }}
+                    >
+                      {" "}
+                      {transitions((style, i) => {
+                        const currentRenderedImage = backgroundImagesData[i];
+
+                        return (
+                          <animated.div
+                            key={i}
+                            style={{
+                              ...style,
+                              position: "absolute",
+                            }}
+                          >
+                            {currentRenderedImage ? (
+                              <GatsbyImage
+                                image={getImage(currentRenderedImage)}
+                                alt="room image"
+                                className="inset-0 h-full w-full object-cover"
+                                onLoad={() =>
+                                  setRenderedImage(currentRenderedImage)
+                                }
+                              />
+                            ) : (
+                              <p>Image not found</p>
+                            )}
+                          </animated.div>
+                        );
+                      })}{" "}
+                    </div>
+                  )}
+                </div>{" "}
+              </div>
+              <div className="w-2/3 flex-1">
+                <div className="flex flex-row flex-wrap">
+                  {smallPhotos.slice(0, 3).map(({ node }, i) => {
+                    const imageName = node.name;
+                    const smallPhotoDetails = imageDetails.find(
+                      (detail) => detail.id === imageName
+                    );
+                    const smallPhotoImage = getImage(
+                      node.childImageSharp.gatsbyImageData
+                    );
+
+                    return (
                       <div
-                        className="absolute inset-0 flex justify-center items-center bg-gradient-to-r  from-white/50 to-transparent  rounded-sm  p-4"
-                        style={{
-                          top: "41%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          width: "auto",
-                          height: "auto",
-                          maxWidth: "70%",
-                          maxHeight: "33%",
+                        key={`smallphoto-1-${node.relativePath}`}
+                        className="rounded overflow-hidden shadow-lg w-1/3 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer"
+                        onClick={() => {
+                          handleOpen(
+                            node.childImageSharp.gatsbyImageData,
+                            null,
+                            imageName
+                          );
+                          setImageTitle(
+                            smallPhotoDetails?.title || "Default Title"
+                          );
+                          setImageDescription(
+                            smallPhotoDetails?.description ||
+                              "Default Description"
+                          );
                         }}
                       >
-                        {" "}
-                        {transitions((style, i) => {
-                          const currentRenderedImage = backgroundImagesData[i];
-
-                          return (
-                            <animated.div
-                              key={i}
-                              style={{
-                                ...style,
-                                position: "absolute",
-                                width: "100%",
-                                height: "100%",
-                              }}
-                            >
-                              {currentRenderedImage ? (
-                                <GatsbyImage
-                                  image={getImage(currentRenderedImage)}
-                                  alt="room image"
-                                  className="inset-0 h-full w-full object-cover absolute bg-gradient-to-r from-white/50 to-transparent"
-                                  style={{
-                                    boxShadow: `0 0 50px black, inset 0 0 50px white`,
-                                  }}
-                                  onLoad={() =>
-                                    setRenderedImage(currentRenderedImage)
-                                  }
-                                />
-                              ) : (
-                                <p>Image not found</p>
-                              )}
-                            </animated.div>
-                          );
-                        })}{" "}
+                        <div className="relative w-full h-full flex items-center">
+                          {smallPhotoImage ? (
+                            <GatsbyImage
+                              image={smallPhotoImage}
+                              alt={node.relativePath || "image"}
+                              className="object-cover "
+                            />
+                          ) : (
+                            <p>Image not found</p>
+                          )}
+                          <p className="absolute bottom-0  left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                            {smallPhotoDetails.title}
+                          </p>
+                        </div>
                       </div>
-                    )}
-                  </div>{" "}
+                    );
+                  })}
                 </div>
-                <div className="w-2/3 flex-1">
-                  <div className="flex flex-row flex-wrap">
-                    {smallPhotos.slice(0, 3).map(({ node }, i) => {
-                      const imageName = node.name;
-                      const smallPhotoDetails = imageDetails.find(
-                        (detail) => detail.id === imageName
-                      );
-                      const smallPhotoImage = getImage(
-                        node.childImageSharp.gatsbyImageData
-                      );
+                <div className="flex flex-row flex-wrap flex-1">
+                  {smallPhotos.slice(3, 6).map(({ node }, i) => {
+                    const imageName = node.name;
+                    const smallPhotoDetails = imageDetails.find(
+                      (detail) => detail.id === imageName
+                    );
+                    const smallPhotoImage = getImage(
+                      node.childImageSharp.gatsbyImageData
+                    );
 
-                      return (
-                        <div
-                          key={`smallphoto-1-${node.relativePath}`}
-                          className="rounded overflow-hidden shadow-lg w-1/3 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer"
-                          onClick={() => {
-                            handleOpen(
-                              node.childImageSharp.gatsbyImageData,
-                              null,
-                              imageName
-                            );
-                            setImageTitle(
-                              smallPhotoDetails?.title || "Default Title"
-                            );
-                            setImageDescription(
-                              smallPhotoDetails?.description ||
-                                "Default Description"
-                            );
-                          }}
-                        >
-                          <div className="relative w-full h-full flex items-center">
-                            {smallPhotoImage ? (
-                              <GatsbyImage
-                                image={smallPhotoImage}
-                                alt={node.relativePath || "image"}
-                                className="object-cover "
-                              />
-                            ) : (
-                              <p>Image not found</p>
-                            )}
-                            <p className="absolute bottom-0  left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                              {smallPhotoDetails.title}
-                            </p>
-                          </div>
+                    return (
+                      <div
+                        key={`smallphoto-2-${node.relativePath}`}
+                        className="rounded overflow-hidden shadow-lg w-1/3 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer flex justify-center items-center"
+                        onClick={() => {
+                          handleOpen(
+                            node.childImageSharp.gatsbyImageData,
+                            null,
+                            imageName
+                          );
+                          setImageTitle(
+                            smallPhotoDetails?.title || "Default Title"
+                          );
+                          setImageDescription(
+                            smallPhotoDetails?.description ||
+                              "Default Description"
+                          );
+                        }}
+                      >
+                        <div className="relative w-full h-full flex items-center">
+                          {smallPhotoImage ? (
+                            <GatsbyImage
+                              image={smallPhotoImage}
+                              alt={node.relativePath || "image"}
+                              className="object-cover w-full "
+                            />
+                          ) : (
+                            <p>Image not found</p>
+                          )}
+                          <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                            {smallPhotoDetails.title}
+                          </p>
                         </div>
-                      );
-                    })}
-                  </div>
-                  <div className="flex flex-row flex-wrap flex-1">
-                    {smallPhotos.slice(3, 6).map(({ node }, i) => {
-                      const imageName = node.name;
-                      const smallPhotoDetails = imageDetails.find(
-                        (detail) => detail.id === imageName
-                      );
-                      const smallPhotoImage = getImage(
-                        node.childImageSharp.gatsbyImageData
-                      );
-
-                      return (
-                        <div
-                          key={`smallphoto-2-${node.relativePath}`}
-                          className="rounded overflow-hidden shadow-lg w-1/3 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer flex justify-center items-center"
-                          onClick={() => {
-                            handleOpen(
-                              node.childImageSharp.gatsbyImageData,
-                              null,
-                              imageName
-                            );
-                            setImageTitle(
-                              smallPhotoDetails?.title || "Default Title"
-                            );
-                            setImageDescription(
-                              smallPhotoDetails?.description ||
-                                "Default Description"
-                            );
-                          }}
-                        >
-                          <div className="relative w-full h-full flex items-center">
-                            {smallPhotoImage ? (
-                              <GatsbyImage
-                                image={smallPhotoImage}
-                                alt={node.relativePath || "image"}
-                                className="object-cover w-full "
-                              />
-                            ) : (
-                              <p>Image not found</p>
-                            )}
-                            <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                              {smallPhotoDetails.title}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
@@ -596,133 +594,127 @@ const GallerySection = () => {
           const randomSmallPhoto = smallPhotosNS[randomIndex];
 
           return (
-            <>
-              <div
-                key={`secondroom-${room.node.relativePath}`}
-                className="flex flex-wrap mb-4 "
-              >
-                <div className={`w-1/3 flex-none p-1 relative`}>
-                  <button
-                    onClick={shuffleRooms}
-                    className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
-                  >
-                    Change room
-                  </button>
-                  <div
-                    className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
-                    onClick={() => {
-                      handleSecondOpen(
-                        roomImage,
-                        secondRenderedImage,
-                        roomIndex
-                      );
-                      setImageTitle(null);
-                      setImageDescription(null);
-                    }}
-                  >
-                    {" "}
-                    {roomImage ? (
-                      <GatsbyImage
-                        image={roomImage}
-                        alt={room.node.relativePath || "image"}
-                        className="object-contain h-full w-full"
-                      />
-                    ) : (
-                      <p>Image not found</p>
-                    )}
-                    {randomSmallPhoto && (
-                      <div
-                        className="absolute inset-0 flex justify-center items-center   rounded-sm  p-4"
-                        style={{
-                          top: "40%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          maxWidth: "100%",
-                          maxHeight: "24%",
-                        }}
-                      >
-                        {secondTransitions((style, i) => {
-                          const currentRenderedImage =
-                            secondBackgroundImagesData[i];
+            <div
+              key={`secondroom-${room.node.relativePath}`}
+              className="flex flex-wrap mb-4 "
+            >
+              <div className={`w-1/3 flex-none p-1 relative`}>
+                <button
+                  onClick={shuffleRooms}
+                  className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
+                >
+                  Change room
+                </button>
+                <div
+                  className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
+                  onClick={() => {
+                    handleSecondOpen(roomImage, secondRenderedImage, roomIndex);
+                    setImageTitle(null);
+                    setImageDescription(null);
+                  }}
+                >
+                  {" "}
+                  {roomImage ? (
+                    <GatsbyImage
+                      image={roomImage}
+                      alt={room.node.relativePath || "image"}
+                      className="object-contain h-full w-full"
+                    />
+                  ) : (
+                    <p>Image not found</p>
+                  )}
+                  {randomSmallPhoto && (
+                    <div
+                      className="absolute inset-0 flex justify-center items-center   rounded-sm  p-4"
+                      style={{
+                        top: "40%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        maxWidth: "100%",
+                        maxHeight: "24%",
+                      }}
+                    >
+                      {secondTransitions((style, i) => {
+                        const currentRenderedImage =
+                          secondBackgroundImagesData[i];
 
-                          return (
-                            <animated.div
-                              key={i}
-                              style={{
-                                ...style,
-                                position: "absolute",
-                              }}
-                            >
-                              {currentRenderedImage ? (
-                                <GatsbyImage
-                                  image={getImage(currentRenderedImage)}
-                                  alt="room image"
-                                  className="inset-0 h-full w-full object-cover"
-                                  onLoad={() =>
-                                    setSecondRenderedImage(currentRenderedImage)
-                                  }
-                                />
-                              ) : (
-                                <p>Image not found</p>
-                              )}
-                            </animated.div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div className="w-2/3 flex-1">
-                  <div className="flex flex-row flex-wrap">
-                    {smallPhotosNS.map(({ node }, i) => {
-                      const imageName = node.name;
-                      const smallPhotoDetails = imageDetails.find(
-                        (detail) => detail.id === imageName
-                      );
-                      const smallPhotoImage = getImage(
-                        node.childImageSharp.gatsbyImageData
-                      );
-
-                      return (
-                        <div
-                          key={`secondsmallphoto-1-${node.relativePath}`}
-                          className="rounded overflow-hidden shadow-lg w-1/2 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer flex justify-center items-center"
-                          onClick={() => {
-                            handleSecondOpen(
-                              node.childImageSharp.gatsbyImageData,
-                              null,
-                              imageName
-                            );
-                            setImageTitle(
-                              smallPhotoDetails?.title || "Default Title"
-                            );
-                            setImageDescription(
-                              smallPhotoDetails?.description ||
-                                "Default Description"
-                            );
-                          }}
-                        >
-                          <div className="relative w-full h-full flex items-center">
-                            {smallPhotoImage ? (
+                        return (
+                          <animated.div
+                            key={i}
+                            style={{
+                              ...style,
+                              position: "absolute",
+                            }}
+                          >
+                            {currentRenderedImage ? (
                               <GatsbyImage
-                                image={smallPhotoImage}
-                                alt={node.relativePath || "image"}
-                                className="object-cover w-full "
+                                image={getImage(currentRenderedImage)}
+                                alt="room image"
+                                className="inset-0 h-full w-full object-cover"
+                                onLoad={() =>
+                                  setSecondRenderedImage(currentRenderedImage)
+                                }
                               />
                             ) : (
                               <p>Image not found</p>
                             )}
-                            <p className="absolute bottom-0 left-0  bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                              {smallPhotoDetails.title}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                          </animated.div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
-            </>
+              <div className="w-2/3 flex-1">
+                <div className="flex flex-row flex-wrap">
+                  {smallPhotosNS.map(({ node }, i) => {
+                    const imageName = node.name;
+                    const smallPhotoDetails = imageDetails.find(
+                      (detail) => detail.id === imageName
+                    );
+                    const smallPhotoImage = getImage(
+                      node.childImageSharp.gatsbyImageData
+                    );
+
+                    return (
+                      <div
+                        key={`secondsmallphoto-1-${node.relativePath}`}
+                        className="rounded overflow-hidden shadow-lg w-1/2 p-1 transition-transform duration-300 hover:scale-95 cursor-pointer flex justify-center items-center"
+                        onClick={() => {
+                          handleSecondOpen(
+                            node.childImageSharp.gatsbyImageData,
+                            null,
+                            imageName
+                          );
+                          setImageTitle(
+                            smallPhotoDetails?.title || "Default Title"
+                          );
+                          setImageDescription(
+                            smallPhotoDetails?.description ||
+                              "Default Description"
+                          );
+                        }}
+                      >
+                        <div className="relative w-full h-full flex items-center">
+                          {smallPhotoImage ? (
+                            <GatsbyImage
+                              image={smallPhotoImage}
+                              alt={node.relativePath || "image"}
+                              className="object-cover w-full "
+                            />
+                          ) : (
+                            <p>Image not found</p>
+                          )}
+                          <p className="absolute bottom-0 left-0  bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                            {smallPhotoDetails.title}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>

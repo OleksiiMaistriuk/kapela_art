@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import video from "../images/Magdalena.mp4";
 import videoMobile1 from "../images/mobile1.mp4";
 import videoMobile2 from "../images/mobile2.mp4";
 import videoMobile3 from "../images/mobile3.mp4";
 import "../styles/global.css";
-import AboutSection from "./AboutSection";
-import Footer from "./Footer";
-import GallerySection from "./GallerySection";
-import OpinionsSection from "./OpinionsSection";
+
+const GallerySection = lazy(() => import("./GallerySection"));
+const OpinionsSection = lazy(() => import("./OpinionsSection"));
+const AboutSection = lazy(() => import("./AboutSection"));
+const Footer = lazy(() => import("./Footer"));
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -109,13 +110,19 @@ const HeroSection = () => {
           <AboutSection />
         </div>
         <div id="2" className="my-10">
-          <OpinionsSection />
+          <Suspense fallback={<div>Loading...</div>}>
+            <OpinionsSection />
+          </Suspense>
         </div>
         <div id="3" className="my-10">
-          <GallerySection />
+          <Suspense fallback={<div>Loading...</div>}>
+            <GallerySection />
+          </Suspense>
         </div>
         <div id="4" className="my-10">
-          <Footer />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Footer />
+          </Suspense>
         </div>
       </div>
       {buttonToUp && (
