@@ -139,11 +139,11 @@ const NavBar = () => {
                   x2="100%"
                   y2="0%"
                 >
-                  <stop offset="0%" stopColor="#f09433" />
-                  <stop offset="25%" stopColor="#e6683c" />
-                  <stop offset="50%" stopColor="#dc2743" />
-                  <stop offset="75%" stopColor="#cc2366" />
-                  <stop offset="100%" stopColor="#bc1888" />
+                  <stop offset="0%" stopColor="#d5a94f" />
+                  <stop offset="25%" stopColor="#d5a84f" />
+                  <stop offset="50%" stopColor="#d5a74f" />
+                  <stop offset="75%" stopColor="#d5a64f" />
+                  <stop offset="100%" stopColor="#d5a54f" />
                 </linearGradient>
               </defs>
               <path
@@ -170,9 +170,9 @@ const NavBar = () => {
                   x2="100%"
                   y2="0%"
                 >
-                  <stop offset="0%" stopColor="#4064ac" />
-                  <stop offset="50%" stopColor="#3a559f" />
-                  <stop offset="100%" stopColor="#315b96" />
+                  <stop offset="0%" stopColor="#d5a94f" />
+                  <stop offset="50%" stopColor="#d5a54f" />
+                  <stop offset="100%" stopColor="#d5a24f" />
                 </linearGradient>
               </defs>
               <path
