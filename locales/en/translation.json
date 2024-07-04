@@ -1,0 +1,500 @@
+{
+  "seo": {
+    "defaultTitle": "Magdalena Kapela Art",
+    "metaDescription": "I create unique paintings that capture the emotions and beauty of the surrounding world. My works combine passion, talent, and a unique artistic vision.",
+    "ogTitle": "Magdalena Kapela - Artist",
+    "ogDescription": "Explore my collection of paintings that capture unique emotions and the beauty of the world around us. Each piece is unique and created with passion and dedication.",
+    "twitterTitle": "Magdalena Kapela - Artist",
+    "twitterDescription": "I create unique paintings that capture the emotions and beauty of the surrounding world. My works combine passion, talent, and a unique artistic vision.",
+    "policy": {
+      "title": "Privacy Policy",
+      "description": "Read our privacy policy and learn how we protect your personal data."
+    },
+    "delivery": {
+      "title": "Delivery Terms",
+      "description": "Check the delivery terms of my paintings. I ensure safe and fast transport."
+    },
+    "home": {
+      "title": "Home",
+      "description": "Welcome to Magdalena Kapela's website. Discover unique paintings full of emotions and beauty. Check our client reviews and see our gallery.",
+      "keywords": "paintings, art, gallery, reviews, Magdalena Kapela, painting, contact"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with us for more information about my artworks."
+    },
+    "statute": {
+      "title": "Statute",
+      "description": "Read our statute to learn about the terms of use of our website."
+    }
+  },
+
+  "statuteSection": {
+    "title": "Terms and Conditions",
+    "sections": [
+      {
+        "title": "§ 1 Preliminary Provisions",
+        "content": "The online store available at the internet address  magdalenakapela.comis run by KAPELLA ART. LIMITED LIABILITY COMPANY with its registered office at 43-300 Bielsko-Biała, prof. dr Mieczysława Michałowicza 12, entered into the register of entrepreneurs of the National Court Register under number KRS: 0000830738, NIP: 5472217560, REGON: 38562239300000."
+      },
+      {
+        "title": "§ 2 Definitions",
+        "content": [
+          "1/ Consumer - a natural person concluding an agreement with the Seller within the Store, the subject of which is not directly related to their business or professional activity.",
+          "2/ Seller - KAPELLA ART. LIMITED LIABILITY COMPANY with its registered office at 43-300 Bielsko-Biała, prof. dr Mieczysława Michałowicza 12, entered into the register of entrepreneurs of the National Court Register under number KRS: 0000830738, NIP: 5472217560, REGON: 38562239300000.",
+          "3/ Client - any entity making purchases through the Store.",
+          "4/ Entrepreneur - a natural person, legal person, and organizational unit without legal personality, to which a separate act grants legal capacity, conducting business activity on their own behalf, who uses the Store.",
+          "5/ Store - the online store run by the Seller at the internet address magdalenakapela.pl",
+          "6/ Distance Contract - an agreement concluded with the Client within an organized system of concluding distance agreements (within the Store), without the simultaneous physical presence of the parties, with the exclusive use of one or more means of remote communication up to and including the conclusion of the agreement.",
+          "7/ Regulations - these store regulations.",
+          "8/ Order - the Client's declaration of intent submitted using the Order Form and aimed directly at concluding a Product or Products Sales Agreement with the Seller.",
+          "9/ Account - the Client's account in the Store, where data provided by the Client and information about Orders placed by them in the Store are collected.",
+          "10/ Registration form - a form available in the Store that allows creating an Account.",
+          "11/ Order form - an interactive form available in the Store that allows placing an Order, in particular by adding Products to the Basket and defining the terms of the Sales Agreement, including the delivery and payment method.",
+          "12/ Basket - an element of the Store's software where the selected by the Client Products for purchase are visible, and the possibility of determining and modifying the Order data, in particular, the quantity of products, is also given.",
+          "13/ Product - a movable item/service available in the Store that is the subject of the Sales Agreement between the Client and the Seller.",
+          "14/ Sales Agreement - a Product sales agreement concluded or entered into between the Client and the Seller via the Store.",
+          "15/ Right of withdrawal - the possibility for a Client who is a Consumer to withdraw from a Distance Agreement."
+        ]
+      },
+      {
+        "title": "§ 3 Contact with the Store",
+        "content": [
+          "1/ The Store's email address is: sklep@magdalenakapela.pl",
+          "2/ The correspondence address is: KAPELLA ART. LIMITED LIABILITY COMPANY, prof. dr Mieczysława Michałowicza 12, 43-300 Bielsko-Biała."
+        ]
+      },
+      {
+        "title": "§ 4 Conditions for using the Store",
+        "content": "1/ The necessary condition for using the Store is that the Client has an end device that meets the minimum technical requirements for using the Service, including: a computer, laptop, tablet, or other end device with Internet access, installed software including a web browser that allows displaying web pages.",
+        "additionalRequirements": "The Client should also meet the following minimum technical requirements to use the electronic services provided by the Seller: have an active email account, use the Internet Explorer web browser (minimum version 11), Mozilla Firefox (minimum version 10), Google Chrome (minimum version 10), Opera (minimum version 10) or Safari (minimum version 5)."
+      },
+      {
+        "title": "§ 5 General Information",
+        "content": [
+          "1/ The Seller is not responsible for disruptions, including interruptions in the functioning of the Store caused by force majeure, unauthorized actions of third parties, or incompatibility of the online store with the Client's technical infrastructure.",
+          "2/ Browsing the Store's assortment does not require setting up an Account. Placing orders by the Client for Products in the Store's assortment is possible either after setting up an Account in accordance with the provisions of § 6 of the Regulations or by providing necessary personal and address data to enable the execution of the Order without setting up an Account.",
+          "3/ The prices given in the Store are in Polish zlotys and are gross prices (including VAT).",
+          "4/ The final (total) amount to be paid by the Client consists of the price for the Product and the cost of delivery (including transport, delivery, and postal fees), about which the Client is informed on the Store's pages when placing the Order, including when expressing the will to be bound by the Sales Agreement.",
+          "5/ In the case of an Agreement covering a subscription or the provision of services for an indefinite period, the final (total) price is the total price including all payments for the settlement period.",
+          "6/ When the nature of the object of the Agreement does not allow, reasonably assessing, for prior calculation of the final (total) price, information about the way the price will be calculated, as well as transport, delivery, postal fees, and other costs, will be provided in the Store in the Product description."
+        ]
+      },
+      {
+        "title": "§ 6 Setting up an Account in the Store",
+        "content": [
+          "1/ To set up an Account in the Store, you need to fill out the Registration form. It is necessary to provide the following data: first name, last name, and email address.",
+          "2/ Setting up an Account in the Store is free.",
+          "3/ Logging into the Account is done by providing the login and password set in the Registration form.",
+          "4/ The Client can delete the Account at any time without giving reasons and without incurring any charges by sending an appropriate request to the Seller, in particular via email or in writing to the addresses provided in § 3."
+        ]
+      },
+      {
+        "title": "§ 7 Order submission rules",
+        "content": [
+          "To place an Order:",
+          "a/ log in to the Store (optional);",
+          "b/ select the Product being the subject of the Order, and then click the 'Add to basket' button (or equivalent);",
+          "c/ log in or use the option of placing an Order without registration;",
+          "d/ if the option of placing an Order without registration is chosen – fill in the Order form by entering the Order recipient's data and the address to which the Product is to be delivered, select the type of shipment (Product delivery method), enter the invoice data if different from the Order recipient's data,",
+          "e/ click the button confirming the order, e.g., 'Order and pay' and confirm the order by clicking the link sent in the email,",
+          "f/ choose one of the available payment methods and, depending on the payment method, pay for the order within a specified period, subject to § 8 point 3."
+        ]
+      },
+      {
+        "title": "§ 8 Offered delivery and payment methods",
+        "content": [
+          "1/ The Client can use the following delivery or collection methods for the ordered Product:",
+          "a/ Postal shipment, postal cash on delivery,",
+          "b/ Courier shipment, courier cash on delivery,",
+          "c/ Personal collection available at the address: 43-300 Bielsko-Biała, prof. dr Mieczysława Michałowicza 12.",
+          "2/ The Client can use the following payment methods:",
+          "a/ Cash on delivery",
+          "b/ Bank transfer to the Seller's account",
+          "c/ Electronic payments",
+          "d/ Payment by credit card.",
+          "3/ Detailed information on delivery methods and acceptable payment methods are available on the Store's pages."
+        ]
+      },
+      {
+        "title": "§ 9 Execution of the sales agreement",
+        "content": [
+          "1/ Conclusion of the Sales Agreement between the Client and the Seller takes place after the Client places an Order using the Order form in the online Store in accordance with § 7 of the Regulations.",
+          "2/ After placing the Order, the Seller immediately confirms its receipt and simultaneously accepts the Order for execution. Confirmation of receipt of the Order and its acceptance for execution is made by sending the Client an appropriate email to the Client's email address provided during the Order submission, which contains at least the Seller's statements about receiving the Order and its acceptance for execution and confirmation of concluding the Sales Agreement. Upon receiving the above email by the Client, a Sales Agreement between the Client and the Seller is concluded.",
+          "3/ In the case of the Client's choice:",
+          "a/ bank transfer, electronic payments, or payment by credit card, the Client is obliged to make the payment within 1 calendar day from the day of concluding the Sales Agreement – otherwise, the order will be canceled.",
+          "b/ cash on delivery upon receipt of the shipment, the Client is obliged to make the payment upon receipt of the shipment.",
+          "4/ If the Client has chosen a delivery method other than personal collection, the Product will be sent by the Seller within the time specified in its description (subject to section 5 of this paragraph), in the manner chosen by the Client when placing the Order.",
+          "a/ In the case of ordering Products with different delivery times, the delivery time is the longest specified time.",
+          "b/ In the case of ordering Products with different delivery times, the Client has the option to demand the delivery of Products in parts or the delivery of all Products after completing the entire order.",
+          "5/ The start of the Product delivery period to the Client is counted in the following way:",
+          "a/ In the case of the Client's choice of bank transfer, electronic payments, or credit card payment method – from the day of crediting the Seller's bank account.",
+          "b/ In the case of the Client's choice of cash on delivery – from the day of concluding the Sales Agreement,",
+          "6/ In the case of the Client's choice of personal collection of the Product, the Product will be ready for collection by the Client within the time specified in the Product description. The Client will be additionally informed about the Product's readiness for collection by the Seller by sending an appropriate email to the Client's email address provided during the Order submission.",
+          "7/ Product delivery takes place only within Poland.",
+          "8/ Product delivery to the Client is payable unless the Sales Agreement provides otherwise. The Product delivery costs (including transport, delivery, and postal fees) are indicated to the Client on the Store's pages in the 'Delivery costs' tab and during the Order submission, including when the Client expresses the will to be bound by the Sales Agreement.",
+          "9/ Personal collection of the Product by the Client is free."
+        ]
+      },
+      {
+        "title": "§ 10 Right to withdraw from the agreement",
+        "content": [
+          "1/ The Consumer can withdraw from the Sales Agreement within 14 days without giving any reason.",
+          "2/ The period specified in paragraph 1 begins with the delivery of the Product to the Consumer or a person indicated by them other than the carrier.",
+          "3/ In the case of an Agreement that covers many Products that are delivered separately, in batches, or in parts, the period specified in paragraph 1 runs from the delivery of the last item, batch, or part.",
+          "4/ In the case of an Agreement that involves the regular delivery of Products for a fixed period (subscription), the period specified in paragraph 1 runs from taking possession of the first item.",
+          "5/ The Consumer can withdraw from the Agreement by submitting a declaration of withdrawal from the Agreement to the Seller. To meet the withdrawal deadline, it is sufficient for the Consumer to send the declaration before the withdrawal period expires.",
+          "6/ The declaration of withdrawal can be sent by traditional mail or electronically by sending the declaration to the Seller's email address. The declaration can also be submitted on the form, the template of which constitutes an appendix to the Act of 30 May 2014 on consumer rights, but it is not obligatory.",
+          "7/ Consequences of withdrawing from the Agreement:",
+          "a/ In the case of withdrawal from a Distance Agreement, the Agreement is considered null and void.",
+          "b/ In the case of withdrawal from the Agreement, the Seller returns to the Consumer all payments received from them, including the costs of delivering the item, except for additional costs resulting from the Consumer's choice of a delivery method other than the least expensive standard delivery method offered by the Seller, immediately and in any event not later than 14 days from the day on which the Seller was informed about the Consumer's decision to exercise the right to withdraw from the Agreement.",
+          "c/ The Seller will refund the payment using the same means of payment that the Consumer used for the original transaction unless the Consumer has expressly agreed otherwise; in any event, the Consumer will not incur any fees as a result of this refund.",
+          "d/ The Seller may withhold the refund until the Product is received back or the Consumer has supplied evidence of having sent back the Product, whichever is the earliest.",
+          "e/ The Consumer should send back the Product to the Seller's address provided in these Regulations immediately and in any event not later than 14 days from the day on which they informed the Seller about withdrawing from the Agreement. The deadline is met if the Consumer sends back the Product before the period of 14 days has expired.",
+          "f/ The Consumer bears the direct costs of returning the Product, including the cost of returning the Product if, due to its nature, the Product could not have been returned by regular mail.",
+          "g/ The Consumer is only liable for any diminished value of the Product resulting from the handling other than what is necessary to establish the nature, characteristics, and functioning of the Product. In the case of paintings, using the Product by the Consumer by opening its original packaging and exposing it to atmospheric conditions results in the acknowledgment that the Product's value has been reduced by 100%, as the Product is no longer suitable for re-exhibition in its original condition.",
+          "8/ The right to withdraw from a Distance Agreement is not granted to the Consumer in respect of contracts:",
+          "- in which the subject of the service is a non-prefabricated item, produced according to the Consumer's specifications or serving to satisfy their individualized needs.",
+          "- in which the subject of the service is an item that deteriorates quickly or has a short period of usability.",
+          "- in which the subject of the service is an item delivered in a sealed package that cannot be returned after opening the package due to health protection or hygiene reasons, if the package was opened after delivery.",
+          "- in which the subject of the service is items that after delivery, according to their nature, are inseparably connected with other items.",
+          "- in which the subject of the service are alcoholic beverages, the price of which was agreed upon at the conclusion of the Sales Agreement, and the delivery of which can only take place after 30 days and the value of which depends on fluctuations in the market, which are beyond the control of the Seller.",
+          "- in which the Consumer has expressly requested that the Seller come to them for urgent repair or maintenance; if the Seller provides additional services other than those requested by the Consumer or delivers items other than replacement parts necessary for the repair or maintenance, the right of withdrawal is granted to the Consumer regarding additional services or items.",
+          "- in which the subject of the service are sound or visual recordings or computer software delivered in a sealed package if the package was opened after delivery.",
+          "- for the delivery of newspapers, periodicals, or magazines, except for subscription contracts.",
+          "- concluded by public auction.",
+          "- for the provision of services if the Seller has fully performed the service with the Consumer's explicit consent, who was informed before the service began that after the performance by the Seller, they would lose the right to withdraw from the Agreement.",
+          "- in which the subject of the service is digital content that is not recorded on a tangible medium, if the performance has begun with the Consumer's prior express consent and their acknowledgment that they thereby lose the right to withdraw from the Agreement.",
+          "- for the supply of digital content that is not recorded on a tangible medium, if the performance has begun with the Consumer's prior express consent and their acknowledgment that they thereby lose the right to withdraw from the Agreement."
+        ]
+      },
+      {
+        "title": "§ 11 Complaint",
+        "content": [
+          "1/ The Seller is obliged to deliver the Product without defects.",
+          "2/ If the Product has defects, the Client may file a complaint regarding the concluded Sales Agreement.",
+          "3/ The complaint can be submitted in writing to the Seller's address provided in these Regulations or electronically via email to the Seller's email address provided in these Regulations.",
+          "4/ The preferred method of submitting complaints by the Client to the Seller is to fill out the Complaint form, which constitutes appendix no. 2 to these Regulations.",
+          "5/ In the complaint submission, the Client should provide their first name, last name, correspondence address, email address, date of concluding the Sales Agreement, type of defect of the Product, and Client's request.",
+          "6/ The Seller will address the complaint promptly, no later than within 14 days from the date of its receipt. The Seller's response to the complaint will be sent to the Client's email address or in another manner indicated by the Client in the complaint submission.",
+          "7/ If verifying the complaint requires additional information from the Client, the Seller may ask the Client to provide them.",
+          "8/ The Client, being a Consumer, has the possibility to use out-of-court methods of dealing with complaints and pursuing claims. To amicably resolve the dispute, the Client may refer to:",
+          "a/ The Permanent Consumer Arbitration Court at the Provincial Inspectorate of Trade Inspection in Bielsko-Biała,",
+          "b/ The Provincial Inspector of Trade Inspection in Bielsko-Biała.",
+          "9/ Information on how to access the above-mentioned modes and procedures of out-of-court dispute resolution, their seats, and territorial jurisdiction areas are made available by the above-mentioned entities."
+        ]
+      },
+      {
+        "title": "§ 12 Personal data in the online store",
+        "content": [
+          "1/ The administrator of the personal data of Clients collected through the online store is the Seller.",
+          "2/ Personal data of Clients collected by the administrator through the online store is collected for the purpose of implementing the Sales Agreement, and if the Client consents to it – also for marketing purposes.",
+          "3/ The administrator of the personal data of Clients collected through the online store is the Seller.",
+          "4/ The administrator of the personal data of Clients collected through the online store is the Seller.",
+          "5/ The administrator of the personal data of Clients collected through the online store is the Seller.",
+          "6/ Detailed information on the processing of personal data of Clients by the Seller is included in the Privacy Policy posted on the online store's pages."
+        ]
+      },
+      {
+        "title": "§ 13 Final provisions",
+        "content": [
+          "1/ Agreements concluded through the online store are concluded in the Polish language.",
+          "2/ The Seller reserves the right to amend the Regulations for important reasons, i.e.: changes in the law, changes in payment and delivery methods – to the extent that these changes affect the implementation of the provisions of these Regulations. The Seller will inform the Client of each change at least 7 days in advance.",
+          "3/ In matters not covered by these Regulations, the universally applicable provisions of Polish law shall apply, in particular: the Civil Code, the Act on copyright and related rights, the Act on the provision of electronic services, the Act on consumer rights, the Act on personal data protection.",
+          "4/ The Client has the right to use out-of-court methods of handling complaints and pursuing claims. To do this, they can submit a complaint via the EU online ODR platform available at: http://ec.europa.eu/consumers/odr/."
+        ]
+      }
+    ]
+  },
+
+  "policySection": {
+    "title": "Privacy and Cookies Policy",
+    "sections": [
+      {
+        "sectionTitle": "§ 1. General Provisions",
+        "content": "The administrator of personal data collected via the  magdalenakapela.comwebsite is KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ, entered into the register of entrepreneurs of the National Court Register under number KRS 0000830738, whose registration files are kept by the District Court in Bielsko-Biała, VIII Commercial Division of the National Court Register, place of business and address for service prof. dr Mieczysława Michałowicza 12, 43-300 Bielsko-Biała, NIP: 5472217560, REGON: 38562239300000, email address: kontakt@magdalenakapela.pl, phone number: 501 686 882, hereinafter referred to as the 'Administrator'. Personal data collected by the Administrator via the website is processed in accordance with the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation), hereinafter referred to as GDPR."
+      },
+      {
+        "sectionTitle": "§ 2. Type of Personal Data Processed, Purpose, and Scope of Data Collection",
+        "content": "PURPOSE OF PROCESSING AND LEGAL BASIS. The Administrator processes the personal data of users of the  magdalenakapela.comwebsite in the case of signing up for the Newsletter to send commercial information electronically. Personal data is processed upon separate consent, based on art. 6 sec. 1 lit. a) GDPR. TYPE OF PERSONAL DATA PROCESSED. In the case of the Newsletter, the user provides their first name and last name, email address. DURATION OF PERSONAL DATA STORAGE. Personal data of users is stored by the Administrator: In the case where the basis for data processing is the performance of a contract, as long as it is necessary for the performance of the contract, and after that time for a period corresponding to the statute of limitations for claims. In the case where the basis for data processing is consent, as long as the consent is not withdrawn, and after withdrawal of consent for a period corresponding to the statute of limitations for claims. Additional information may be collected when using the website, including IP address, domain name, browser type, access time, and operating system type."
+      },
+      {
+        "sectionTitle": "§ 3. Sharing Personal Data",
+        "content": "The personal data of users is transferred to service providers used by the Administrator in the operation of the website. Service providers to whom personal data is transferred, depending on contractual arrangements and circumstances, either act on the instructions of the Administrator regarding the purposes and means of processing this data (processors) or determine the purposes and means of processing themselves (controllers). Personal data of users is stored exclusively within the European Economic Area (EEA)."
+      },
+      {
+        "sectionTitle": "§ 4. Right to Control, Access, and Correct Personal Data",
+        "content": "The person whose data is being processed has the right to access their personal data and the right to rectify, delete, restrict processing, the right to data portability, the right to object, the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. To exercise these rights, you can send an appropriate email to: kontakt@magdalenakapela.pl"
+      },
+      {
+        "sectionTitle": "§ 5. Cookies",
+        "content": "The Administrator's website uses 'cookies'. Installing 'cookies' is necessary for the proper provision of services on the website. The website uses two types of 'cookies': 'session' and 'permanent'. The user has the right to decide on the access of 'cookies' to their computer by selecting them in their browser window beforehand."
+      },
+      {
+        "sectionTitle": "§ 6. Final Provisions",
+        "content": "The Administrator uses technical and organizational measures to ensure the protection of processed personal data appropriate to the threats and the category of data protected, and in particular to protect the data against unauthorized access, acquisition by an unauthorized person, processing in violation of applicable laws, and changes, loss, damage, or destruction. In matters not covered by this Privacy Policy, the provisions of GDPR and other relevant provisions of Polish law shall apply accordingly."
+      }
+    ]
+  },
+  "opinions": {
+    "image1": "zbigniew",
+    "title1": "Foundation for the Development of Cardiac Surgery named after Prof. Zbigniew Religa",
+    "subTitle1": "",
+    "desc1": "Magdalena Kapela, artist and ambassador of the Foundation for the Development of Cardiac Surgery named after Prof. Zbigniew Religa. Over many years of our cooperation, she has proven to be the embodiment of goodness and wonderful, positive energy. Magda has donated many beautiful paintings to us, which, auctioned during charity auctions, have significantly supported our Foundation. We can always count on her, she is present at important events for us and promotes our activities in the country and the world.",
+    "image2": "Izabela",
+    "title2": "Izabela Połatyńska Janik",
+    "subTitle2": "Real Estate Specialist",
+    "desc2": "I love art. Anyone can be an artist, regardless of the level of professionalism in practicing art. The power of Magda Kapela's talent, who creates paintings based on her own concept, is undeniable. She has her own unique, consistent style, commitment, and vision of creative work. She stands out among other artists. I wish everyone an aesthetic experience when interacting with her art. Izabela Połatyńska Janik",
+    "image3": "arek",
+    "title3": "Arkadiusz Gołębiowski",
+    "subTitle3": "Actor",
+    "desc3": "Grasping, accepting, penetrating, smiling, you leave a sense of wanting more. That's how I see you, you who paint half the world for me with a stroke. Yes! I can, I desire, I want! And that's how it is with you. I almost understood, I almost had you within reach of my hand, my moment, the oasis of space that nourished and suddenly disappeared... That's how I see you and greatly value your art. It is like love that envelops but always leaves an unknown taste of longing... The passion and delicacy of the stroke that enchants me evokes emotions and shows that wanting is power. So I can have you in your painting to soon want more and differently... Is it still the same painting? Yes. Because you are a real woman with many changes. That's how I see those beautiful and ethereal strokes giving my imagination enormous food... although I would like you to just be on my ordinary gray wall.",
+    "image4": "medical",
+    "title4": "Adriana Gołębiewska",
+    "subTitle4": "Gołębiewska Medical SOA",
+    "desc4": "Magda Kapela, my authority, master in painting, is versatile in her passion, dedicated, she approaches each work with love, commitment, and professionalism. Magda's art is worth recommending and cooperating with. Magda's works decorate the interiors of my company Gołębiewska Medical Spa as well as my home... I highly recommend and am grateful that we met.",
+    "image5": "sylwia",
+    "title5": "Sylwia Mokrysz",
+    "subTitle5": "Mokate S.A.",
+    "desc5": "Mrs. Magdalena Kapela is a versatile artist. Recently, her trademark has been paintings in gold on a black background. They are usually created during journeys, which are the essence of the artist's life. She cannot imagine going on one without canvas or paints. The love of beauty and travels are our common areas of interest. Personally, I own several works by Mrs. Magdalena Kapela at home, and I must say that the portrait she made is one of my favorites. I wish her many inspirations and continued creativity.",
+    "image6": "agata",
+    "title6": "Agata Limanówka",
+    "subTitle6": "Strategist. Psychologist and business practitioner. Trainer, certified mentor coach ICF PCC, author, publisher.",
+    "desc6": "Magda is a world-class, unique artist, and her works, especially the expressive series with Ukrainian gold, highlight her unique personality. I really like that Magda combines her passion for art with business and luxury. Thanks to this, she brings art into business, which translates into increasing the prestige of a place, and thus higher sales in places like beauty and spa salons, hotels, restaurants, or law firms. Magda's involvement in many large charity events shows that art can very realistically help those in need. I own several of Magda's works and still can't stop looking at them. And my clients too! I highly recommend her to anyone who loves art and wants to add uniqueness and prestige to the place they live and work.",
+    "image7": "juliusz",
+    "title7": "Juliusz Wątroba",
+    "subTitle7": "Literary",
+    "desc7": "Magdalena Kapela - an exceptional, outstanding, rebellious artist. In a word, a creative personality. Versatile - from portrait, graphics to landscape. Her originality is captivating, especially in the erotic art painted in gold on black.",
+    "image8": "wilart",
+    "title8": "Karolina Wilk",
+    "subTitle8": "",
+    "desc8": "We have been cooperating with Magdalena Kapela for many years, there is nothing impossible for her, she is a versatile artist combining what is most important in art - love and authenticity.",
+    "image9": "nykel",
+    "title9": "Mirosława Nykiel",
+    "subTitle9": "Member of the Polish Parliament",
+    "desc9": "I have known Magdalena Kapela for many years. I highly value her art and know how much respect she is held in by the residents of Bielsko-Biała and the entire region. Besides being a great artist, she also has great social sensitivity. We have cooperated within the framework of the Regional Congress of Women of Podbeskidzie and numerous charity actions.",
+    "image10": "Jarek",
+    "title10": "Jarosław Klimaszewski",
+    "subTitle10": "Mayor of Bielsko-Biała",
+    "desc10": "Mrs. Magdalena Kapela is an excellent artist but also a wonderful ambassador of Bielsko-Biała. She has been cooperating with the local government of Bielsko-Biała for many years and supports our city with her talent. It is an honor that such an extraordinary painter, and a very nice person at that, creates right here in the capital of Podbeskidzie."
+  },
+  "gallery": {
+    "default_title": "Default Title",
+    "default_description": "Default Description",
+    "size_label": "Size",
+    "learn_more": "Learn more about this painting",
+    "change_room": "Change room",
+    "imageDetails": [
+      {
+        "id": "photo (1)",
+        "title": "Feng huang",
+        "size": "100x80",
+        "description": "Acrylic and oil on canvas, exclusive Ukrainian gold (acrylic), Winsor black. The Feng Huang amulet is a Phoenix from ancient China, symbolizing eternal love, bringing peace and harmony to the relationship. The bottom of the painting is like a vase or more of a female element, symbolizing birth, as well as where we come from and sexual freedom. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (2)",
+        "size": "86x70",
+        "title": "Embrace",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black. A captured moment of tenderness between two people, directed at each other, wrapped, immersed in love for each other. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (4)",
+        "size": "100x80",
+        "title": "Duality of Thought",
+        "description": "Overload is a very common theme in a relationship, but gilded gives the pillar of elevation and nobility in development. Ukrainian gold on black cotton-linen canvas. Signed."
+      },
+      {
+        "id": "photo (5)",
+        "size": "105x65",
+        "title": "Dance with me",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black. The painting depicts a couple dancing in harmony, immersed in the movement and emotions that accompany each dance. Dynamic composition highlighting the passion and joy of life. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (6)",
+        "size": "120x90",
+        "title": "Harmonious Love",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black, emerald (Italian acrylic). The background of the painting is a composition that is not entirely separate. It creeps into the bodies of lovers, additionally making elements of certain embellishments, but also destruction. It penetrates with the dynamics of color through gold and sometimes deliberately disrupts the golden line. Original. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (7)",
+        "size": "120x90",
+        "title": "Love in Saint-Tropez",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Italian emerald. The painting in a figurative-symbolic style. It depicts a loving couple, whose faces show strength and determination, the contours of the figures resemble the style of art deco figures. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (8)",
+        "size": "120x90",
+        "title": "Adult love",
+        "description": "Only true love is without divisions. With this accent in the painting, I wanted to emphasize its importance. The painting is made with acrylic, Ukrainian gold on cotton-linen canvas. With my personal signature on the back of the canvas."
+      },
+      {
+        "id": "photo (9)",
+        "size": "60x40",
+        "title": "True",
+        "description": "Black and gold collection. An abstract painting depicting a woman's face. Perfectly matching white, bright interiors."
+      },
+      {
+        "id": "photo (10)",
+        "size": "120x90",
+        "title": "Love in Motion",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black. The painting depicts a couple in motion, full of love and the energy that surrounds them. The movement and dynamics of the composition give the whole an impression of constant dance, symbolizing unending love. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (11)",
+        "size": "120x90",
+        "title": "Thousand Visages",
+        "description": "The story of this painting is my personal experience. The painting matured over several months. It is a story about a beautiful person. Unique, it will not be duplicated. Lots of Ukrainian gold, white, black. Signed."
+      },
+      {
+        "id": "photo (12)",
+        "size": "90x70",
+        "title": "Paris",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic). A sketch painting of the city of love and art. The first piece painted live in Paris. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (13)",
+        "size": "120x100",
+        "title": "Fiat 126p",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black. Maluch - a cult car of the PRL era, depicted in the form of a painting sketch. The same only in white, I made for a famous event in Bielsko Biała - Maluch for Tom Hanks, painting it live for an audience of thousands. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (14)",
+        "size": "100x70",
+        "title": "I'm looking",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic) and Winsor black, and gold spray. The painting is a reflection on the world of our thoughts. It expresses emotions in two directions that the viewer can interpret in their own way. An ideal painting for a gift or ready to hang in the living room or office. I also choose a frame for this painting at the client's request. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (15)",
+        "size": "120x90",
+        "title": "Freedom",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black, two-color spray. The painting depicts a couple of young, modern people. The couple is focused on the viewer, but the boy's hand gesture keeps the girl close to him. Modern, very original painting, one piece. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (16)",
+        "size": "115x90",
+        "title": "Passion",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), black spray. A painting depicting a loving couple, where the man is a gentleman, suggested by the hairstyle, as if from the interwar period. It may express the importance of such traits in men as elegance and chic. The painting is recommended for the living room or bedroom. Signed, I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (17)",
+        "size": "113x84",
+        "title": "Krakow",
+        "description": "Acrylic, Ukrainian gold, background - black cardboard. Painted live in Krakow with a view of Igor Mitoraj's sculpture. One of my paintings created during painting trips. Unique. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (18)",
+        "size": "130x95",
+        "title": "Infinity",
+        "description": "The Dragon and the Monkey are the highest degree of happiness and success. Here they are presented innovatively with infinity signs crowning the painting. The precisely executed painting, the quality of the gold paint gives an almost woven texture effect. The realism of the monkey's head gives us the impression as if it were close to us and raises the curiosity of the whole composition. Incredibly original painting. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (19)",
+        "size": "130x90",
+        "title": "Together",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black, and gold spray. Initially loosely drawn sketch on paper was born on canvas in a central composition depicting people in love. The painting looks beautiful in bright interiors, in the living room, by large windows. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (20)",
+        "size": "70x50",
+        "title": "Whispers of Love",
+        "description": "The most famous sign of the beginning of love between people is a kiss. The painting is painted with Ukrainian gold on a black background, acrylic on canvas. With my personal signature on the back of the canvas."
+      },
+      {
+        "id": "photo (21)",
+        "size": "110 Ø",
+        "title": "Fading Words",
+        "description": "Acrylic on round canvas, Ukrainian gold, gold spray, Winsor black, combined graphic element. Audrey Hepburn depicted in a loose, modern composition somewhat in the pop art style. The painting is signed, and I also include a certificate of authenticity."
+      },
+      {
+        "id": "photo (22)",
+        "size": "130x60",
+        "title": "Spectrum of Love",
+        "description": "Acrylic on canvas, exclusive Ukrainian gold (acrylic), Winsor black. Embrace and kiss is the most majestic experience. The tenderness that emanates from the painting gives hope for increasing love. I recommend it as a gift, especially a wedding one. It looks beautiful in the living room and bedroom. The painting is signed, and I also include a certificate of authenticity."
+      }
+    ]
+  },
+  "footer": {
+    "quote": "The artist should be like God: invisible and omnipotent.",
+    "author": "Gustave Flaubert",
+    "contact_info": "Contact Information",
+    "copyright": "Copyright ©"
+  },
+  "instagram": "Instagram",
+  "facebook": "Facebook",
+  "delivery_terms": "Delivery Terms",
+  "delivery_details": [
+    {
+      "sectionTitle": "§ 1. Introduction",
+      "content": "Welcome to our delivery page. The goal is to ensure that orders arrive quickly, safely, and in perfect condition. We strive to make the delivery process as transparent and convenient as possible for customers."
+    },
+    {
+      "sectionTitle": "§ 2. Shipping Options",
+      "content": "Various shipping options are offered to suit customers' needs. You can choose from express, standard, and economy shipping. Costs and delivery times vary depending on the selected option and delivery location."
+    },
+    {
+      "sectionTitle": "§ 3. Packaging and Safety",
+      "content": "Orders are carefully packaged using high-quality materials to ensure their safety during transit. Each product is secured to ensure it arrives in pristine condition."
+    },
+    {
+      "sectionTitle": "§ 4. Order Tracking",
+      "content": "After the order is shipped, customers receive a tracking number that allows them to monitor the shipment status in real time. Shipment status information is available on our website."
+    },
+    {
+      "sectionTitle": "§ 5. International Delivery",
+      "content": "Worldwide shipping is available. International delivery times and shipping costs may vary depending on the destination country. Please review the available options when placing your order."
+    },
+    {
+      "sectionTitle": "§ 6. Returns and Complaints",
+      "content": "In case the ordered product arrives damaged, we offer a hassle-free returns and complaints policy. Please contact our customer service within 14 days of receiving the shipment, and a replacement or refund will be arranged."
+    },
+    {
+      "sectionTitle": "§ 7. Courier Shipping",
+      "content": "If personal collection of the paintings is not possible, courier shipping is available. Each painting is insured for the purchase amount during transit, protecting against potential damage or loss. Paintings are professionally packed (foil and a cardboard box made of reinforced cardboard that is resistant to deformation during transport). According to customer feedback, 100% of the paintings shipped in this box have arrived undamaged. The box is perfectly suited to the size requirements of the courier company to minimize the risk of damage. Delivery of paintings is possible worldwide. Delivery within the country (Poland) is free."
+    }
+  ],
+
+  "quote": "The way to know life is to love many things.",
+  "phone_number": "Phone Number",
+  "email_address": "Email Address",
+  "thank_you": "Thank you for your message! We will get back to you shortly.",
+  "send_message": "Send Message",
+  "image_title": "IMAGE",
+  "name_placeholder": "Your Name",
+  "email_placeholder": "Your Email Address",
+  "phone_placeholder": "Your Phone Number",
+  "message_placeholder": "Your Message",
+  "form_errors": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "details": "Message"
+  },
+
+  "cookie_consent": {
+    "description": "This site uses cookies for statistical, marketing, and user authentication purposes. You can specify the conditions for storing or accessing cookies in your browser. However, we inform you that blocking cookies may prevent you from using some or all of the site's functions.",
+    "privacy_policy": "privacy policy",
+    "learn_more": "to learn more about how we use cookies and protect your data.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "policy_details": "Return"
+  },
+  "footerLinks": {
+    "Statute": "Statute",
+    "Privacy_policy": "Privacy policy",
+    "Delivery": "Delivery",
+    "Contact": "Contact"
+  },
+
+  "description1": "I am a painter and artist, the creator of numerous individual and collective exhibitions in Poland and abroad. As the only woman in Poland, I introduced art into industry, painting personal works on dozens of silos in the explosion zone. My paintings have found their place in prestigious hotels, including Ohla Barcelona and Plaza Athénée in Paris. My appearances on the Dzień Dobry TVN program, including the portrait 'Sanitariuszka 19,' have garnered well-deserved attention from viewers. My works also adorn private collections, both in the country and abroad. I undeniably leave a lasting mark in the art world, with my signature black canvases and golden lines.",
+  "description2": "You can have a beautiful interior that will definitely come to life and elevate your mood to a higher energetic level – an invaluable thing. Art is a spiritual necessity. It is not only a collector's sense but often a surprise, as we interpret it differently each time. Art can surprise even ourselves. In your surroundings, your gaze always directs horizontally, meaning in a room, it is always the wall you look at directly – this is our main field of vision, the rest being the peripheral field, less important for our sight. Similarly, when we look at a person, we focus on the face and eyes. So, how and what you want to see on the wall is up to you. Treat yourself to looking at an extraordinary painting, dreams, inspiration, something priceless.",
+  "description3": "Art is a way for me to express myself through the medium of painting. I have been creating paintings for over 25 years. What sets me apart? I am an artist by education, holding a master's degree in art, painting, and graphics from the Academy of Fine Arts in Katowice. My works can be part of your collectible investment.",
+
+  "nav": {
+    "back": "Back"
+  },
+  "navIndex": [
+    { "label": "About Me" },
+    { "label": "Reviews" },
+    { "label": "Gallery" },
+    { "label": "Contact" }
+  ]
+}

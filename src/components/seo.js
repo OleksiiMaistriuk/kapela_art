@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 function Seo({ description, title, children }) {
   const { site } = useStaticQuery(
@@ -16,40 +17,33 @@ function Seo({ description, title, children }) {
     `
   );
 
+  const { t, i18n } = useTranslation();
+
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
 
   return (
     <Helmet
       htmlAttributes={{
-        lang: "pl",
+        lang: i18n.language,
       }}
     >
       <title>
         {defaultTitle
           ? `${title} - ${defaultTitle}`
-          : `${title} - Sztuka Magdalena Kapela`}
+          : `${title} - ${t("seo.defaultTitle")}`}
       </title>
       <meta
         name="description"
-        content={`${metaDescription} Tworzę wyjątkowe obrazy, które oddają emocje i piękno otaczającego świata. Moje dzieła to połączenie pasji, talentu i unikalnej wizji artystycznej.`}
+        content={`${metaDescription} ${t("seo.metaDescription")}`}
       />
-      <meta property="og:title" content="Magdalena Kapela - Artystka Malarka" />
-      <meta
-        property="og:description"
-        content="Zapraszam do odkrycia mojej kolekcji obrazów, które oddają niepowtarzalne emocje i piękno otaczającego nas świata. Każde dzieło jest wyjątkowe i tworzę je z pasją oraz zaangażowaniem."
-      />
+      <meta property="og:title" content={t("seo.ogTitle")} />
+      <meta property="og:description" content={t("seo.ogDescription")} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="/src/images/icon.png" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="Magdalena Kapela - Artystka Malarka"
-      />
-      <meta
-        name="twitter:description"
-        content="Tworzę wyjątkowe obrazy, które oddają emocje i piękno otaczającego świata. Moje dzieła to połączenie pasji, talentu i unikalnej wizji artystycznej."
-      />
+      <meta name="twitter:title" content={t("seo.twitterTitle")} />
+      <meta name="twitter:description" content={t("seo.twitterDescription")} />
       <meta name="twitter:image" content="/src/images/icon.png" />
       {children}
     </Helmet>

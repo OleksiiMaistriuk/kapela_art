@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
-import { animated, useTransition } from "react-spring";
+import { useTransition } from "react-spring";
 import video from "../images/Magdalena.mp4";
 import videoMobile1 from "../images/mobile1.mp4";
 import videoMobile2 from "../images/mobile2.mp4";
@@ -18,7 +18,6 @@ const HeroSection = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
 
   const videos = [videoMobile1, videoMobile2, videoMobile3];
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -39,13 +38,6 @@ const HeroSection = () => {
     config: { duration: 3000 },
   });
 
-  const transitions = useTransition(isModalOpen, {
-    from: { opacity: 0, transform: "scale(0.95)" },
-    enter: { opacity: 1, transform: "scale(1)" },
-    leave: { opacity: 0, transform: "scale(0.95)" },
-    config: { duration: 3000 },
-  });
-
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
@@ -55,25 +47,9 @@ const HeroSection = () => {
 
   return (
     <>
-      {/* {transitions(
-        (style, item) =>
-          item && (
-            <animated.div
-              style={style}
-              className="fixed inset-0 flex justify-center items-center z-50 cursor-pointer"
-              onClick={toggleModal}
-            >
-              <Trail>
-                <h1 className="text-3xl font-extrabold text-center sm:text-4xl">
-                  Magdalena Kapela
-                </h1>
-              </Trail>
-            </animated.div>
-          )
-      )} */}
-      <div className="relative isolate overflow-hidden h-screen  ">
+      <div className=" h-screen  ">
         {transition((style, i) => (
-          <animated.div
+          <div
             key={"big" + i}
             style={style}
             className="fixed top-0 left-0 w-full h-full"
@@ -82,7 +58,7 @@ const HeroSection = () => {
               autoPlay
               muted
               loop
-              className="hidden md:block inset-0 h-full w-full object-cover"
+              className="hidden md:block inset-0 h-full w-full object-cover overlay-black"
             >
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
@@ -101,10 +77,10 @@ const HeroSection = () => {
                 Your browser does not support the video tag.
               </video>
             ))}
-          </animated.div>
+          </div>
         ))}
       </div>
-      <span className="bg-black absolute inset-0 opacity-50" />
+
       <div className="relative bg-transparent z-10 text-white pt-[100vh] sm:pt-[50vh]  ">
         <div id="1" className="my-10">
           <AboutSection />

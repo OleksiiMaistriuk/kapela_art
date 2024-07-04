@@ -1,10 +1,15 @@
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
-import { policyDetails } from "../constants/policyDetails";
+import { useTranslation } from "react-i18next";
 
 const CookieConsent = () => {
+  const { t } = useTranslation();
   const [showConsent, setShowConsent] = useState(false);
   const [showPolicyDetails, setShowPolicyDetails] = useState(false);
+
+  const policyDetails = t("policySection.sections", {
+    returnObjects: true,
+  });
 
   useEffect(() => {
     if (!Cookies.get("cookies-accepted")) {
@@ -30,7 +35,7 @@ const CookieConsent = () => {
     <>
       {showConsent && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10  "
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"
           onClick={declineCookies}
           role="button"
           aria-label="Decline cookies"
@@ -47,13 +52,13 @@ const CookieConsent = () => {
           {showPolicyDetails ? (
             <ul className="max-h-96 overflow-y-auto">
               {policyDetails.map((detail) => (
-                <li key={detail.title} className="mb-4">
+                <li key={detail.sectionTitle} className="mb-4">
                   <h2 className="font-bold text-lg">{detail.title}</h2>
                   <p className="text-sm">{detail.content}</p>
                 </li>
               ))}
               <button
-                className="mt-4 px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded"
+                className="px-4 py-2 border hover:border-gray-700 hover:text-gray-700 rounded mr-2"
                 onClick={togglePolicyDetails}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -61,21 +66,14 @@ const CookieConsent = () => {
                   }
                 }}
               >
-                Wróć
+                {t("cookie_consent.policy_details")}
               </button>
             </ul>
           ) : (
             <div>
+              <p className="mb-4 text-sm">{t("cookie_consent.description")}</p>
               <p className="mb-4 text-sm">
-                Strona korzysta z plików cookies w celach statystycznych,
-                marketingowych, realizacji obsługi uwierzytelniania
-                użytkowników. Możesz określić warunki przechowywania lub dostępu
-                do plików cookies w Twojej przeglądarce. Informujemy jednak, że
-                zablokowanie cookies może uniemożliwić korzystanie z niektórych
-                lub wszystkich funkcji serwisu.
-              </p>
-              <p className="mb-4 text-sm">
-                Zapoznaj się z naszą{" "}
+                {t("cookie_consent.privacy_policy")}
                 <span
                   className="text-blue-500 cursor-pointer hover:underline"
                   onClick={togglePolicyDetails}
@@ -87,13 +85,11 @@ const CookieConsent = () => {
                     }
                   }}
                 >
-                  polityką prywatności
+                  {t("cookie_consent.learn_more")}
                 </span>
-                , aby dowiedzieć się więcej o tym, jak wykorzystujemy pliki
-                cookies i chronimy Twoje dane.
               </p>
               <button
-                className="px-4 py-2 border hover:border-gray-700  hover:text-gray-700  rounded mr-2"
+                className="px-4 py-2 border hover:border-gray-700 hover:text-gray-700 rounded mr-2"
                 onClick={acceptCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -101,10 +97,10 @@ const CookieConsent = () => {
                   }
                 }}
               >
-                Akceptuj
+                {t("cookie_consent.accept")}
               </button>
               <button
-                className="px-4 py-2 border hover:border-gray-700  hover:text-gray-700  rounded"
+                className="px-4 py-2 border hover:border-gray-700 hover:text-gray-700 rounded"
                 onClick={declineCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Esc" || e.key === " ") {
@@ -112,7 +108,7 @@ const CookieConsent = () => {
                   }
                 }}
               >
-                Nie akceptuj
+                {t("cookie_consent.decline")}
               </button>
             </div>
           )}

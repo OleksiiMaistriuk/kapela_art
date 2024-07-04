@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-dark-purple relative  ">
+    <div className="min-h-screen bg-black relative  ">
       <NavBar />
       <div>{children}</div>
       <CookieConsent />

@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { footerLinks } from "../constants/footerLinks";
 import "../styles/global.css";
-import { footerLinks } from "./../constants/footerLinks";
-
 function Icon() {
   return (
     <svg
@@ -21,9 +21,8 @@ function Icon() {
 }
 
 const Footer = () => {
-  const getCurrentYear = () => {
-    return new Date().getFullYear();
-  };
+  const { t } = useTranslation();
+  // const footerLinks = t("footerLinks", { returnObjects: true });
 
   return (
     <footer className="bg-dark-blue/90 pt-8 pb-6 z-50 bg-black/90">
@@ -31,9 +30,9 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4 mb-6 lg:mb-0">
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-              "Artysta powinien być jak Bóg: niewidzialny a wszechmocny."
+              {t("footer.quote")}
             </h5>
-            <h4 className="text-xl font-semibold">Gustave Flaubert</h4>
+            <h4 className="text-xl font-semibold">{t("footer.author")}</h4>
             <div className="mt-6 lg:mb-0 mb-6 flex align-center p-4">
               <a
                 className="hover:opacity-75"
@@ -41,7 +40,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="sr-only">Instagram</span>
+                <span className="sr-only">{t("instagram")}</span>
                 <svg
                   className="w-10 h-10"
                   viewBox="0 0 24 24"
@@ -76,7 +75,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="sr-only">Facebook</span>
+                <span className="sr-only">{t("facebook")}</span>
                 <svg
                   className="w-11 h-11"
                   viewBox="0 0 24 24"
@@ -105,7 +104,7 @@ const Footer = () => {
           </div>
           <div className="w-full lg:w-6/12 px-4 mb-6 lg:mb-0">
             <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">
-              Contact Information
+              {t("footer.contact_info")}
             </span>
             <div className="flex flex-col gap-4">
               {/* <div className="flex items-center gap-4 ">
@@ -146,12 +145,12 @@ const Footer = () => {
                 </div>
                 <a
                   href="tel:+48501686882"
-                  className="block antialiased font-sans text-sm  md:text-base leading-relaxed text-inherit font-bold"
+                  className="block antialiased font-sans text-sm md:text-base leading-relaxed text-inherit font-bold"
                 >
                   +(48) 501 686 882
                 </a>
               </div>
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <div className="mr-3 flex h-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
                   <svg
                     width="28"
@@ -170,11 +169,11 @@ const Footer = () => {
                   href="mailto:kontakt@magdalenakapela.pl"
                   className="block w-1/2 text-xs antialiased font-sans sm:text-sm  md:text-base leading-relaxed text-inherit font-bold"
                 >
-                  kontakt@magdalenakapela.pl
+                
                 </a>
-              </div>
+              </div> */}
             </div>
-          </div>{" "}
+          </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
               <div className="w-full lg:w-4/12 px-4 ml-auto">
@@ -200,7 +199,8 @@ const Footer = () => {
         <div className="flex flex-wrap items-center justify-center md:justify-between">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blueGray-500 font-semibold py-1">
-              Copyright © <span id="get-current-year">{getCurrentYear()}</span>{" "}
+              {t("footer.copyright")}{" "}
+              <span id="get-current-year">{new Date().getFullYear()}</span>{" "}
               Magdalena Kapela{" "}
             </div>
           </div>

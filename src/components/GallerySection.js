@@ -2,8 +2,8 @@ import { Dialog, DialogHeader, Typography } from "@material-tailwind/react";
 import { graphql, navigate, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { animated, useTransition } from "react-spring";
-import { imageDetails } from "../constants/gallery";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
 
@@ -24,6 +24,7 @@ const shuffleArray = (array) => {
 };
 
 const GallerySection = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [openSecond, setOpenSecond] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -72,6 +73,7 @@ const GallerySection = () => {
     },
     exitBeforeEnter: true,
   });
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex(
@@ -105,28 +107,31 @@ const GallerySection = () => {
   };
 
   const handleOpen = (node, smallNode, nodeName) => {
-    console.log(node, smallNode, nodeName);
     setSelectedImage(node);
     setSmallRandomImage(smallNode);
-    const imageDetail = imageDetails.find(
+    const imageDetail = t("gallery.imageDetails", { returnObjects: true }).find(
       (detail) => detail.id === nodeName || detail.name === nodeName
     );
-    setImageTitle(imageDetail?.title || "Default Title");
-    setImageDescription(imageDetail?.description || "Default Description");
-    setRate(imageDetail?.size || nodeName);
+    setImageTitle(imageDetail?.title || t("gallery.default_title"));
+    setImageDescription(
+      imageDetail?.description || t("gallery.default_description")
+    );
+    setRate(imageDetail?.size);
     setOpen(true);
   };
 
   const handleSecondOpen = (node, smallNode, nodeName) => {
     setSelectedImage(node);
     setSmallRandomImage(smallNode);
-    const imageDetail = imageDetails.find(
+    const imageDetail = t("gallery.imageDetails", { returnObjects: true }).find(
       (detail) => detail.id === nodeName || detail.name === nodeName
     );
-    setImageTitle(imageDetail?.title || "Default Title");
-    setImageDescription(imageDetail?.description || "Default Description");
+    setImageTitle(imageDetail?.title || t("gallery.default_title"));
+    setImageDescription(
+      imageDetail?.description || t("gallery.default_description")
+    );
 
-    setRate(imageDetail?.size || nodeName);
+    setRate(imageDetail?.size);
     setOpenSecond(true);
   };
 
@@ -202,7 +207,9 @@ const GallerySection = () => {
         size="xxl"
         open={open}
         handler={handleClose}
-        className="bg-black h-full md:h-screen"
+        className={` bg-black h-full xl:h-screen ${
+          !imageDescription && "h-screen"
+        }`}
       >
         <div>
           <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
@@ -224,7 +231,7 @@ const GallerySection = () => {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    Rozmiar: {rate} cm.
+                    {t("gallery.size_label")}: {rate} cm.
                   </Typography>
                 )}
               </div>
@@ -264,27 +271,25 @@ const GallerySection = () => {
                   <div
                     className="absolute w-1/4  flex justify-center items-center"
                     style={{
-                      top: "39%",
+                      top: "41%",
                       left: "50%",
                       transform: "translate(-50%, -50%)",
+                      width: "auto",
+                      height: "auto",
                     }}
                   >
                     <GatsbyImage
                       image={getImage(smallRandomImage)}
                       alt="small random"
-                      className="inset-0 h-full w-full object-cover shadow"
-                      // style={{
-                      //   boxShadow: `0 0 50px black, inset 0 0 50px white`,
-                      // }}
+                      className="inset-0 w-1/2  object-cover "
                     />{" "}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20  to-black/50 "></div>
                   </div>
                 )}
               </div>
             )}
             {imageDescription && (
               <div className="p-5 ">
-                <Typography className="min-w-64 max-w-screen-sm">
+                <Typography className="min-w-64 max-w-screen-sm bg-black">
                   {imageDescription}
                 </Typography>
                 <button
@@ -293,8 +298,7 @@ const GallerySection = () => {
                   }
                   className="border p-2 rounded  hover:bg-gray-700 focus:outline-none w-15 mt-10 "
                 >
-                  Dowiedz się więcej
-                  <br />o tym obrazie
+                  {t("gallery.learn_more")}
                 </button>
               </div>
             )}
@@ -306,12 +310,14 @@ const GallerySection = () => {
         size="xxl"
         open={openSecond}
         handler={handleClose}
-        className=" bg-black h-full md:h-screen"
+        className={` bg-black h-full xl:h-screen ${
+          !imageDescription && "h-screen"
+        }`}
       >
         <div>
           <DialogHeader className="justify-between absolute bg-transparent w-full z-30">
             <div className="flex items-center gap-3">
-              <div className="-mt-px flex flex-col">
+              <div className="flex flex-col bg-black ">
                 {imageTitle && (
                   <Typography
                     variant="small"
@@ -328,7 +334,7 @@ const GallerySection = () => {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    Rozmiar: {rate} cm.
+                    {t("gallery.size_label")}: {rate} cm.
                   </Typography>
                 )}
               </div>
@@ -393,8 +399,7 @@ const GallerySection = () => {
                   }
                   className="border p-2 rounded  hover:bg-gray-700 focus:outline-none w-15 m-10"
                 >
-                  Dowiedz się więcej
-                  <br />o tym obrazie
+                  {t("gallery.learn_more")}
                 </button>
               </div>
             )}
@@ -418,12 +423,11 @@ const GallerySection = () => {
             >
               {" "}
               <div className={`w-1/3 flex-none p-1 ${orderClass} relative `}>
-                {/* <p>{room.node.relativePath}</p> */}
                 <button
-                  onClick={shuffleRooms}
-                  className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
+                  onClick={() => shuffleRooms()}
+                  className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-[0.5rem]  md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
                 >
-                  Change room
+                  {t("gallery.change_room")}
                 </button>
                 <div
                   className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
@@ -450,8 +454,8 @@ const GallerySection = () => {
                         top: "41%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        maxWidth: "100%",
-                        maxHeight: "25%",
+                        width: "auto",
+                        height: "auto",
                       }}
                     >
                       {" "}
@@ -464,13 +468,15 @@ const GallerySection = () => {
                             style={{
                               ...style,
                               position: "absolute",
+                              display: "flex",
+                              justifyContent: "center",
                             }}
                           >
                             {currentRenderedImage ? (
                               <GatsbyImage
                                 image={getImage(currentRenderedImage)}
                                 alt="room image"
-                                className="inset-0 h-full w-full object-cover"
+                                className="inset-0  w-5/6 mr-0  object-cover"
                                 onLoad={() =>
                                   setRenderedImage(currentRenderedImage)
                                 }
@@ -489,9 +495,9 @@ const GallerySection = () => {
                 <div className="flex flex-row flex-wrap">
                   {smallPhotos.slice(0, 3).map(({ node }, i) => {
                     const imageName = node.name;
-                    const smallPhotoDetails = imageDetails.find(
-                      (detail) => detail.id === imageName
-                    );
+                    const smallPhotoDetails = t("gallery.imageDetails", {
+                      returnObjects: true,
+                    }).find((detail) => detail.id === imageName);
                     const smallPhotoImage = getImage(
                       node.childImageSharp.gatsbyImageData
                     );
@@ -507,11 +513,12 @@ const GallerySection = () => {
                             imageName
                           );
                           setImageTitle(
-                            smallPhotoDetails?.title || "Default Title"
+                            smallPhotoDetails?.title ||
+                              t("gallery.default_title")
                           );
                           setImageDescription(
                             smallPhotoDetails?.description ||
-                              "Default Description"
+                              t("gallery.default_description")
                           );
                         }}
                       >
@@ -525,8 +532,8 @@ const GallerySection = () => {
                           ) : (
                             <p>Image not found</p>
                           )}
-                          <p className="absolute bottom-0  left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                            {smallPhotoDetails.title}
+                          <p className="absolute bottom-0  left-0 bg-black bg-opacity-50 text-[0.5rem] sm:text-sm p-1">
+                            {smallPhotoDetails?.title}
                           </p>
                         </div>
                       </div>
@@ -536,9 +543,9 @@ const GallerySection = () => {
                 <div className="flex flex-row flex-wrap flex-1">
                   {smallPhotos.slice(3, 6).map(({ node }, i) => {
                     const imageName = node.name;
-                    const smallPhotoDetails = imageDetails.find(
-                      (detail) => detail.id === imageName
-                    );
+                    const smallPhotoDetails = t("gallery.imageDetails", {
+                      returnObjects: true,
+                    }).find((detail) => detail.id === imageName);
                     const smallPhotoImage = getImage(
                       node.childImageSharp.gatsbyImageData
                     );
@@ -554,11 +561,12 @@ const GallerySection = () => {
                             imageName
                           );
                           setImageTitle(
-                            smallPhotoDetails?.title || "Default Title"
+                            smallPhotoDetails?.title ||
+                              t("gallery.default_title")
                           );
                           setImageDescription(
                             smallPhotoDetails?.description ||
-                              "Default Description"
+                              t("gallery.default_description")
                           );
                         }}
                       >
@@ -572,8 +580,8 @@ const GallerySection = () => {
                           ) : (
                             <p>Image not found</p>
                           )}
-                          <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                            {smallPhotoDetails.title}
+                          <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-[0.5rem] sm:text-sm p-1">
+                            {smallPhotoDetails?.title}
                           </p>
                         </div>
                       </div>
@@ -600,10 +608,10 @@ const GallerySection = () => {
             >
               <div className={`w-1/3 flex-none p-1 relative`}>
                 <button
-                  onClick={shuffleRooms}
-                  className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-xs md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
+                  onClick={shuffleSecondRooms}
+                  className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-[0.5rem]  md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
                 >
-                  Change room
+                  {t("gallery.change_room")}
                 </button>
                 <div
                   className="rounded overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-95 cursor-pointer relative flex justify-center items-center"
@@ -669,9 +677,9 @@ const GallerySection = () => {
                 <div className="flex flex-row flex-wrap">
                   {smallPhotosNS.map(({ node }, i) => {
                     const imageName = node.name;
-                    const smallPhotoDetails = imageDetails.find(
-                      (detail) => detail.id === imageName
-                    );
+                    const smallPhotoDetails = t("gallery.imageDetails", {
+                      returnObjects: true,
+                    }).find((detail) => detail.id === imageName);
                     const smallPhotoImage = getImage(
                       node.childImageSharp.gatsbyImageData
                     );
@@ -687,11 +695,12 @@ const GallerySection = () => {
                             imageName
                           );
                           setImageTitle(
-                            smallPhotoDetails?.title || "Default Title"
+                            smallPhotoDetails?.title ||
+                              t("gallery.default_title")
                           );
                           setImageDescription(
                             smallPhotoDetails?.description ||
-                              "Default Description"
+                              t("gallery.default_description")
                           );
                         }}
                       >
@@ -705,8 +714,8 @@ const GallerySection = () => {
                           ) : (
                             <p>Image not found</p>
                           )}
-                          <p className="absolute bottom-0 left-0  bg-black bg-opacity-50 text-xs sm:text-sm p-1">
-                            {smallPhotoDetails.title}
+                          <p className="absolute bottom-0 left-0 text-[0.5rem] bg-black bg-opacity-50 text-xs sm:text-sm p-1">
+                            {smallPhotoDetails?.title}
                           </p>
                         </div>
                       </div>

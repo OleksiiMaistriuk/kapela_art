@@ -1,4 +1,10 @@
 import "animate.css";
+import { graphql } from "gatsby";
+import {
+  I18nextProvider,
+  useI18next,
+  useTranslation,
+} from "gatsby-plugin-react-i18next";
 import * as React from "react";
 import CookieConsent from "../components/CookieConsent";
 import HeroSection from "../components/HeroSection";
@@ -7,23 +13,60 @@ import Seo from "../components/seo";
 import "../styles/global.css";
 
 const IndexPage = () => {
+  const { t, i18n } = useTranslation();
+  const { languages, changeLanguage, language, originalPath } = useI18next();
+
+  React.useEffect(() => {
+    console.log("originalPath", originalPath);
+    console.log("language", language);
+    console.log("languages", languages);
+    console.log("changeLanguage", changeLanguage);
+    const pathLang = originalPath.split("/")[1];
+    console.log("pathLang", pathLang);
+    if (languages.includes(pathLang) && language !== pathLang) {
+      changeLanguage(pathLang);
+    }
+  }, [originalPath, language, changeLanguage, languages]);
+
   return (
-    <div className="min-h-screen bg-dark-purple relative  ">
-      <div className="overlay-black" />
+    <I18nextProvider
+      i18n={i18n}
+      className="min-h-screen bg-dark-purple relative"
+    >
       <NavBar />
       <CookieConsent />
-      <Seo title="Home" />
+      <Seo
+        title={t("seo.home.title")}
+        description={t("seo.home.description")}
+      />
       <HeroSection />
-    </div>
+    </I18nextProvider>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => (
-  <Seo
-    title="Strona główna"
-    description="Witamy na stronie Magdaleny Kapeli. Odkryj wyjątkowe obrazy pełne emocji i piękna. Sprawdź opinie naszych klientów i zobacz galerię naszych dzieł."
-    keywords="obrazy, sztuka, galeria, opinie, Magdalena Kapela, malarstwo, kontakt,"
-  />
-);
+export const Head = () => {
+  const { t } = useTranslation();
+  return (
+    <Seo
+      title={t("seo.home.title")}
+      description={t("seo.home.description")}
+      keywords={t("seo.home.keywords")}
+    />
+  );
+};
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

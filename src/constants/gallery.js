@@ -44,7 +44,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności obrazu.`,
   {
     id: "photo (7)",
     size: "120x90",
-    title: "Dance of Love",
+    title: "Love in Saint-Tropez",
     description: `Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), szmaragd włoski.
 Obraz w stylu figurowo-symbolicznym.
 Przedstawia zakochaną parę, w której twarzach widać siłę i zdecydowanie, kontury postaci przypominają styl figur art deco.
@@ -59,7 +59,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności obrazu.`,
   {
     id: "photo (9)",
     size: "60x40",
-    title: "Silent Voice",
+    title: "True",
     description: `Kolekcja czarno-złota. Obraz abstrakcyjnie przedstawiający twarz kobiety. Idealnie pasujący do białych, jasnych wnętrz.`,
   },
   {
@@ -98,7 +98,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności obrazu.`,
   {
     id: "photo (14)",
     size: "100x70",
-    title: "Reflections of Thought",
+    title: "I'm looking",
     description: `Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl) i czerń Winsora oraz złoty spray.
 Obraz jest refleksją nad światem naszych myśli. Wyraża emocje w dwóch kierunkach, które widz może interpretować na własną modłę.
 Obraz idealny na prezent lub gotowy do powieszenia w salonie czy firmie.
@@ -108,7 +108,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności.`,
   {
     id: "photo (15)",
     size: "120x90",
-    title: "Cosmic Dance",
+    title: "Freedom",
     description: `Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora, spray dwukolorowy.
 Obraz przedstawia parę młodych, nowoczesnych ludzi.
 Para skupiona jest na widzu, ale gest ręki chłopaka zatrzymuje dziewczynę przy nim.
@@ -118,7 +118,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności.`,
   {
     id: "photo (16)",
     size: "115x90",
-    title: "Golden Embrace",
+    title: "Passion",
     description: `Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czarny spray.
 Obraz przedstawiający zakochaną parę, w której mężczyzna jest gentlemanem, sugeruje to fryzura, jakby z czasów dwudziestolecia międzywojennego.
 Może to wyrażać zaznaczanie ważności takich cech u mężczyzn jak elegancja i szyk.
@@ -138,7 +138,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności obrazu.`,
   {
     id: "photo (18)",
     size: "130x95",
-    title: "Duality of Nature",
+    title: "Infinty",
     description: `Smok i Małpa to najwyższy stopień szczęścia i powodzenia.
 Tutaj przedstawieni nowatorsko z znakami nieskończoności wieńczącymi obraz.
 Precyzyjnie wykonany obraz, jakość farby złotej daje wręcz efekt tkanej struktury.
@@ -149,7 +149,7 @@ Obraz sygnowany, dołączam również certyfikat autentyczności.`,
   {
     id: "photo (19)",
     size: "130x90",
-    title: "Golden Harmony",
+    title: "Together",
     description: `Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora, oraz złoty spray.
 Pierwotnie luźno narysowany szkic na kartce zrodził się na płótnie w kompozycję centralną przedstawiającą zakochanych ludzi.
 Obraz pięknie wygląda w jasnych wnętrzach, w salonie, przy dużych oknach.

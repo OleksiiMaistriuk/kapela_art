@@ -1,7 +1,7 @@
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
-import { opinions } from "../constants/opinions";
 import { useImageService } from "../elements/imageService";
 import useRevealAnimation from "../useRevealAnimation";
 
@@ -26,14 +26,12 @@ function SampleNextArrow(props) {
       className="hidden md:block"
       style={{
         ...style,
-
         position: "absolute",
         right: "10px",
         top: "50%",
         transform: "translateY(-50%)",
         zIndex: 2,
         cursor: "pointer",
-
         borderRadius: "50%",
       }}
       onClick={onClick}
@@ -48,14 +46,12 @@ function SamplePrevArrow(props) {
       className="hidden md:block"
       style={{
         ...style,
-
         position: "absolute",
         left: "10px",
         top: "50%",
         transform: "translateY(-50%)",
         zIndex: 2,
         cursor: "pointer",
-
         borderRadius: "50%",
       }}
       onClick={onClick}
@@ -68,6 +64,7 @@ const OpinionsSection = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+  const { t } = useTranslation();
 
   const settings = {
     dots: true,
@@ -84,6 +81,13 @@ const OpinionsSection = () => {
   };
 
   const { getImageData } = useImageService();
+
+  const opinions = Array.from({ length: 10 }, (_, index) => ({
+    title: t(`opinions.title${index + 1}`),
+    subTitle: t(`opinions.subTitle${index + 1}`),
+    description: t(`opinions.desc${index + 1}`),
+    image: t(`opinions.image${index + 1}`), // Get the image name from translations
+  }));
 
   return (
     <div

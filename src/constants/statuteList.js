@@ -2,7 +2,7 @@ export const statuteList = [
   {
     title: "§ 1 Postanowienia wstępne",
     content:
-      "Sklep internetowy dostępny pod adresem internetowym magdalenakapela.pl prowadzony jest przez KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ. z siedzibą w 43-300 Bielsko-Biała, ul. prof. dr Mieczysława Michałowicza 12, wpisaną do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS: 0000830738, NIP: 5472217560, REGON: 38562239300000.",
+      "Sklep internetowy dostępny pod adresem internetowym magdalenakapela.com prowadzony jest przez KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ. z siedzibą w 43-300 Bielsko-Biała, ul. prof. dr Mieczysława Michałowicza 12, wpisaną do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS: 0000830738, NIP: 5472217560, REGON: 38562239300000.",
   },
   {
     title: "§ 2 Definicje",

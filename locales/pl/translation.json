@@ -1,0 +1,507 @@
+{
+  "seo": {
+    "defaultTitle": "Sztuka Magdalena Kapela",
+    "metaDescription": "Tworzę wyjątkowe obrazy, które oddają emocje i piękno otaczającego świata. Moje dzieła to połączenie pasji, talentu i unikalnej wizji artystycznej.",
+    "ogTitle": "Magdalena Kapela - Artystka Malarka",
+    "ogDescription": "Zapraszam do odkrycia mojej kolekcji obrazów, które oddają niepowtarzalne emocje i piękno otaczającego nas świata. Każde dzieło jest wyjątkowe i tworzę je z pasją oraz zaangażowaniem.",
+    "twitterTitle": "Magdalena Kapela - Artystka Malarka",
+    "twitterDescription": "Tworzę wyjątkowe obrazy, które oddają emocje i piękno otaczającego świata. Moje dzieła to połączenie pasji, talentu i unikalnej wizji artystycznej.",
+    "policy": {
+      "title": "Polityka Prywatności",
+      "description": "Zapoznaj się z naszą polityką prywatności i dowiedz się, jak chronimy Twoje dane osobowe."
+    },
+    "delivery": {
+      "title": "Warunki dostawy",
+      "description": "Sprawdź warunki dostawy moich obrazów. Zapewniam bezpieczny i szybki transport."
+    },
+    "home": {
+      "title": "Home",
+      "description": "Witamy na stronie Magdaleny Kapeli. Odkryj wyjątkowe obrazy pełne emocji i piękna. Sprawdź opinie naszych klientów i zobacz galerię naszych dzieł.",
+      "keywords": "obrazy, sztuka, galeria, opinie, Magdalena Kapela, malarstwo, kontakt"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Skontaktuj się z nami w celu uzyskania więcej informacji o moich pracach artystycznych."
+    },
+    "statute": {
+      "title": "Regulamin",
+      "description": "Przeczytaj nasz regulamin, aby poznać zasady korzystania z naszej strony internetowej."
+    }
+  },
+  "policySection": {
+    "title": "Polityka prywatności i cookies",
+    "sections": [
+      {
+        "sectionTitle": "§ 1. Postanowienia ogólne",
+        "content": "Administratorem danych osobowych zbieranych za pośrednictwem strony internetowej  magdalenakapela.comjest KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ wpisana do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS 0000830738, której akta rejestrowe przechowywane są przez Sąd rejonowy w Bielsku-Białej, VIII wydział gospodarczy Krajowego Rejestru Sądowego, miejsce wykonywania działalności oraz adres do doręczeń prof. dr Mieczysława Michałowicza 12, 43-300 Bielsko-Biała, NIP: 5472217560, REGON: 38562239300000, adres poczty elektronicznej (e-mail): kontakt@magdalenakapela.pl, numer telefonu: 501 686 882, zwany dalej „Administratorem”. Dane osobowe zbierane przez Administratora za pośrednictwem strony internetowej są przetwarzane zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych), zwane dalej RODO."
+      },
+      {
+        "sectionTitle": "§ 2. Rodzaj przetwarzanych danych osobowych, cel i zakres zbierania danych",
+        "content": "CEL PRZETWARZANIA I PODSTAWA PRAWNA. Administrator przetwarza dane osobowe użytkowników strony  magdalenakapela.comw przypadku zapisania się do Newslettera w celu przesyłania informacji handlowych drogą elektroniczną. Dane osobowe są przetwarzane po wyrażeniu odrębnej zgody, na podstawie art. 6 ust. 1 lit. a) RODO. RODZAJ PRZETWARZANYCH DANYCH OSOBOWYCH. W przypadku Newslettera użytkownik podaje imię i nazwisko, adres e-mail. OKRES ARCHIWIZACJI DANYCH OSOBOWYCH. Dane osobowe użytkowników przechowywane są przez Administratora: W przypadku, gdy podstawą przetwarzania danych jest wykonanie umowy, tak długo, jak jest to niezbędne do wykonania umowy, a po tym czasie przez okres odpowiadający okresowi przedawnienia roszczeń. W przypadku, gdy podstawą przetwarzania danych jest zgoda, tak długo, aż zgoda nie zostanie odwołana, a po odwołaniu zgody przez okres czasu odpowiadający okresowi przedawnienia roszczeń. Dodatkowe informacje mogą być pobierane podczas korzystania ze strony, w tym adres IP, nazwa domeny, rodzaj przeglądarki, czas dostępu, typ systemu operacyjnego."
+      },
+      {
+        "sectionTitle": "§ 3. Udostępnianie danych osobowych",
+        "content": "Dane osobowe użytkowników przekazywane są dostawcom usług, z których korzysta Administrator przy prowadzeniu strony internetowej. Dostawcy usług, którym przekazywane są dane osobowe, w zależności od uzgodnień umownych i okoliczności, albo podlegają poleceniom Administratora co do celów i sposobów przetwarzania tych danych (podmioty przetwarzające) albo samodzielnie określają cele i sposoby ich przetwarzania (administratorzy). Dane osobowe użytkowników są przechowywane wyłącznie na terenie Europejskiego Obszaru Gospodarczego (EOG)."
+      },
+      {
+        "sectionTitle": "§ 4. Prawo kontroli, dostępu do treści własnych danych oraz ich poprawiania",
+        "content": "Osoba, której dane dotyczą, ma prawo dostępu do treści swoich danych osobowych oraz prawo ich sprostowania, usunięcia, ograniczenia przetwarzania, prawo do przenoszenia danych, prawo wniesienia sprzeciwu, prawo do cofnięcia zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem. W celu realizacji uprawnień można wysłać stosowną wiadomość e-mail na adres: kontakt@magdalenakapela.pl"
+      },
+      {
+        "sectionTitle": "§ 5. Pliki „cookies”",
+        "content": "Strona Administratora używa plików „cookies”. Instalacja plików „cookies” jest konieczna do prawidłowego świadczenia usług na stronie internetowej. W ramach strony stosowane są dwa rodzaje plików „cookies”: „sesyjne” oraz „stałe”. Użytkownik ma prawo zadecydowania w zakresie dostępu plików „cookies” do swojego komputera poprzez ich uprzedni wybór w oknie swojej przeglądarki."
+      },
+      {
+        "sectionTitle": "§ 6. Postanowienia końcowe",
+        "content": "Administrator stosuje środki techniczne i organizacyjne zapewniające ochronę przetwarzanych danych osobowych odpowiednią do zagrożeń oraz kategorii danych objętych ochroną, a w szczególności zabezpiecza dane przed ich udostępnieniem osobom nieupoważnionym, zabraniem przez osobę nieuprawnioną, przetwarzaniem z naruszeniem obowiązujących przepisów oraz zmianą, utratą, uszkodzeniem lub zniszczeniem. W sprawach nieuregulowanych niniejszą Polityką prywatności stosuje się odpowiednio przepisy RODO oraz inne właściwe przepisy prawa polskiego."
+      }
+    ]
+  },
+  "statuteSection": {
+    "title": "Regulamin",
+    "sections": [
+      {
+        "title": "§ 1 Postanowienia wstępne",
+        "content": "Sklep internetowy dostępny pod adresem internetowym  magdalenakapela.comprowadzony jest przez KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ. z siedzibą w 43-300 Bielsko-Biała, ul. prof. dr Mieczysława Michałowicza 12, wpisaną do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS: 0000830738, NIP: 5472217560, REGON: 38562239300000."
+      },
+      {
+        "title": "§ 2 Definicje",
+        "content": [
+          "1/ Konsument – osoba fizyczna zawierająca ze Sprzedawcą umowę w ramach Sklepu, której przedmiot nie jest związany bezpośrednio z jej działalnością gospodarczą lub zawodową.",
+          "2/ Sprzedawca – KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ. z siedzibą w 43-300 Bielsko-Biała, ul. prof. dr Mieczysława Michałowicza 12, wpisaną do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS: 0000830738, NIP: 5472217560, REGON: 38562239300000.",
+          "3/ Klient – każdy podmiot dokonujący zakupów za pośrednictwem Sklepu.",
+          "4/ Przedsiębiorca – osoba fizyczna, osoba prawna i jednostka organizacyjna niebędąca osobą prawną, której odrębna ustawa przyznaje zdolność prawną, wykonująca we własnym imieniu działalność gospodarczą, która korzysta ze Sklepu.",
+          "5/ Sklep – sklep internetowy prowadzony przez Sprzedawcę pod adresem internetowym magdalenakapela.pl",
+          "6/ Umowa zawarta na odległość – umowa zawarta z Klientem w ramach zorganizowanego systemu zawierania umów na odległość (w ramach Sklepu), bez jednoczesnej fizycznej obecności stron, z wyłącznym wykorzystaniem jednego lub większej liczby środków porozumiewania się na odległość do chwili zawarcia umowy włącznie.",
+          "7/ Regulamin – niniejszy regulamin Sklepu.",
+          "8/ Zamówienie – oświadczenie woli Klienta składane za pomocą Formularza Zamówienia i zmierzające bezpośrednio do zawarcia Umowy Sprzedaży Produktu lub Produktów ze Sprzedawcą.",
+          "9/ Konto – konto klienta w Sklepie, na którym gromadzone są dane podane przez Klienta oraz informacje o złożonych przez niego Zamówieniach w Sklepie.",
+          "10/ Formularz rejestracji – formularz dostępny w Sklepie, umożliwiający utworzenie Konta.",
+          "11/ Formularz zamówienia – interaktywny formularz dostępny w Sklepie umożliwiający złożenie Zamówienia, w szczególności poprzez dodanie Produktów do Koszyka oraz określenie warunków Umowy Sprzedaży, w tym sposobu dostawy i płatności.",
+          "12/ Koszyk – element oprogramowania Sklepu, w którym widoczne są wybrane przez Klienta Produkty do zakupu, a także istnieje możliwość ustalenia i modyfikacji danych Zamówienia, w szczególności ilości produktów.",
+          "13/ Produkt – dostępna w Sklepie rzecz ruchoma/usługa będąca przedmiotem Umowy Sprzedaży między Klientem a Sprzedawcą.",
+          "14/ Umowa Sprzedaży – umowa sprzedaży Produktu zawierana albo zawarta między Klientem a Sprzedawcą za pośrednictwem Sklepu.",
+          "15/ Prawo odstąpienia – możliwość Klienta będącego Konsumentem do odstąpienia od Umowy na odległość."
+        ]
+      },
+      {
+        "title": "§ 3 Kontakt ze Sklepem",
+        "content": [
+          "1/ Adresem e-mail Sklepu jest: sklep@magdalenakapela.pl",
+          "2/ Adresem do korespondencji jest: KAPELLA ART. SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ. ul. prof. dr Mieczysława Michałowicza 12, 43-300 Bielsko-Biała."
+        ]
+      },
+      {
+        "title": "§ 4 Warunki korzystania ze Sklepu",
+        "content": "1/ Warunkiem koniecznym korzystania ze Sklepu jest posiadanie przez Klienta urządzenia końcowego, które spełnia minimalne wymagania techniczne umożliwiające korzystanie z Serwisu, w tym: komputera, laptopa, tabletu lub innego urządzenia końcowego z dostępem do Internetu, zainstalowanego oprogramowania w tym przeglądarki internetowej, pozwalającej wyświetlać strony internetowe.",
+        "additionalRequirements": "Klient powinien także spełnić następujące minimalne wymagania techniczne, aby korzystać z usług elektronicznych świadczonych przez Sprzedawcę: posiadać aktywne konto poczty elektronicznej (e-mail), posługiwać się przeglądarką internetową Internet Explorer (wersja minimum 11), Mozilla Firefox (wersja minimum 10), Google Chrome (wersja minimum 10), Opera (wersja minimum 10) lub Safari (wersja minimum 5)."
+      },
+      {
+        "title": "§ 5 Informacje ogólne",
+        "content": [
+          "1/ Sprzedawca nie ponosi odpowiedzialności za zakłócenia, w tym przerwy w funkcjonowaniu Sklepu spowodowane siłą wyższą, niedozwolonym działaniem osób trzecich lub niekompatybilnością Sklepu internetowego z infrastrukturą techniczną Klienta.",
+          "2/ Przeglądanie asortymentu Sklepu nie wymaga zakładania Konta. Składanie zamówień przez Klienta na Produkty znajdujące się w asortymencie Sklepu możliwe jest albo po założeniu Konta zgodnie z postanowieniami § 6 Regulaminu albo przez podanie niezbędnych danych osobowych i adresowych umożliwiających realizację Zamówienia bez zakładania Konta.",
+          "3/ Ceny podane w Sklepie są podane w polskich złotych i są cenami brutto (uwzględniają podatek VAT).",
+          "4/ Na końcową (ostateczną) kwotę do zapłaty przez Klienta składa się cena za Produkt oraz koszt dostawy (w tym opłaty za transport, dostarczenie i usługi pocztowe), o której Klient jest informowany na stronach Sklepu w trakcie składania Zamówienia, w tym także w chwili wyrażenia woli związania się Umową Sprzedaży.",
+          "5/ W przypadku Umowy obejmującej prenumeratę lub świadczenie usług na czas nieoznaczony końcową (ostateczną) ceną jest łączna cena obejmująca wszystkie płatności za okres rozliczeniowy.",
+          "6/ Gdy charakter przedmiotu Umowy nie pozwala, rozsądnie oceniając, na wcześniejsze obliczenie wysokości końcowej (ostatecznej) ceny, informacja o sposobie, w jaki cena będzie obliczana, a także o opłatach za transport, dostarczenie, usługi pocztowe oraz o innych kosztach, będzie podana w Sklepie w opisie Produktu."
+        ]
+      },
+      {
+        "title": "§ 6 Zakładanie Konta w Sklepie",
+        "content": [
+          "1/ Aby założyć Konto w Sklepie, należy wypełnić Formularz rejestracji. Niezbędne jest podanie następujących danych Imię i Nazwisko, adres e-mail.",
+          "2/ Założenie Konta w Sklepie jest darmowe.",
+          "3/ Logowanie się na Konto odbywa się poprzez podanie loginu i hasła ustanowionych w Formularzu rejestracji.",
+          "4/ Klient ma możliwość w każdej chwili, bez podania przyczyny i bez ponoszenia z tego tytułu jakichkolwiek opłat usunąć Konto poprzez wysłanie stosownego żądania do Sprzedawcy, w szczególności za pośrednictwem poczty elektronicznej lub pisemnie na adresy podane w § 3."
+        ]
+      },
+      {
+        "title": "§ 7 Zasady składania Zamówienia",
+        "content": [
+          "W celu złożenia Zamówienia należy:",
+          "a/ zalogować się do Sklepu (opcjonalnie);",
+          "b/ wybrać Produkt będący przedmiotem Zamówienia, a następnie kliknąć przycisk „Do koszyka” (lub równoznaczny);",
+          "c/ zalogować się lub skorzystać z możliwości złożenia Zamówienia bez rejestracji;",
+          "d/ jeżeli wybrano możliwość złożenia Zamówienia bez rejestracji – wypełnić Formularz zamówienia poprzez wpisanie danych odbiorcy Zamówienia oraz adresu, na który ma nastąpić dostawa Produktu, wybrać rodzaj przesyłki (sposób dostarczenia Produktu), wpisać dane do faktury, jeśli są inne niż dane odbiorcy Zamówienia,",
+          "e/ kliknąć przycisk potwierdzający zamówienia, np. “Zamawiam i płacę” oraz potwierdzić zamówienie, klikając w link przesłany w wiadomości e-mail,",
+          "f/ wybrać jeden z dostępnych sposobów płatności i w zależności od sposobu płatności, opłacić zamówienie w określonym terminie, z zastrzeżeniem § 8 pkt 3."
+        ]
+      },
+      {
+        "title": "§ 8 Oferowane metody dostawy oraz płatności",
+        "content": [
+          "1/ Klient może skorzystać z następujących metod dostawy lub odbioru zamówionego Produktu:",
+          "a/ Przesyłka pocztowa, przesyłka pocztowa pobraniowa,",
+          "b/ Przesyłka kurierska, przesyłka kurierska pobraniowa,",
+          "c/ Odbiór osobisty dostępny pod adresem: 43-300 Bielsko-Biała, ul. prof. dr Mieczysława Michałowicza 12.",
+          "2/ Klient może skorzystać z następujących metod płatności:",
+          "a/ Płatność za pobraniem",
+          "b/ Płatność przelewem na konto Sprzedawcy",
+          "c/ Płatności elektroniczne",
+          "d/ Płatność kartą płatniczą.",
+          "3/ Szczegółowe informacje na temat metod dostawy oraz akceptowalnych metod płatności znajdują się za stronach Sklepu."
+        ]
+      },
+      {
+        "title": "§ 9 Wykonanie umowy sprzedaży",
+        "content": [
+          "1/ Zawarcie Umowy Sprzedaży między Klientem a Sprzedawcą następuje po uprzednim złożeniu przez Klienta Zamówienia za pomocą Formularza zamówienia w Sklepie internetowym zgodnie z § 7 Regulaminu.",
+          "2/ Po złożeniu Zamówienia Sprzedawca niezwłocznie potwierdza jego otrzymanie oraz jednocześnie przyjmuje Zamówienie do realizacji. Potwierdzenie otrzymania Zamówienia i jego przyjęcie do realizacji następuje poprzez przesłanie przez Sprzedawcę Klientowi stosownej wiadomości e-mail na podany w trakcie składania Zamówienia adres poczty elektronicznej Klienta, która zawiera co najmniej oświadczenia Sprzedawcy o otrzymaniu Zamówienia i o jego przyjęciu do realizacji oraz potwierdzenie zawarcia Umowy Sprzedaży. Z chwilą otrzymania przez Klienta powyższej wiadomości e-mail zostaje zawarta Umowa Sprzedaży między Klientem a Sprzedawcą.",
+          "3/ W przypadku wyboru przez Klienta:",
+          "a/ płatności przelewem, płatności elektronicznych albo płatności kartą płatniczą, Klient obowiązany jest do dokonania płatności w terminie 1 dnia kalendarzowego od dnia zawarcia Umowy Sprzedaży – w przeciwnym razie zamówienie zostanie anulowane.",
+          "b/ płatności za pobraniem przy odbiorze przesyłki, Klient obowiązany jest do dokonania płatności przy odbiorze przesyłki.",
+          "4/ Jeżeli Klient wybrał sposób dostawy inny niż odbiór osobisty, Produkt zostanie wysłany przez Sprzedawcę w terminie wskazanym w jego opisie (z zastrzeżeniem ustępu 5 niniejszego paragrafu), w sposób wybrany przez Klienta podczas składania Zamówienia.",
+          "a/ W przypadku zamówienia Produktów o różnych terminach dostawy, terminem dostawy jest najdłuższy podany termin.",
+          "b/ W przypadku zamówienia Produktów o różnych terminach dostawy, Klient ma możliwość żądania dostarczenia Produktów częściami lub też dostarczenia wszystkich Produktów po skompletowaniu całego zamówienia.",
+          "5/ Początek biegu terminu dostawy Produktu do Klienta liczy się w następujący sposób:",
+          "a/ W przypadku wyboru przez Klienta sposobu płatności przelewem, płatności elektroniczne lub kartą płatniczą – od dnia uznania rachunku bankowego Sprzedawcy.",
+          "b/ W przypadku wyboru przez Klienta sposobu płatności za pobraniem – od dnia zawarcia Umowy Sprzedaży,",
+          "6/ W przypadku wyboru przez Klienta odbioru osobistego Produktu, Produkt będzie gotowy do odbioru przez Klienta w terminie wskazanym w opisie Produktu. O gotowości Produktu do odbioru Klient zostanie dodatkowo poinformowany przez Sprzedawcę poprzez przesłanie stosownej wiadomości e-mail na podany w trakcie składania Zamówienia adres poczty elektronicznej Klienta.",
+          "7/ Dostawa Produktu odbywa się wyłącznie na terenie Polski.",
+          "8/ Dostawa Produktu do Klienta jest odpłatna, chyba że Umowa Sprzedaży stanowi inaczej. Koszty dostawy Produktu (w tym opłaty za transport, dostarczenie i usługi pocztowe) są wskazywane Klientowi na stronach Sklepu internetowego w zakładce „Koszty dostawy” oraz w trakcie składania Zamówienia, w tym także w chwili wyrażenia przez Klienta woli związania się Umową Sprzedaży.",
+          "9/ Odbiór osobisty Produktu przez Klienta jest bezpłatny."
+        ]
+      },
+      {
+        "title": "§ 10 Prawo odstąpienia od umowy",
+        "content": [
+          "1/ Konsument może w terminie 14 dni odstąpić od Umowy Sprzedaży bez podania przyczyny.",
+          "2/ Bieg terminu określonego w ust. 1 rozpoczyna się od dostarczenia Produktu Konsumentowi lub wskazanej przez niego osobie innej niż przewoźnik.",
+          "3/ W przypadku Umowy, która obejmuje wiele Produktów, które są dostarczane osobno, partiami lub w częściach, termin wskazany w ust. 1 biegnie od dostawy ostatniej rzeczy, partii lub części.",
+          "4/ W przypadku Umowy, która polega na regularnym dostarczaniu Produktów przez czas oznaczony (prenumerata), termin wskazany w ust. 1 biegnie od objęcia w posiadanie pierwszej z rzeczy.",
+          "5/ Konsument może odstąpić od Umowy, składając Sprzedawcy oświadczenie o odstąpieniu od Umowy. Do zachowania terminu odstąpienia od Umowy wystarczy wysłanie przez Konsumenta oświadczenia przed upływem tego terminu.",
+          "6/ Oświadczenie o odstąpieniu może być wysłane za pomocą tradycyjnej poczty bądź drogą elektroniczną poprzez przesłanie oświadczenia na adres e-mail Sprzedawcy. Oświadczenie można złożyć również na formularzu, którego wzór stanowi załącznik do ustawy z dnia 30 maja 2014 roku o prawach konsumenta, jednak nie jest to obowiązkowe.",
+          "7/ Skutki odstąpienia od Umowy:",
+          "a/ W przypadku odstąpienia od Umowy zawartej na odległość Umowę uważa się za niezawartą.",
+          "b/ W przypadku odstąpienia od Umowy Sprzedawca zwraca Konsumentowi niezwłocznie, nie później niż w terminie 14 dni od dnia otrzymania oświadczenia Konsumenta o odstąpieniu od Umowy, wszystkie dokonane przez niego płatności, w tym koszty dostarczenia rzeczy, z wyjątkiem dodatkowych kosztów wynikających z wybranego przez Konsumenta sposobu dostarczenia innego niż najtańszy zwykły sposób dostarczenia oferowany przez Sprzedawcę.",
+          "c/ Zwrotu płatności Sprzedawca dokona przy użyciu takich samych metod płatności, jakie zostały przez Konsumenta użyte w pierwotnej transakcji, chyba że Konsument wyraźnie zgodził się na inne rozwiązanie, które nie będzie się wiązało dla niego z żadnymi kosztami.",
+          "d/ Sprzedawca może wstrzymać się ze zwrotem płatności do czasu otrzymania Produktu z powrotem i umożliwienia mu zbadania stanu produktu.",
+          "e/ Konsument powinien odesłać Produkt na adres Sprzedawcy podany w niniejszym Regulaminie niezwłocznie, nie później niż 14 dni od dnia, w którym poinformował Sprzedawcę o odstąpieniu od Umowy. Termin zostanie zachowany, jeśli Konsument odeśle Produkt przed upływem terminu 14 dni.",
+          "f/ Konsument ponosi bezpośrednie koszty zwrotu Produktu, także koszty zwrotu Produktu, jeśli ze względu na swój charakter Produkt ten nie mógł zostać w zwykłym trybie odesłany pocztą.",
+          "g/ Konsument odpowiada za zmniejszenie wartości Produktu wynikające z korzystania z niego w sposób inny niż było to konieczne do stwierdzenia charakteru, cech i funkcjonowania Produktu. W wypadku obrazów –  korzystanie z Produktu poprzez otwarcie przez Konsumenta jego oryginalnego opakowania i wystawienie na działanie warunków atmosferycznych skutkuje uznaniem, że zmniejszenie wartości Produktu nastąpiło w wymiarze 100%, Produkt nie nadaje się bowiem do ponownego wystawienia w charakterze oryginalnym.",
+          "8/ Prawo odstąpienia od Umowy zawartej na odległość nie przysługuje Konsumentowi w odniesieniu do Umów:",
+          "- w której przedmiotem świadczenia jest rzecz nieprefabrykowana, wyprodukowana według specyfikacji Konsumenta lub służąca zaspokojeniu jego zindywidualizowanych potrzeb.",
+          "- w której przedmiotem świadczenia jest rzecz ulegająca szybkiemu zepsuciu lub mająca krótki termin przydatności do użycia.",
+          "- w której przedmiotem świadczenia jest rzecz dostarczana w zapieczętowanym opakowaniu, której po otwarciu opakowania nie można zwrócić ze względu na ochronę zdrowia lub ze względów higienicznych, jeżeli opakowanie zostało otwarte po dostarczeniu.",
+          "- w której przedmiotem świadczenia są rzeczy, które po dostarczeniu, ze względu na swój charakter, zostają nierozłącznie połączone z innymi rzeczami.",
+          "- w której przedmiotem świadczenia są napoje alkoholowe, których cena została uzgodniona przy zawarciu Umowy Sprzedaży, a których dostarczenie może nastąpić dopiero po upływie 30 dni i których wartość zależy od wahań na rynku, nad którymi Sprzedawca nie ma kontroli.",
+          "- w której Konsument wyraźnie żądał, aby Sprzedawca do niego przyjechał w celu dokonania pilnej naprawy lub konserwacji; jeżeli Sprzedawca świadczy dodatkowo inne usługi niż te, których wykonania Konsument żądał, lub dostarcza rzeczy inne niż części zamienne niezbędne do wykonania naprawy lub konserwacji, prawo odstąpienia od Umowy przysługuje Konsumentowi w odniesieniu do dodatkowych usług lub rzeczy.",
+          "- w której przedmiotem świadczenia są nagrania dźwiękowe lub wizualne albo programy komputerowe dostarczane w zapieczętowanym opakowaniu, jeżeli opakowanie zostało otwarte po dostarczeniu.",
+          "- o dostarczanie dzienników, periodyków lub czasopism, z wyjątkiem umowy o prenumeratę.",
+          "- zawartej w drodze aukcji publicznej.",
+          "- o świadczenie usług, jeżeli Sprzedawca wykonał w pełni usługę za wyraźną zgodą Konsumenta, który został poinformowany przed rozpoczęciem świadczenia, że po spełnieniu świadczenia przez Sprzedawcę utraci prawo odstąpienia od Umowy.",
+          "- w której przedmiotem świadczenia są pliki cyfrowe, które nie są zapisane na nośniku materialnym, jeżeli spełnianie świadczenia rozpoczęło się za wyraźną zgodą Konsumenta przed upływem terminu do odstąpienia od Umowy i po poinformowaniu go przez Sprzedawcę o utracie prawa odstąpienia od Umowy.",
+          "- o dostarczanie treści cyfrowych, które nie są zapisane na nośniku materialnym, jeżeli spełnianie świadczenia rozpoczęło się za wyraźną zgodą Konsumenta przed upływem terminu do odstąpienia od Umowy i po poinformowaniu go przez Sprzedawcę o utracie prawa odstąpienia od Umowy."
+        ]
+      },
+      {
+        "title": "§ 11 Reklamacja",
+        "content": [
+          "1/ Sprzedawca jest zobowiązany dostarczyć Produkt bez wad.",
+          "2/ Jeżeli Produkt posiada wady, Klient może złożyć reklamację dotyczącą zawartej Umowy Sprzedaży.",
+          "3/ Reklamację można złożyć na piśmie na adres Sprzedawcy podany w niniejszym Regulaminie lub drogą elektroniczną za pośrednictwem poczty elektronicznej na adres e-mail Sprzedawcy podany w niniejszym Regulaminie.",
+          "4/ Preferowany przez Sprzedawcę sposób składania reklamacji przez Klienta to wypełnienie Formularza reklamacyjnego stanowiącego załącznik nr 2 do niniejszego Regulaminu.",
+          "5/ W zgłoszeniu reklamacyjnym Klient winien podać swoje imię, nazwisko, adres do korespondencji, adres e-mail, datę zawarcia Umowy Sprzedaży, rodzaj wady Produktu oraz żądanie Klienta.",
+          "6/ Sprzedawca rozpatruje reklamację niezwłocznie, nie później niż w terminie 14 dni od dnia jej otrzymania. Odpowiedź Sprzedawcy w sprawie reklamacji jest wysyłana na wskazany przez Klienta adres e-mail lub inny podany w zgłoszeniu reklamacyjnym sposób.",
+          "7/ W przypadku gdy weryfikacja reklamacji będzie wymagała dodatkowych informacji od Klienta, Sprzedawca może poprosić Klienta o ich dostarczenie.",
+          "8/ Klient, będący Konsumentem, ma możliwość skorzystania z pozasądowych sposobów rozpatrywania reklamacji i dochodzenia roszczeń. Dla polubownego rozstrzygnięcia sporu Klient może zwrócić się do:",
+          "a/ Stałego Polubownego Sądu Konsumenckiego przy Wojewódzkim Inspektoracie Inspekcji Handlowej w Bielsku-Białej,",
+          "b/ Wojewódzkiego Inspektora Inspekcji Handlowej w Bielsku-Białej.",
+          "9/ Informacje o sposobach dostępu do ww. trybów i procedur polubownego rozstrzygania sporów, siedzibach oraz obszarach właściwości terytorialnej ww. podmiotów udostępniane są przez ww. podmioty."
+        ]
+      },
+      {
+        "title": "§ 12 Dane osobowe w Sklepie internetowym",
+        "content": [
+          "1/ Administratorem danych osobowych Klientów zbieranych za pośrednictwem Sklepu internetowego jest Sprzedawca.",
+          "2/ Dane osobowe Klientów zbierane przez administratora za pośrednictwem Sklepu internetowego zbierane są w celu realizacji Umowy Sprzedaży, a jeżeli Klient wyrazi na to zgodę – także w celach marketingowych.",
+          "3/ Administratorem danych osobowych Klientów zbieranych za pośrednictwem Sklepu internetowego jest Sprzedawca.",
+          "4/ Administratorem danych osobowych Klientów zbieranych za pośrednictwem Sklepu internetowego jest Sprzedawca.",
+          "5/ Administratorem danych osobowych Klientów zbieranych za pośrednictwem Sklepu internetowego jest Sprzedawca.",
+          "6/ Szczegółowe informacje dotyczące przetwarzania danych osobowych Klientów przez Sprzedawcę znajdują się w Polityce prywatności zamieszczonej na stronach Sklepu internetowego."
+        ]
+      },
+      {
+        "title": "§ 13 Dane osobowe w Sklepie internetowym",
+        "content": [
+          "1/ Administratorem danych osobowych Klientów zbieranych za pośrednictwem Sklepu internetowego jest Sprzedawca.",
+          "2/ Dane osobowe Klientów zbierane przez administratora za pośrednictwem Sklepu internetowego zbierane są w celu realizacji Umowy Sprzedaży, a jeżeli Klient wyrazi na to zgodę – także w celu marketingowym.",
+          "3/ Odbiorcami danych osobowych Klientów Sklepu internetowego mogą być:",
+          "   a/ W przypadku Klienta, który korzysta w Sklepie internetowym ze sposobu dostawy przesyłką pocztową lub przesyłką kurierską, Administrator udostępnia zebrane dane osobowe Klienta wybranemu przewoźnikowi lub pośrednikowi realizującemu przesyłki na zlecenie Administratora.",
+          "   b/ W przypadku Klienta, który korzysta w Sklepie internetowym ze sposobu płatności elektronicznych lub kartą płatniczą Administrator udostępnia zebrane dane osobowe Klienta, wybranemu podmiotowi obsługującemu powyższe płatności w Sklepie internetowym.",
+          "4/ Klient ma prawo dostępu do treści swoich danych oraz ich poprawiania.",
+          "5/ Podanie danych osobowych jest dobrowolne, aczkolwiek niepodanie wskazanych w Regulaminie danych osobowych niezbędnych do zawarcia Umowy Sprzedaży skutkuje brakiem możliwości zawarcia tejże umowy."
+        ]
+      },
+      {
+        "title": "§ 14 Postanowienia końcowe",
+        "content": [
+          "1/ Umowy zawierane poprzez Sklep internetowy zawierane są w języku polskim.",
+          "2/ Sprzedawca zastrzega sobie prawo do dokonywania zmian Regulaminu z ważnych przyczyn to jest: zmiany przepisów prawa, zmiany sposobów płatności i dostaw – w zakresie, w jakim te zmiany wpływają na realizację postanowień niniejszego Regulaminu. O każdej zmianie Sprzedawca poinformuje Klienta z co najmniej 7 dniowym wyprzedzeniem.",
+          "3/ W sprawach nieuregulowanych w niniejszą Polityką prywatności stosuje się odpowiednio przepisy RODO oraz inne właściwe przepisy prawa polskiego."
+        ]
+      }
+    ]
+  },
+  "opinions": {
+    "image1": "zbigniew",
+    "title1": "Fundacja Rozwoju Kardiochirurgii im. prof. Zbigniewa Religi",
+    "subTitle1": "",
+    "desc1": "Magdalena Kapela, artystka – ambasadorka Fundacji Rozwoju Kardiochirurgii im. prof. Zbigniewa Religi. Przez wiele lat naszej współpracy dała się poznać jako ucieleśnienie dobra i wspaniałej, pozytywnej energii. Magda przekazała nam wiele pięknych obrazów, które zlicytowanie podczas aukcji charytatywnych znacząco wsparły naszą Fundację. Zawsze możemy na Nią liczyć, jest obecna podczas ważnych dla nas wydarzeń i promuje naszą działalność w kraju i na świecie.",
+    "image2": "Izabela",
+    "title2": "Izabela Połatyńska Janik",
+    "subTitle2": "Specjalista ds. nieruchomości",
+    "desc2": "Kocham sztukę. Artystą może być każdy, bez względu na stopień profesjonalizmu w uprawianiu sztuki. Potęga talentu Magdy Kapeli, która tworzy obrazy w oparciu o własną koncepcję, jest niezaprzeczalna. Posiada swój indywidualny spójny styl, zaangażowanie i wizję pracy twórczej. Wyróżnia się na tle innych artystów. Każdemu życzę przeżycie estetyczne, w obcowaniu z jej twórczością. Izabela Połatyńska Janik",
+    "image3": "arek",
+    "title3": "Arkadiusz Gołębiowski",
+    "subTitle3": "Aktor",
+    "desc3": "Ujmując, przyjmując, wnikając, uśmiechając zostawiasz niedosyt. Tak Cie widze, o Ty która kreska mi malujesz pol swiata. Tak ! Ja mogę, ja pragnę, ja chce ! I tak to z Toba jest. Już prawie zrozumialem już prawie miałem Cie na wyciągnięcie dłoni mój momencie, oazo przestworzy która nasyciłaś i zniknęłaś nagle... Tak Cie widze i bardzo cenie Twoja sztukę. Jest jak miłość, która otula lecz zawsze pozostawia nieznany smak tęsknoty...Namiętność i zwiewność kreski, która mnie oczarowuje wzbudza emocje i pokazuje, że chcieć to moc. Tak mogę Cie mieć mieć w Twoim obrazie by za chwile chcieć więcej i inaczej...Czy to nadal ten sam Twoj obraz ? Tak. Bo jestes prawdziwa kobieta o zmiennościach wielu. Tak widze te piękne i eteryczne kreski dajace mojej wyobraźni ogromna karme....choc chciałbym żebyś ot tak była na mojej zwykłe szarej ścianie.",
+    "image4": "medical",
+    "title4": "Adriana Gołębiewska",
+    "subTitle4": "Gołębiewska Medical SOA",
+    "desc4": "Magda Kapela , mój autorytet , mistrz w malarstwie , jest wszechstronna w swojej pasji , oddana ,do każdego dzieła podchodzi z miłością ,zaangażowaniem i profesjonalizmem . Sztuka Magdy jest godna polecenia i współpracy. Dzieła Magdy ozdabiają wnętrza mojej firmy Gołębiewska Medical Spa a także mojego domu ... serdecznie polecam i jestem wdzięczna że się poznałyśmy.",
+    "image5": "sylwia",
+    "title5": "Sylwia Mokrysz",
+    "subTitle5": "Mokate S.A.",
+    "desc5": "Pani Magdalena Kapela to wszechstronna Artystka. Ostatnio Jej znakiem rozpoznawczym są malowane złotem obrazy na czarnym tle.Zazwyczaj powstają w podróży, które są esencją życia Artystki. Nie wyobraża sobie Ona, by mogła udać się w jedną z nich bez płótna czy farb.Umilowanie piękna i podróże to akurat nasze wspólne obszary zainteresowań.Osobiście posiadam kilka prac p. Magdaleny Kapeli w domu i muszę stwierdzić, że portret w Jej wykonaniu należy do moich ulubionych.Życzę wielu inspiracji oraz dalszej kreatywności.",
+    "image6": "agata",
+    "title6": "Agata Limanówka",
+    "subTitle6": "Strateg. Psycholog i praktyk biznesu. Trener, certyfikowany mentor coach ICF PCC, autor, wydawca.",
+    "desc6": "Magda to światowej klasy, wyjątkowa artystka, a jej dzieła, szczególnie ekspresyjna seria z ukraińskim złotem, podkreśla jej niepowtarzalną osobowość. Bardzo mi się podoba, że Magda łączy w sobie pasję do sztuki z biznesem i luksusem. Dzięki temu wprowadza sztukę do biznesu, a to realnie przekłada się na podniesienie prestiżu danego miejsca, a tym samym większej sprzedaży takich miejscach jak salony beauty i spa, hotele, restauracje czy kancelarie prawne. Zaangażowanie Magdy w wiele dużych akcji charytatywnych, świadczy o tym, że sztuka bardzo realnie może pomagać tym którzy tego potrzebują. Posiadam kilka dzieł Magdy i ciągle nie mogę się na nie napatrzeć. I moi klienci także! Polecam gorąco każdemu, kto kocha sztukę i chce dodać wyjątkowości i prestiżu miejscu, w którym przebywa u pracuje.",
+    "image7": "juliusz",
+    "title7": "Juliusz Wątroba",
+    "subTitle7": "Literat",
+    "desc7": "Magdalena Kapela - artystka wyjątkowa, wybitna, niepokorna.Słowem osobowość twórcza. Wszechstronna - od portretu, grafiki po pejzaż.Zachwyca jej oryginalność, szczególnie w erotykach malowanych złotem w czerni.",
+    "image8": "wilart",
+    "title8": "Karolina Wilk",
+    "subTitle8": "",
+    "desc8": "Z Magdaleną Kapelą współpracujemy od wielu lat, nie ma dla niej rzeczy niemożliwych, to artystka wszechstronna łącząca to co w sztuce najważniejsze miłość i autentyczność.",
+    "image9": "nykel",
+    "title9": "Mirosława Nykiel",
+    "subTitle9": "Posłanka na Sejm RP",
+    "desc9": "Z Magdaleną Kapelą znamy się od wielu lat. Bardzo cenię jej sztukę i wiem, jakim szacunkiem darzą ją mieszkańcy Bielska-Białej i całego regionu. Oprócz tego, że jest wspaniałą artystką, ma również wielką wrażliwość społeczną. Współpracowałyśmy w ramach Regionalnego Kongresu Kobiet Podbeskidzia oraz licznych akcji charytatywnych.",
+    "image10": "Jarek",
+    "title10": "Jarosław Klimaszewski",
+    "subTitle10": "Prezydent Bielska-Białej",
+    "desc10": "Pani Magdalena Kapela to znakomita artystka, ale również wspaniała ambasadorka Bielska-Białej. Od wielu lat współpracuje z bielskim samorządem i wspiera nasze miasto swoim talentem. To zaszczyt, że tak niezwykła malarka, a przy tym bardzo sympatyczna osoba tworzy właśnie w stolicy Podbeskidzia."
+  },
+  "gallery": {
+    "default_title": "Domyślny Tytuł",
+    "default_description": "Domyślny Opis",
+    "size_label": "Rozmiar",
+    "learn_more": "Dowiedz się więcej o tym obrazie",
+    "change_room": "Zmień pokój",
+    "imageDetails": [
+      {
+        "id": "photo (1)",
+        "title": "Feng huang",
+        "size": "100x80",
+        "description": "Akryl i olej na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora. Amulet Feng Huang to Feniks ze starożytnych Chin, symbolizujący długowieczną miłość, wprowadzający spokój i harmonię do związku. Dół obrazu to jakby waza czy bardziej pierwiastek kobiecy, symbol narodzin, a także skąd pochodzimy i wolności seksualnej. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (2)",
+        "title": "Embrace",
+        "size": "86x70",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora. Uchwycona chwila czułości dwojga ludzi, skierowanych do siebie, otulona, zanurzona w miłości do siebie nawzajem. Obraz sygnowany, dołączam również certyfikat autentyczności."
+      },
+      {
+        "id": "photo (4)",
+        "title": "Duality of Thought",
+        "size": "100x80",
+        "description": "Przeciążenie to bardzo często występujący wątek w związku, ale ozłocony daje filar wzniesienia się i szlachetności w rozwoju. Złoto ukraińskie na płótnie bawełniano-lnianym czarnym. Sygnowany."
+      },
+      {
+        "id": "photo (5)",
+        "title": "Dance with me",
+        "size": "105x65",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora. Obraz przedstawia parę tańczącą w harmonii, zanurzoną w ruchu i emocjach, które towarzyszą każdemu tańcowi. Dynamiczna kompozycja podkreślająca pasję i radość życia. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (6)",
+        "title": "Harmonious Love",
+        "size": "120x90",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora, szmaragd (akryl włoski). Tło obrazu to kompozycja, która nie jest do końca osobną częścią. Wkrada się w ciała zakochanych, robiąc dodatkowo elementy pewnych upiększeń, ale też destrukcji. Przenika dynamiką barwy przez złoto i burzy czasem celowo złotą linię. Oryginał. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (7)",
+        "title": "Love in Saint-Tropez",
+        "size": "120x90",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), szmaragd włoski. Obraz w stylu figurowo-symbolicznym. Przedstawia zakochaną parę, w której twarzach widać siłę i zdecydowanie, kontury postaci przypominają styl figur art deco. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (8)",
+        "title": "Adult love",
+        "size": "120x90",
+        "description": "Tylko prawdziwa miłość jest bez podziałów. Tym akcentem w obrazie chciałam podkreślić jej wagę. Obraz malowany jest akrylem, złotem ukraińskim na płótnie bawełniano-lnianym. Z moją osobistą sygnaturą z tyłu płótna."
+      },
+      {
+        "id": "photo (9)",
+        "title": "True",
+        "size": "60x40",
+        "description": "Kolekcja czarno-złota. Obraz abstrakcyjnie przedstawiający twarz kobiety. Idealnie pasujący do białych, jasnych wnętrz."
+      },
+      {
+        "id": "photo (10)",
+        "title": "Love in Motion",
+        "size": "120x90",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora. Obraz przedstawia parę w ruchu, pełną miłości i energii, która ich otacza. Ruch i dynamika kompozycji nadają całości wrażenie ciągłego tańca, symbolizując nieustającą miłość. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (11)",
+        "title": "Thousand Visages",
+        "size": "120x90",
+        "description": "Historia tego obrazu jest moim osobistym przeżyciem. Obraz dojrzewał przez kilka miesięcy. Jest opowieścią o pięknym człowieku. Jedyny, nie będzie powielany. Dużo złota ukraińskiego, biel, czerń. Sygnowany."
+      },
+      {
+        "id": "photo (12)",
+        "title": "Paris",
+        "size": "90x70",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl). Szkic malarski miasta miłości i sztuki. Pierwszy egzemplarz malowany na żywo w Paryżu. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (13)",
+        "title": "Fiat 126p",
+        "size": "120x100",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora. Maluch - kultowy samochód czasów PRL-u, przedstawiony w formie szkicu malarskiego. Taki sam tylko w kolorze białym, wykonałam na znaną akcję w Bielsku Białej - Maluch dla Toma Hanksa, malując go na żywo dla kilkutysięcznej publiczności. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (14)",
+        "title": "I'm looking",
+        "size": "100x70",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl) i czerń Winsora oraz złoty spray. Obraz jest refleksją nad światem naszych myśli. Wyraża emocje w dwóch kierunkach, które widz może interpretować na własną modłę. Obraz idealny na prezent lub gotowy do powieszenia w salonie czy firmie. Dobieram również ramę do tego obrazu na życzenie klienta. Obraz sygnowany, dołączam również certyfikat autentyczności."
+      },
+      {
+        "id": "photo (15)",
+        "title": "Freedom",
+        "size": "120x90",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora, spray dwukolorowy. Obraz przedstawia parę młodych, nowoczesnych ludzi. Para skupiona jest na widzu, ale gest ręki chłopaka zatrzymuje dziewczynę przy nim. Obraz nowoczesny, bardzo oryginalny, jedna sztuka. Obraz sygnowany, dołączam również certyfikat autentyczności."
+      },
+      {
+        "id": "photo (16)",
+        "title": "Passion",
+        "size": "115x90",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czarny spray. Obraz przedstawiający zakochaną parę, w której mężczyzna jest gentlemanem, sugeruje to fryzura, jakby z czasów dwudziestolecia międzywojennego. Może to wyrażać zaznaczanie ważności takich cech u mężczyzn jak elegancja i szyk. Obraz polecany do salonu lub sypialni. Sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (17)",
+        "title": "Krakow",
+        "size": "113x84",
+        "description": "Akryl, złoto ukraińskie, tło - czarny karton. Malowany na żywo w Krakowie z ujęciem rzeźby Igora Mitoraja. Jeden z moich obrazów powstających podczas podróży malarskich. Unikat. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (18)",
+        "title": "Infinty",
+        "size": "130x95",
+        "description": "Smok i Małpa to najwyższy stopień szczęścia i powodzenia. Tutaj przedstawieni nowatorsko z znakami nieskończoności wieńczącymi obraz. Precyzyjnie wykonany obraz, jakość farby złotej daje wręcz efekt tkanej struktury. Realizm głowy małpy daje nam wrażenie, jakby była blisko nas i podnosi ciekawość całej kompozycji obrazu. Obraz niesamowicie oryginalny. Obraz sygnowany, dołączam również certyfikat autentyczności."
+      },
+      {
+        "id": "photo (19)",
+        "title": "Together",
+        "size": "130x90",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora, oraz złoty spray. Pierwotnie luźno narysowany szkic na kartce zrodził się na płótnie w kompozycję centralną przedstawiającą zakochanych ludzi. Obraz pięknie wygląda w jasnych wnętrzach, w salonie, przy dużych oknach. Obraz sygnowany, dołączam również certyfikat autentyczności."
+      },
+      {
+        "id": "photo (20)",
+        "title": "Whispers of Love",
+        "size": "70x50",
+        "description": "Najsłynniejszy znak początku miłości między ludźmi to pocałunek. Obraz malowany złotem ukraińskim na czarnym tle, akryl na płótnie. Z moją osobistą sygnaturą z tyłu płótna."
+      },
+      {
+        "id": "photo (21)",
+        "title": "Fading Words",
+        "size": "110 Ø",
+        "description": "Akryl na płótnie okrągłym, złoto ukraińskie, złoty spray, czerń Winsora, łączony element grafiki. Audrey Hepburn przedstawiona w luźnej, nowoczesnej kompozycji trochę w stylu pop artu. Obraz sygnowany, dołączam również certyfikat autentyczności obrazu."
+      },
+      {
+        "id": "photo (22)",
+        "title": "Spectrum of Love",
+        "size": "130x60",
+        "description": "Akryl na płótnie, ekskluzywne złoto ukraińskie (akryl), czerń Winsora. Objęcie i pocałunek to najbardziej majestatyczne przeżycie. Czułość, która bije z obrazu, daje nadzieję na coraz większą miłość. Polecam na prezent, zwłaszcza ślubny. Pięknie wygląda w salonie i sypialni. Obraz sygnowany, dołączam również certyfikat autentyczności."
+      }
+    ]
+  },
+  "footer": {
+    "quote": "Artysta powinien być jak Bóg: niewidzialny a wszechmocny.",
+    "author": "Gustave Flaubert",
+    "contact_info": "Informacje kontaktowe",
+    "copyright": "Copyright ©"
+  },
+  "instagram": "Instagram",
+  "facebook": "Facebook",
+
+  "delivery_terms": "Warunki Dostawy",
+  "delivery_details": [
+    {
+      "sectionTitle": "§ 1. Wprowadzenie",
+      "content": "Witamy na naszej stronie dostawy. Celem jest zapewnienie, że zamówienia dotrą szybko, bezpiecznie i w idealnym stanie. Dokładamy wszelkich starań, aby proces dostawy był jak najbardziej przejrzysty i wygodny dla klientów."
+    },
+    {
+      "sectionTitle": "§ 2. Opcje Wysyłki",
+      "content": "Oferowane są różne opcje wysyłki, aby dopasować się do potrzeb klientów. Można wybierać spośród ekspresowej, standardowej i ekonomicznej wysyłki. Koszty oraz czas dostawy różnią się w zależności od wybranej opcji i lokalizacji dostawy."
+    },
+    {
+      "sectionTitle": "§ 3. Pakowanie i Bezpieczeństwo",
+      "content": "Zamówienia są starannie pakowane przy użyciu wysokiej jakości materiałów, aby zapewnić ich bezpieczeństwo podczas transportu. Każdy produkt jest zabezpieczony w taki sposób, aby dotarł w nienaruszonym stanie."
+    },
+    {
+      "sectionTitle": "§ 4. Śledzenie Zamówienia",
+      "content": "Po wysłaniu zamówienia klienci otrzymują numer śledzenia, który pozwala monitorować status przesyłki w czasie rzeczywistym. Informacje o statusie przesyłki są dostępne na naszej stronie internetowej."
+    },
+    {
+      "sectionTitle": "§ 5. Dostawa Międzynarodowa",
+      "content": "Realizowane są wysyłki na całym świecie. Czas dostawy oraz koszty wysyłki międzynarodowej mogą się różnić w zależności od kraju docelowego. Prosimy o zapoznanie się z dostępnymi opcjami podczas składania zamówienia."
+    },
+    {
+      "sectionTitle": "§ 6. Zwroty i Reklamacje",
+      "content": "W przypadku, gdy zamówiony produkt dotrze uszkodzony, oferowana jest bezproblemowa polityka zwrotów i reklamacji. Prosimy o kontakt z działem obsługi klienta w ciągu 14 dni od otrzymania przesyłki, a zostanie zorganizowana wymiana lub zwrot pieniędzy."
+    },
+    {
+      "sectionTitle": "§ 7. Wysyłka Kurierem",
+      "content": "W przypadku braku możliwości odbioru osobistego obrazu/obrazów, istnieje możliwość wysyłki kurierem. Każdy obraz jest ubezpieczony na czas podróży na kwotę zakupu, co chroni przed ewentualnym uszkodzeniem czy zaginięciem. Obrazy są pakowane profesjonalnie (folia i pudło kartonowe ze wzmocnionej tektury, która nie jest podatna na odkształcenia w trakcie transportu). Według informacji od klientów, 100% obrazów wysyłanych w tym kartonie dotarło do celu bez żadnych uszkodzeń. Karton jest idealnie dopasowany do wymogów gabarytowych firmy kurierskiej, tak aby zminimalizować ryzyko ewentualnych uszkodzeń. Dostawa obrazów jest możliwa na całym świecie. Na terenie kraju (Polska) dostawa jest bezpłatna."
+    }
+  ],
+  "quote": "„Sposób na poznanie życia to kochać wiele rzeczy.”",
+  "phone_number": "Numer telefonu",
+  "email_address": "Adres e-mail",
+  "thank_you": "Dziękujemy za wiadomość! Skontaktuje się z Tobą w najbliższym czasie.",
+  "send_message": "Wyślij wiadomość",
+  "image_title": "OBRAZ",
+  "name_placeholder": "Twoje imię",
+  "email_placeholder": "Twój adres e-mail",
+  "phone_placeholder": "Twój numer telefonu",
+  "message_placeholder": "Twoja wiadomość",
+  "form_errors": {
+    "name": "Imię",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "details": "Wiadomość"
+  },
+  "cookie_consent": {
+    "description": "Strona korzysta z plików cookies w celach statystycznych, marketingowych, realizacji obsługi uwierzytelniania użytkowników. Możesz określić warunki przechowywania lub dostępu do plików cookies w Twojej przeglądarce. Informujemy jednak, że zablokowanie cookies może uniemożliwić korzystanie z niektórych lub wszystkich funkcji serwisu.",
+    "privacy_policy": "polityką prywatności",
+    "learn_more": ", aby dowiedzieć się więcej o tym, jak wykorzystujemy pliki cookies i chronimy Twoje dane.",
+    "accept": "Akceptuj",
+    "decline": "Nie akceptuj",
+    "policy_details": "Wróć"
+  },
+  "footerLinks": {
+    "Statute": "Regulamin",
+    "Privacy_policy": "Polityka prywatności",
+    "Delivery": "Dostawa",
+    "Contact": "Kontakt"
+  },
+
+  "description1": "Jestem artystką malarką, twórczynią licznych wystaw indywidualnych i zbiorowych w Polsce i za granicą. Jako jedyna kobieta w Polsce wprowadziłam sztukę w przemysł, malując osobiste dzieła na kilkudziesięciu silosach w strefie wybuchu. Moje obrazy znalazły się w prestiżowych hotelach, w tym w Ohla Barcelona i Plaza Athénée w Paryżu. Moje ekspozycje w programie Dzień Dobry TVN, w tym m.in. portret „Sanitariuszka 19”, przyciągnęły zasłużoną uwagę telewidzów. Moje dzieła zdobią również kolekcje prywatne, zarówno w kraju, jak i za granicą. Niezaprzeczalnie pozostawiam trwały ślad w świecie sztuki, a moim znakiem rozpoznawczym są czarne płótna i złote linie.",
+  "description2": "Możesz mieć piękne wnętrze, które zdecydowanie ożyje i sprawi, że Twoje samopoczucie – rzecz bezcenna – będzie na wyższym poziomie energetycznym. Sztuka jest potrzebą duchową. Jest sensem nie tylko kolekcjonerskim, ale często zaskoczeniem, ponieważ odczytujemy ją za każdym razem inaczej. Sztuka potrafi zaskakiwać nas samych. W twoim otoczeniu twój wzrok zawsze kieruje się horyzontalnie, czyli w pomieszczeniu to zawsze ściana, patrzymy na wprost – to nasze główne pole widzenia, reszta to pole poboczne, dla naszego wzroku rzeczy mniej ważne. Tak samo, gdy patrzymy na człowieka, koncentrujemy się na twarzy i oczach. Więc to, w jaki sposób i co chcesz widzieć na ścianie, zależy od ciebie. Podaruj sobie patrząc na wyjątkowy obraz, marzenia, natchnienie, coś bezcennego.",
+  "description3": "Sztuka jest dla mnie sposobem wyrażania siebie poprzez medium malarskie. Tworzę obrazy od ponad 25 lat. Co mnie wyróżnia? Jestem z wykształcenia artystą, magistrem sztuki, malarstwa i grafiki na Akademii Sztuk Pięknych w Katowicach. Moje prace mogą być częścią twojej inwestycji kolekcjonerskiej.",
+  "nav": {
+    "back": "Powrót"
+  },
+  "navIndex": [
+    { "label": "O mnie" },
+    { "label": "Opinii" },
+    { "label": "Galeria" },
+    { "label": "Kontakt" }
+  ]
+}
