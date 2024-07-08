@@ -6,6 +6,7 @@ import {
   useTranslation,
 } from "gatsby-plugin-react-i18next";
 import * as React from "react";
+import { useEffect } from "react";
 import CookieConsent from "../components/CookieConsent";
 import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
@@ -16,11 +17,8 @@ const IndexPage = () => {
   const { t, i18n } = useTranslation();
   const { languages, changeLanguage, language, originalPath } = useI18next();
 
-  React.useEffect(() => {
-    console.log("originalPath", originalPath);
-    console.log("language", language);
-    console.log("languages", languages);
-    console.log("changeLanguage", changeLanguage);
+useEffect(() => {
+
     const pathLang = originalPath.split("/")[1];
     console.log("pathLang", pathLang);
     if (languages.includes(pathLang) && language !== pathLang) {
@@ -33,7 +31,7 @@ const IndexPage = () => {
       i18n={i18n}
       className="min-h-screen bg-dark-purple relative"
     >
-      <NavBar />
+      <NavBar  />
       <CookieConsent />
       <Seo
         title={t("seo.home.title")}

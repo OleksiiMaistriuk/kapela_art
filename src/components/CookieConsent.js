@@ -73,7 +73,7 @@ const CookieConsent = () => {
             <div>
               <p className="mb-4 text-sm">{t("cookie_consent.description")}</p>
               <p className="mb-4 text-sm">
-                {t("cookie_consent.privacy_policy")}
+                {t("cookie_consent.privacy policy")}
                 <span
                   className="text-blue-500 cursor-pointer hover:underline"
                   onClick={togglePolicyDetails}
