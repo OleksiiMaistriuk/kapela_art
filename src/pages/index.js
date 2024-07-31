@@ -37,6 +37,7 @@ useEffect(() => {
         title={t("seo.home.title")}
         description={t("seo.home.description")}
       />
+      <h1>Magdalena Kapela</h1>
       <HeroSection />
     </I18nextProvider>
   );

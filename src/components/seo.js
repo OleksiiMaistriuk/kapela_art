@@ -20,7 +20,7 @@ function Seo({ description, title, children }) {
   const { t, i18n } = useTranslation();
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const defaultTitle = site.siteMetadata?.title || "Magdalena Kapela" ;
 
   return (
     <Helmet

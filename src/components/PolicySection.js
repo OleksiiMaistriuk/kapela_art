@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/global.css";
 
-const PolicySection = ({ data }) => {
+const PolicySection = () => {
   const { t } = useTranslation();
 
   const policyDetails = t("policySection.sections", { returnObjects: true });

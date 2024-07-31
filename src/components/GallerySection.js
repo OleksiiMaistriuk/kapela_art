@@ -94,17 +94,17 @@ const GallerySection = () => {
     return () => clearInterval(timer);
   }, [secondBackgroundImagesData.length]);
 
-  useEffect(() => {
-    shuffleRooms();
-    shuffleSecondRooms();
-  }, []);
-
   const shuffleRooms = () => {
     setShuffledRooms(shuffleArray([...data.rooms.edges]).slice(0, 3));
   };
   const shuffleSecondRooms = () => {
     setShuffledSecondRooms(shuffleArray([...data.rooms.edges]).slice(0, 1));
   };
+
+  useEffect(() => {
+    shuffleRooms();
+    shuffleSecondRooms();
+  }, []);
 
   const handleOpen = (node, smallNode, nodeName) => {
     setSelectedImage(node);
@@ -424,7 +424,7 @@ const GallerySection = () => {
               {" "}
               <div className={`w-1/3 flex-none p-1 ${orderClass} relative `}>
                 <button
-                  onClick={() => shuffleRooms()}
+                onClick={() => shuffleRooms()}
                   className="absolute bg-black/50 rounded p-1 m-2 z-30 bottom-0 text-[0.5rem]  md-text:base  hover:bg-gray-700/60  md:bottom-4 sm:right-4 sm:p-2 sm:text-base sm:m-3"
                 >
                   {t("gallery.change_room")}
@@ -436,6 +436,16 @@ const GallerySection = () => {
                     setImageTitle(null);
                     setImageDescription(null);
                   }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleOpen(roomImage, renderedImage, roomIndex);
+                      setImageTitle(null);
+                      setImageDescription(null);
+                    }
+                  }}
+                  aria-label="Open room image"
                 >
                   {" "}
                   {roomImage ? (
@@ -521,12 +531,32 @@ const GallerySection = () => {
                               t("gallery.default_description")
                           );
                         }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            handleOpen(
+                              node.childImageSharp.gatsbyImageData,
+                              null,
+                              imageName
+                            );
+                            setImageTitle(
+                              smallPhotoDetails?.title ||
+                                t("gallery.default_title")
+                            );
+                            setImageDescription(
+                              smallPhotoDetails?.description ||
+                                t("gallery.default_description")
+                            );
+                          }
+                        }}
+                        aria-label="Open small photo"
                       >
                         <div className="relative w-full h-full flex items-center">
                           {smallPhotoImage ? (
                             <GatsbyImage
                               image={smallPhotoImage}
-                              alt={node.relativePath || "image"}
+                              alt={node.relativePath || "Magdalena Kapela"}
                               className="object-cover "
                             />
                           ) : (
@@ -569,12 +599,32 @@ const GallerySection = () => {
                               t("gallery.default_description")
                           );
                         }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            handleOpen(
+                              node.childImageSharp.gatsbyImageData,
+                              null,
+                              imageName
+                            );
+                            setImageTitle(
+                              smallPhotoDetails?.title ||
+                                t("gallery.default_title")
+                            );
+                            setImageDescription(
+                              smallPhotoDetails?.description ||
+                                t("gallery.default_description")
+                            );
+                          }
+                        }}
+                        aria-label="Open small photo"
                       >
                         <div className="relative w-full h-full flex items-center">
                           {smallPhotoImage ? (
                             <GatsbyImage
                               image={smallPhotoImage}
-                              alt={node.relativePath || "image"}
+                              alt={node.relativePath || "Magdalena Kapela"}
                               className="object-cover w-full "
                             />
                           ) : (
@@ -620,6 +670,16 @@ const GallerySection = () => {
                     setImageTitle(null);
                     setImageDescription(null);
                   }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleSecondOpen(roomImage, secondRenderedImage, roomIndex);
+                      setImageTitle(null);
+                      setImageDescription(null);
+                    }
+                  }}
+                  aria-label="Open room image"
                 >
                   {" "}
                   {roomImage ? (
@@ -703,12 +763,32 @@ const GallerySection = () => {
                               t("gallery.default_description")
                           );
                         }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            handleSecondOpen(
+                              node.childImageSharp.gatsbyImageData,
+                              null,
+                              imageName
+                            );
+                            setImageTitle(
+                              smallPhotoDetails?.title ||
+                                t("gallery.default_title")
+                            );
+                            setImageDescription(
+                              smallPhotoDetails?.description ||
+                                t("gallery.default_description")
+                            );
+                          }
+                        }}
+                        aria-label="Open small photo"
                       >
                         <div className="relative w-full h-full flex items-center">
                           {smallPhotoImage ? (
                             <GatsbyImage
                               image={smallPhotoImage}
-                              alt={node.relativePath || "image"}
+                              alt={node.relativePath || "Magdalena Kapela"}
                               className="object-cover w-full "
                             />
                           ) : (

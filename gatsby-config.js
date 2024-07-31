@@ -10,6 +10,7 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -28,18 +29,13 @@ module.exports = {
         localeJsonSourceName: `locale`,
         languages: ["en", "pl"],
         defaultLanguage: "pl",
-        siteUrl: "http://localhost:8000/",
+        siteUrl: "https://magdalenakapela.com/",
         i18nextOptions: {
           interpolation: {
             escapeValue: false,
           },
         },
-        // pages: [
-        //   {
-        //     matchPath: "/:lang?/blog/:uid",
-        //     getLanguageFromPath: true,
-        //   },
-        // ],
+  
       },
     },
     "gatsby-plugin-sharp",

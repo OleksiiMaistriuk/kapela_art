@@ -1,8 +1,8 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useTransition } from "react-spring";
+import loadingImage from "../images/backgrounds/download.png";
+import photo from "../images/backgrounds/photo.jpg";
 import video from "../images/Magdalena.mp4";
-import videoMobile1 from "../images/mobile1.mp4";
-import videoMobile2 from "../images/mobile2.mp4";
 import videoMobile3 from "../images/mobile3.mp4";
 import "../styles/global.css";
 
@@ -13,11 +13,9 @@ const Footer = lazy(() => import("./Footer"));
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [isShown, setIsShown] = useState(true);
-  const [buttonToUp, setButtonToUp] = useState(false);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
-
-  const videos = [videoMobile1, videoMobile2, videoMobile3];
+  const [isMobile, setIsMobile] = useState(false);
+  const [bigVideoLoaded, setBigVideoLoaded] = useState(false);
+  const [smallVideoLoaded, setSmallVideoLoaded] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -28,60 +26,82 @@ const HeroSection = () => {
     }
   }, [isModalOpen]);
 
-  useEffect(() => {
-    setCurrentVideoIndex(Math.floor(Math.random() * videos.length));
-  }, []);
-
-  const transition = useTransition(isShown, {
+  const transition = useTransition(true, {
     enter: { opacity: 1, transform: "translateY(0)" },
     leave: { opacity: 0, transform: "translateY(-100%)" },
-    config: { duration: 3000 },
+    config: { duration: 5000 },
   });
 
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
   return (
     <>
-      <div className=" h-screen  ">
+     <div className="h-screen">
         {transition((style, i) => (
           <div
-            key={"big" + i}
+            key={i}
             style={style}
             className="fixed top-0 left-0 w-full h-full"
           >
-            <video
-              autoPlay
-              muted
-              loop
-              className="hidden md:block inset-0 h-full w-full object-cover overlay-black"
-            >
-              <source src={video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            {videos.map((videoSrc, index) => (
+            {!isModalOpen && !bigVideoLoaded && !isMobile && (
+              <img
+                src={loadingImage}
+                alt="Loading"
+                className="hidden md:block inset-0 h-full w-full object-cover"
+              />
+            )}
+            {!isMobile && (
               <video
-                key={index + "mobile"}
                 autoPlay
                 muted
                 loop
-                className={`md:hidden responsive-video inset-0 h-full w-full object-cover ${
-                  index === currentVideoIndex ? "" : "hidden"
+                className={`hidden md:block inset-0 h-full w-full object-cover overlay-black ${
+                  bigVideoLoaded ? "block" : "hidden"
                 }`}
+                onLoadedData={() => setBigVideoLoaded(true)}
               >
-                <source src={videoSrc} type="video/mp4" />
-                Your browser does not support the video tag.
+                <source src={video} type="video/mp4" />
+                Magdalena Kapela
               </video>
-            ))}
+            )}
+
+            {!isModalOpen && !smallVideoLoaded && isMobile && (
+              <img
+                src={photo}
+                alt="Loading"
+                className="md:hidden inset-0 h-full w-full object-cover"
+              />
+            )}
+            {isMobile && (
+              <video
+                autoPlay
+                muted
+                loop
+                className={`md:hidden inset-0 h-full w-full object-cover ${
+                  smallVideoLoaded ? "block" : "hidden"
+                }`}
+                onLoadedData={() => setSmallVideoLoaded(true)}
+              >
+                <source src={videoMobile3} type="video/mp4" />
+                Magdalena Kapela
+              </video>
+            )}
           </div>
         ))}
       </div>
 
-      <div className="relative bg-transparent z-10 text-white pt-[100vh] sm:pt-[50vh]  ">
+      <div className="relative bg-transparent z-10 text-white pt-[100vh] sm:pt-[50vh]">
         <div id="1" className="my-10">
           <AboutSection />
         </div>
@@ -101,29 +121,6 @@ const HeroSection = () => {
           </Suspense>
         </div>
       </div>
-      {buttonToUp && (
-        <div className="fixed bottom-4 left-0 right-0 pb-4 flex justify-center z-50">
-          <button
-            onClick={() => scrollToSection(0)}
-            className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6 text-black"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 10l7-7m0 0l7 7m-7-7v18"
-              />
-            </svg>
-          </button>
-        </div>
-      )}
     </>
   );
 };

@@ -7,20 +7,20 @@ import useRevealAnimation from "../useRevealAnimation";
 
 const TextSection = ({ title, description, subTitle }) => (
   <div className="flex flex-col items-center justify-center w-full p-4 md:w-1/2 md:border-l-2 border-gray-200 h-full md:h-screen animate-fadeInUp">
-    <h2 className="text-2xl font-semibold tracking-tight sm:text-4xl md:text-5xl text-center text-black">
+    <h2 className="text-2xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center text-black">
       {title}
     </h2>
-    <p className="text-base font-semibold tracking-tight sm:text-lg md:text-xl text-center text-black mt-2">
+    <p className="text-base font-bold tracking-tight sm:text-lg md:text-xl text-center text-black mt-2">
       {subTitle}
     </p>
-    <p className="mt-3 text-sm font-light leading-relaxed text-black sm:text-base md:text-lg max-w-prose text-center">
+    <p className="mt-3 text-sm font-medium leading-relaxed text-black sm:text-base md:text-lg max-w-prose text-center">
       {description}
     </p>
   </div>
 );
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <div
       className="hidden md:block"
@@ -35,6 +35,12 @@ function SampleNextArrow(props) {
         borderRadius: "50%",
       }}
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') onClick();
+      }}
+      aria-label="Next slide"
     />
   );
 }
@@ -55,6 +61,12 @@ function SamplePrevArrow(props) {
         borderRadius: "50%",
       }}
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') onClick();
+      }}
+      aria-label="Previous slide"
     />
   );
 }
@@ -86,7 +98,7 @@ const OpinionsSection = () => {
     title: t(`opinions.title${index + 1}`),
     subTitle: t(`opinions.subTitle${index + 1}`),
     description: t(`opinions.desc${index + 1}`),
-    image: t(`opinions.image${index + 1}`), // Get the image name from translations
+    image: t(`opinions.image${index + 1}`), 
   }));
 
   return (
