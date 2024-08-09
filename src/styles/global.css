@@ -15,6 +15,7 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+  background-color: black;
 }
 
 html::-webkit-scrollbar {

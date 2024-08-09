@@ -48,7 +48,7 @@ const CookieConsent = () => {
         />
       )}
       {showConsent && (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 md:w-3/5 lg:w-1/2 bg-dark-licorice bg-opacity-90 rounded-lg p-5 md:p-10 z-20 overflow-y-auto max-h-4/5">
+        <div className="fixed mt-12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 md:w-3/5 lg:w-1/2 bg-dark-licorice bg-opacity-90 rounded-lg p-3 md:p-10 z-20 overflow-y-auto max-h-4/5">
           {showPolicyDetails ? (
             <ul className="max-h-96 overflow-y-auto">
               {policyDetails.map((detail) => (
@@ -73,9 +73,8 @@ const CookieConsent = () => {
             <div>
               <p className="mb-4 text-sm">{t("cookie_consent.description")}</p>
               <p className="mb-4 text-sm">
-                {t("cookie_consent.privacy policy")}
                 <span
-                  className="text-blue-500 cursor-pointer hover:underline"
+                  className=" cursor-pointer underline"
                   onClick={togglePolicyDetails}
                   role="button"
                   tabIndex={0}
@@ -85,11 +84,12 @@ const CookieConsent = () => {
                     }
                   }}
                 >
-                  {t("cookie_consent.learn_more")}
-                </span>
+                  {t("cookie_consent.privacy_policy")}
+                </span>{t("cookie_consent.learn_more")}
               </p>
+              <div className="d-flex">
               <button
-                className="px-4 py-2 border hover:border-gray-700 hover:text-gray-700 rounded mr-2"
+                className="p-2 md:px-4 md:py-2 border hover:border-gray-700 hover:text-gray-700 rounded mr-2"
                 onClick={acceptCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -100,7 +100,7 @@ const CookieConsent = () => {
                 {t("cookie_consent.accept")}
               </button>
               <button
-                className="px-4 py-2 border hover:border-gray-700 hover:text-gray-700 rounded"
+                className="p-2 md:px-4 md:py-2  border hover:border-gray-700 hover:text-gray-700 rounded"
                 onClick={declineCookies}
                 onKeyDown={(e) => {
                   if (e.key === "Esc" || e.key === " ") {
@@ -110,6 +110,7 @@ const CookieConsent = () => {
               >
                 {t("cookie_consent.decline")}
               </button>
+            </div>
             </div>
           )}
         </div>

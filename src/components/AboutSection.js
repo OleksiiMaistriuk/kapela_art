@@ -67,7 +67,7 @@ const AboutSection = () => {
         ref={revealRef2}
         className="relative flex w-full md:px-4 py-2 z-10 bg-stone-300 h-screen sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28 mt-5"
       >
-        <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center  items-center flex-col p-4 md:m-5 md:p-7 bg-black/50 md:bg-transparent rounded-md z-50">
+        <div className="w-screen h-screen md:h-1/2 md:w-2/3 flex justify-center  items-center flex-col p-4 md:m-5 md:p-7  md:bg-transparent rounded-md z-50">
           <p className="relative p-5 md:p-0 text-black text-xs font-bold leading-5 sm:max-w-md lg:max-w-none md:w-3/4 md:text-base sm:text-lg ">
             {t("description2")}
           </p>

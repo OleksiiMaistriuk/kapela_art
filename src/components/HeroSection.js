@@ -47,7 +47,7 @@ const HeroSection = () => {
   }, []);
   return (
     <>
-     <div className="h-screen">
+     <div className="h-screen bg-black">
         {transition((style, i) => (
           <div
             key={i}

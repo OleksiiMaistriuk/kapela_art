@@ -479,10 +479,10 @@
   },
   "cookie_consent": {
     "description": "Strona korzysta z plików cookies w celach statystycznych, marketingowych, realizacji obsługi uwierzytelniania użytkowników. Możesz określić warunki przechowywania lub dostępu do plików cookies w Twojej przeglądarce. Informujemy jednak, że zablokowanie cookies może uniemożliwić korzystanie z niektórych lub wszystkich funkcji serwisu.",
-    "privacy_policy": "polityką prywatności",
-    "learn_more": ", aby dowiedzieć się więcej o tym, jak wykorzystujemy pliki cookies i chronimy Twoje dane.",
+    "privacy_policy": "Polityką prywatności",
+    "learn_more": " kliknij, aby dowiedzieć się więcej o tym, jak wykorzystujemy pliki cookies i chronimy Twoje dane.",
     "accept": "Akceptuj",
-    "decline": "Nie akceptuj",
+    "decline": "Odrzuć",
     "policy_details": "Wróć"
   },
   "footerLinks": {
